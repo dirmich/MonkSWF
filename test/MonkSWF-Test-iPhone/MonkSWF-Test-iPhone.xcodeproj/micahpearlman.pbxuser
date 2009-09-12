@@ -1,0 +1,861 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* MonkSWF-Test-iPhone */ = {
+		activeExec = 0;
+		executables = (
+			FA9EA4FE0F79A71A00492ABC /* MonkSWF-Test-iPhone */,
+		);
+	};
+	289233A40DB2D0840083E9F9 /* MainView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {920, 410}}";
+			sepNavSelRange = "{253, 0}";
+			sepNavVisRange = "{0, 309}";
+		};
+	};
+	289233A50DB2D0840083E9F9 /* MainView.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 980}}";
+			sepNavSelRange = "{709, 0}";
+			sepNavVisRange = "{541, 713}";
+			sepNavWindowFrame = "{{15, 40}, {1187, 733}}";
+		};
+	};
+	289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {920, 600}}";
+			sepNavSelRange = "{384, 0}";
+			sepNavVisRange = "{0, 400}";
+		};
+	};
+	289233A90DB2D0DB0083E9F9 /* MainViewController.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {920, 1330}}";
+			sepNavSelRange = "{793, 0}";
+			sepNavVisRange = "{393, 845}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = FA9EA4FE0F79A71A00492ABC /* MonkSWF-Test-iPhone */;
+		activeSDKPreference = iphoneos2.2.1;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* MonkSWF-Test-iPhone */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* MonkSWF-Test-iPhone */,
+		);
+		breakpoints = (
+			FAFE6FA80FA7AA6E00E680B8 /* main.m:13 */,
+			FA7E7E830FB23A3400DC09A8 /* DefineShape.cpp:591 */,
+			FA7E7E9B0FB23E5400DC09A8 /* DefineShape.cpp:577 */,
+			FA7E7EA40FB23F6100DC09A8 /* DefineShape.cpp:606 */,
+			FA7E7EA60FB23F6800DC09A8 /* DefineShape.cpp:593 */,
+			FA7E804D0FB370D500DC09A8 /* MainView.mm:38 */,
+			FA8AE8910FB4E39A00BDA0F6 /* DefineShape.cpp:674 */,
+			FA8AE89B0FB4E4E500BDA0F6 /* DefineShape.cpp:522 */,
+			FA8AE89E0FB4E52700BDA0F6 /* DefineShape.cpp:569 */,
+			FA9B6CD30FBA2EDB006CEDA2 /* MainView.mm:37 */,
+		);
+		codeSenseManager = FA9EA50C0F79A73900492ABC /* Code sense */;
+		executables = (
+			FA9EA4FE0F79A71A00492ABC /* MonkSWF-Test-iPhone */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					366,
+					566,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXErrorsWarningsDataSource_TypeID,
+					PBXErrorsWarningsDataSource_MessageID,
+					PBXErrorsWarningsDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					742,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					756.20849609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					702,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 264451836;
+			PBXWorkspaceStateSaveDate = 264451836;
+		};
+		perUserProjectItems = {
+			FA01E46A0FAA3E090085275C /* PBXTextBookmark */ = FA01E46A0FAA3E090085275C /* PBXTextBookmark */;
+			FA5DDCE40FBE15F4009B9043 /* PBXTextBookmark */ = FA5DDCE40FBE15F4009B9043 /* PBXTextBookmark */;
+			FA5DDCE50FBE15F4009B9043 /* PBXTextBookmark */ = FA5DDCE50FBE15F4009B9043 /* PBXTextBookmark */;
+			FA5DDCE70FBE15F4009B9043 /* PBXTextBookmark */ = FA5DDCE70FBE15F4009B9043 /* PBXTextBookmark */;
+			FA5DDCE90FBE15F4009B9043 /* PBXTextBookmark */ = FA5DDCE90FBE15F4009B9043 /* PBXTextBookmark */;
+			FA5DDCEB0FBE15F4009B9043 /* PBXTextBookmark */ = FA5DDCEB0FBE15F4009B9043 /* PBXTextBookmark */;
+			FA5DDCED0FBE15F4009B9043 /* PBXTextBookmark */ = FA5DDCED0FBE15F4009B9043 /* PBXTextBookmark */;
+			FA7E80C80FB389A800DC09A8 /* PBXTextBookmark */ = FA7E80C80FB389A800DC09A8 /* PBXTextBookmark */;
+			FA7E80C90FB389A800DC09A8 /* PBXTextBookmark */ = FA7E80C90FB389A800DC09A8 /* PBXTextBookmark */;
+			FA7E80CA0FB389A800DC09A8 /* PBXTextBookmark */ = FA7E80CA0FB389A800DC09A8 /* PBXTextBookmark */;
+			FA7E80CB0FB389A800DC09A8 /* PBXTextBookmark */ = FA7E80CB0FB389A800DC09A8 /* PBXTextBookmark */;
+			FA7E80D40FB389A800DC09A8 /* PBXTextBookmark */ = FA7E80D40FB389A800DC09A8 /* PBXTextBookmark */;
+			FA7E80D50FB389A800DC09A8 /* PBXTextBookmark */ = FA7E80D50FB389A800DC09A8 /* PBXTextBookmark */;
+			FA7E80DA0FB389A800DC09A8 /* PBXTextBookmark */ = FA7E80DA0FB389A800DC09A8 /* PBXTextBookmark */;
+			FA7E80DB0FB389A800DC09A8 /* PBXTextBookmark */ = FA7E80DB0FB389A800DC09A8 /* PBXTextBookmark */;
+			FA8AE6720FB3AC0700BDA0F6 /* PBXTextBookmark */ = FA8AE6720FB3AC0700BDA0F6 /* PBXTextBookmark */;
+			FA8AE8BE0FB4EFD100BDA0F6 /* PBXTextBookmark */ = FA8AE8BE0FB4EFD100BDA0F6 /* PBXTextBookmark */;
+			FA8AE8C70FB4EFD100BDA0F6 /* PBXTextBookmark */ = FA8AE8C70FB4EFD100BDA0F6 /* PBXTextBookmark */;
+			FA8AE8CB0FB4EFD100BDA0F6 /* PBXTextBookmark */ = FA8AE8CB0FB4EFD100BDA0F6 /* PBXTextBookmark */;
+			FAA6FC200FC5D457004003C7 /* PBXTextBookmark */ = FAA6FC200FC5D457004003C7 /* PBXTextBookmark */;
+			FAA6FC210FC5D457004003C7 /* PBXTextBookmark */ = FAA6FC210FC5D457004003C7 /* PBXTextBookmark */;
+			FAA6FC230FC5D457004003C7 /* PBXTextBookmark */ = FAA6FC230FC5D457004003C7 /* PBXTextBookmark */;
+			FAA6FC250FC5D457004003C7 /* PBXTextBookmark */ = FAA6FC250FC5D457004003C7 /* PBXTextBookmark */;
+			FAA6FC270FC5D457004003C7 /* PBXTextBookmark */ = FAA6FC270FC5D457004003C7 /* PBXTextBookmark */;
+			FAA6FC290FC5D457004003C7 /* PBXTextBookmark */ = FAA6FC290FC5D457004003C7 /* PBXTextBookmark */;
+			FAB7DFAC0F79C64D008EC0C3 /* PBXTextBookmark */ = FAB7DFAC0F79C64D008EC0C3 /* PBXTextBookmark */;
+			FAB7E0A30F79D7EF008EC0C3 /* PBXTextBookmark */ = FAB7E0A30F79D7EF008EC0C3 /* PBXTextBookmark */;
+			FAE67B870F7B1DEE0087C145 /* PBXTextBookmark */ = FAE67B870F7B1DEE0087C145 /* PBXTextBookmark */;
+			FAE67B880F7B1DEE0087C145 /* PBXTextBookmark */ = FAE67B880F7B1DEE0087C145 /* PBXTextBookmark */;
+		};
+		sourceControlManager = FA9EA50B0F79A73900492ABC /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 267}}";
+			sepNavSelRange = "{204, 0}";
+			sepNavVisRange = "{0, 368}";
+		};
+	};
+	FA01E46A0FAA3E090085275C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FAE67B890F7B1DEE0087C145 /* DefineShape.cpp */;
+		name = "DefineShape.cpp: 510";
+		rLen = 0;
+		rLoc = 10495;
+		rType = 0;
+		vrLen = 706;
+		vrLoc = 10765;
+	};
+	FA01E5D10FAB7BB90085275C /* DefineShape.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = DefineShape.cpp;
+		path = /Users/micahpearlman/dev/MonkSWF/src/tags/DefineShape.cpp;
+		sourceTree = "<group>";
+	};
+	FA5DDCE40FBE15F4009B9043 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */;
+		name = "MainViewController.mm: 31";
+		rLen = 0;
+		rLoc = 793;
+		rType = 0;
+		vrLen = 847;
+		vrLoc = 393;
+	};
+	FA5DDCE50FBE15F4009B9043 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA5DDCE60FBE15F4009B9043 /* parser.c */;
+		name = "parser.c: 552";
+		rLen = 0;
+		rLoc = 16721;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 16178;
+	};
+	FA5DDCE60FBE15F4009B9043 /* parser.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = parser.c;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/parser.c";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1128, 47306}}";
+			sepNavSelRange = "{16721, 0}";
+			sepNavVisRange = "{16178, 1308}";
+			sepNavWindowFrame = "{{15, 45}, {1187, 733}}";
+		};
+	};
+	FA5DDCE70FBE15F4009B9043 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA5DDCE80FBE15F4009B9043 /* read.c */;
+		name = "read.c: 33";
+		rLen = 9;
+		rLoc = 437;
+		rType = 0;
+		vrLen = 559;
+		vrLoc = 143;
+	};
+	FA5DDCE80FBE15F4009B9043 /* read.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = read.c;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/read.c";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1128, 6132}}";
+			sepNavSelRange = "{437, 9}";
+			sepNavVisRange = "{143, 559}";
+		};
+	};
+	FA5DDCE90FBE15F4009B9043 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA5DDCEA0FBE15F4009B9043 /* shape_character_def.cpp */;
+		name = "shape_character_def.cpp: 435";
+		rLen = 0;
+		rLoc = 14712;
+		rType = 0;
+		vrLen = 1815;
+		vrLoc = 11110;
+	};
+	FA5DDCEA0FBE15F4009B9043 /* shape_character_def.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = shape_character_def.cpp;
+		path = "/Users/micahpearlman/Downloads/gnash-0.8.5/libcore/parser/shape_character_def.cpp";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1128, 12110}}";
+			sepNavSelRange = "{14712, 0}";
+			sepNavVisRange = "{11110, 1815}";
+			sepNavWindowFrame = "{{15, 45}, {1187, 733}}";
+		};
+	};
+	FA5DDCEB0FBE15F4009B9043 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA5DDCEC0FBE15F4009B9043 /* outputswf.c */;
+		name = "outputswf.c: 396";
+		rLen = 8;
+		rLoc = 13921;
+		rType = 0;
+		vrLen = 1833;
+		vrLoc = 13204;
+	};
+	FA5DDCEC0FBE15F4009B9043 /* outputswf.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = outputswf.c;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/outputswf.c";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1128, 17346}}";
+			sepNavSelRange = "{13921, 8}";
+			sepNavVisRange = "{13204, 1832}";
+			sepNavWindowFrame = "{{15, 45}, {1187, 733}}";
+		};
+	};
+	FA5DDCED0FBE15F4009B9043 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA5DDCEE0FBE15F4009B9043 /* outputtxt.c */;
+		name = "outputtxt.c: 1672";
+		rLen = 15;
+		rLoc = 50286;
+		rType = 0;
+		vrLen = 2095;
+		vrLoc = 49670;
+	};
+	FA5DDCEE0FBE15F4009B9043 /* outputtxt.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = outputtxt.c;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/outputtxt.c";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1128, 39060}}";
+			sepNavSelRange = "{50286, 15}";
+			sepNavVisRange = "{49670, 2095}";
+			sepNavWindowFrame = "{{15, 45}, {1187, 733}}";
+		};
+	};
+	FA7E7E830FB23A3400DC09A8 /* DefineShape.cpp:591 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA01E5D10FAB7BB90085275C /* DefineShape.cpp */;
+		functionName = "ShapeWithStyle::read( Reader* reader, DefineShapeTag* define_shape_tag )";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 591;
+		location = "MonkSWF-Test-iPhone";
+		modificationTime = 264453359.998725;
+		state = 2;
+	};
+	FA7E7E9B0FB23E5400DC09A8 /* DefineShape.cpp:577 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA01E5D10FAB7BB90085275C /* DefineShape.cpp */;
+		functionName = "FillStyle::read( Reader* reader, bool support_32bit_color )";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 577;
+		modificationTime = 264453360.341499;
+		state = 0;
+	};
+	FA7E7EA40FB23F6100DC09A8 /* DefineShape.cpp:606 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA01E5D10FAB7BB90085275C /* DefineShape.cpp */;
+		functionName = "ShapeWithStyle::read( Reader* reader, DefineShapeTag* define_shape_tag )";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 606;
+		modificationTime = 264453360.505624;
+		state = 0;
+	};
+	FA7E7EA60FB23F6800DC09A8 /* DefineShape.cpp:593 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA01E5D10FAB7BB90085275C /* DefineShape.cpp */;
+		functionName = "ShapeWithStyle::read( Reader* reader, DefineShapeTag* define_shape_tag )";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 593;
+		modificationTime = 264453360.579153;
+		state = 0;
+	};
+	FA7E7F790FB3631F00DC09A8 /* MainViewController.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = MainViewController.h;
+		path = "/Users/micahpearlman/dev/MonkSWF/test/MonkSWF-Test-iPhone/Classes/MainViewController.h";
+		sourceTree = "<absolute>";
+	};
+	FA7E7F900FB363C900DC09A8 /* MainViewController.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = MainViewController.h;
+		path = "/Users/micahpearlman/dev/MonkSWF/test/MonkSWF-Test-iPhone/Classes/MainViewController.h";
+		sourceTree = "<absolute>";
+	};
+	FA7E7FA00FB3652300DC09A8 /* mkCommon.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = mkCommon.h;
+		path = /Users/micahpearlman/dev/MonkSWF/src/mkCommon.h;
+		sourceTree = "<absolute>";
+	};
+	FA7E7FA80FB3654500DC09A8 /* mkHeader.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = mkHeader.h;
+		path = /Users/micahpearlman/dev/MonkSWF/src/mkHeader.h;
+		sourceTree = "<absolute>";
+	};
+	FA7E7FCC0FB3681400DC09A8 /* MainView.mm */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.objcpp;
+		name = MainView.mm;
+		path = "/Users/micahpearlman/dev/MonkSWF/test/MonkSWF-Test-iPhone/Classes/MainView.mm";
+		sourceTree = "<group>";
+	};
+	FA7E804D0FB370D500DC09A8 /* MainView.mm:38 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 289233A50DB2D0840083E9F9 /* MainView.mm */;
+		functionName = "-drawRect:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 38;
+		location = "MonkSWF-Test-iPhone";
+		modificationTime = 264453359.998783;
+		state = 2;
+	};
+	FA7E80C80FB389A800DC09A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA7E7FA00FB3652300DC09A8 /* mkCommon.h */;
+		name = "mkCommon.h: 11";
+		rLen = 0;
+		rLoc = 180;
+		rType = 0;
+		vrLen = 310;
+		vrLoc = 0;
+	};
+	FA7E80C90FB389A800DC09A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA7E7FA80FB3654500DC09A8 /* mkHeader.h */;
+		name = "mkHeader.h: 17";
+		rLen = 0;
+		rLoc = 267;
+		rType = 0;
+		vrLen = 527;
+		vrLoc = 0;
+	};
+	FA7E80CA0FB389A800DC09A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA7E7F900FB363C900DC09A8 /* MainViewController.h */;
+		name = "MainViewController.h: 12";
+		rLen = 0;
+		rLoc = 260;
+		rType = 0;
+		vrLen = 280;
+		vrLoc = 0;
+	};
+	FA7E80CB0FB389A800DC09A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A40DB2D0840083E9F9 /* MainView.h */;
+		name = "MainView.h: 13";
+		rLen = 0;
+		rLoc = 253;
+		rType = 0;
+		vrLen = 309;
+		vrLoc = 0;
+	};
+	FA7E80D40FB389A800DC09A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA7E7F790FB3631F00DC09A8 /* MainViewController.h */;
+		name = "MainViewController.h: 8";
+		rLen = 0;
+		rLoc = 152;
+		rType = 0;
+		vrLen = 277;
+		vrLoc = 0;
+	};
+	FA7E80D50FB389A800DC09A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */;
+		name = "MainViewController.mm: 13";
+		rLen = 0;
+		rLoc = 295;
+		rType = 0;
+		vrLen = 924;
+		vrLoc = 55;
+	};
+	FA7E80DA0FB389A800DC09A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA7E7FA00FB3652300DC09A8 /* mkCommon.h */;
+		name = "mkCommon.h: 11";
+		rLen = 0;
+		rLoc = 180;
+		rType = 0;
+		vrLen = 310;
+		vrLoc = 0;
+	};
+	FA7E80DB0FB389A800DC09A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA7E7FA80FB3654500DC09A8 /* mkHeader.h */;
+		name = "mkHeader.h: 17";
+		rLen = 0;
+		rLoc = 267;
+		rType = 0;
+		vrLen = 527;
+		vrLoc = 0;
+	};
+	FA8AE6720FB3AC0700BDA0F6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 18";
+		rLen = 0;
+		rLoc = 368;
+		rType = 0;
+		vrLen = 368;
+		vrLoc = 0;
+	};
+	FA8AE8910FB4E39A00BDA0F6 /* DefineShape.cpp:674 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA01E5D10FAB7BB90085275C /* DefineShape.cpp */;
+		functionName = "ShapeWithStyle::read( Reader* reader, DefineShapeTag* define_shape_tag )";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 674;
+		location = "MonkSWF-Test-iPhone";
+		modificationTime = 264453359.998792;
+		state = 2;
+	};
+	FA8AE89B0FB4E4E500BDA0F6 /* DefineShape.cpp:522 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA01E5D10FAB7BB90085275C /* DefineShape.cpp */;
+		functionName = "Gradient::read( Reader* reader )";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 522;
+		modificationTime = 264453360.680357;
+		state = 0;
+	};
+	FA8AE89E0FB4E52700BDA0F6 /* DefineShape.cpp:569 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA01E5D10FAB7BB90085275C /* DefineShape.cpp */;
+		functionName = "FillStyle::read( Reader* reader, bool support_32bit_color )";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 569;
+		location = "MonkSWF-Test-iPhone";
+		modificationTime = 264453359.998809;
+		state = 2;
+	};
+	FA8AE8BE0FB4EFD100BDA0F6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA7E7FCC0FB3681400DC09A8 /* MainView.mm */;
+		name = "MainView.mm: 37";
+		rLen = 0;
+		rLoc = 687;
+		rType = 0;
+		vrLen = 1099;
+		vrLoc = 315;
+	};
+	FA8AE8C70FB4EFD100BDA0F6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA8AE8C80FB4EFD100BDA0F6 /* read.h */;
+		name = "read.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 925;
+		vrLoc = 0;
+	};
+	FA8AE8C80FB4EFD100BDA0F6 /* read.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = read.h;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/read.h";
+		sourceTree = "<absolute>";
+	};
+	FA8AE8CB0FB4EFD100BDA0F6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA8AE8CC0FB4EFD100BDA0F6 /* read.h */;
+		name = "read.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 925;
+		vrLoc = 0;
+	};
+	FA8AE8CC0FB4EFD100BDA0F6 /* read.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = read.h;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/read.h";
+		sourceTree = "<absolute>";
+	};
+	FA9B6CD30FBA2EDB006CEDA2 /* MainView.mm:37 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA7E7FCC0FB3681400DC09A8 /* MainView.mm */;
+		functionName = "-drawRect:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 37;
+		location = "MonkSWF-Test-iPhone";
+		modificationTime = 264453359.998818;
+		state = 2;
+	};
+	FA9EA4FE0F79A71A00492ABC /* MonkSWF-Test-iPhone */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "MonkSWF-Test-iPhone";
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+			"paintModes-VGbitfield-MonkVG::QuartzPath::draw" = 1;
+		};
+	};
+	FA9EA50B0F79A73900492ABC /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	FA9EA50C0F79A73900492ABC /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	FAA6FC200FC5D457004003C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */;
+		name = "MainViewController.mm: 31";
+		rLen = 0;
+		rLoc = 793;
+		rType = 0;
+		vrLen = 845;
+		vrLoc = 393;
+	};
+	FAA6FC210FC5D457004003C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FAA6FC220FC5D457004003C7 /* parser.c */;
+		name = "parser.c: 552";
+		rLen = 0;
+		rLoc = 16721;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 16178;
+	};
+	FAA6FC220FC5D457004003C7 /* parser.c */ = {
+		isa = PBXFileReference;
+		name = parser.c;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/parser.c";
+		sourceTree = "<absolute>";
+	};
+	FAA6FC230FC5D457004003C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FAA6FC240FC5D457004003C7 /* read.c */;
+		name = "read.c: 33";
+		rLen = 9;
+		rLoc = 437;
+		rType = 0;
+		vrLen = 559;
+		vrLoc = 143;
+	};
+	FAA6FC240FC5D457004003C7 /* read.c */ = {
+		isa = PBXFileReference;
+		name = read.c;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/read.c";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1128, 6132}}";
+			sepNavSelRange = "{437, 9}";
+			sepNavVisRange = "{143, 559}";
+			sepNavWindowFrame = "{{15, 45}, {1187, 733}}";
+		};
+	};
+	FAA6FC250FC5D457004003C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FAA6FC260FC5D457004003C7 /* shape_character_def.cpp */;
+		name = "shape_character_def.cpp: 435";
+		rLen = 0;
+		rLoc = 14712;
+		rType = 0;
+		vrLen = 1815;
+		vrLoc = 11110;
+	};
+	FAA6FC260FC5D457004003C7 /* shape_character_def.cpp */ = {
+		isa = PBXFileReference;
+		name = shape_character_def.cpp;
+		path = "/Users/micahpearlman/Downloads/gnash-0.8.5/libcore/parser/shape_character_def.cpp";
+		sourceTree = "<absolute>";
+	};
+	FAA6FC270FC5D457004003C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FAA6FC280FC5D457004003C7 /* outputswf.c */;
+		name = "outputswf.c: 396";
+		rLen = 8;
+		rLoc = 13921;
+		rType = 0;
+		vrLen = 1832;
+		vrLoc = 13204;
+	};
+	FAA6FC280FC5D457004003C7 /* outputswf.c */ = {
+		isa = PBXFileReference;
+		name = outputswf.c;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/outputswf.c";
+		sourceTree = "<absolute>";
+	};
+	FAA6FC290FC5D457004003C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FAA6FC2A0FC5D457004003C7 /* outputtxt.c */;
+		name = "outputtxt.c: 1672";
+		rLen = 15;
+		rLoc = 50286;
+		rType = 0;
+		vrLen = 2095;
+		vrLoc = 49670;
+	};
+	FAA6FC2A0FC5D457004003C7 /* outputtxt.c */ = {
+		isa = PBXFileReference;
+		name = outputtxt.c;
+		path = "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_multimedia_ming/work/ming-0.4.0.beta5/util/outputtxt.c";
+		sourceTree = "<absolute>";
+	};
+	FAB7DFAC0F79C64D008EC0C3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A50DB2D0840083E9F9 /* MainView.mm */;
+		name = "MainView.mm: 43";
+		rLen = 0;
+		rLoc = 739;
+		rType = 0;
+		vrLen = 704;
+		vrLoc = 381;
+	};
+	FAB7E0A30F79D7EF008EC0C3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A40DB2D0840083E9F9 /* MainView.h */;
+		name = "MainView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 208;
+		vrLoc = 0;
+	};
+	FAE67B870F7B1DEE0087C145 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 18";
+		rLen = 0;
+		rLoc = 368;
+		rType = 0;
+		vrLen = 368;
+		vrLoc = 0;
+	};
+	FAE67B880F7B1DEE0087C145 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FAE67B890F7B1DEE0087C145 /* DefineShape.cpp */;
+		name = "DefineShape.cpp: 233";
+		rLen = 0;
+		rLoc = 20141;
+		rType = 0;
+		vrLen = 893;
+		vrLoc = 6656;
+	};
+	FAE67B890F7B1DEE0087C145 /* DefineShape.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = DefineShape.cpp;
+		path = /Users/micahpearlman/dev/MonkSWF/src/tags/DefineShape.cpp;
+		sourceTree = "<absolute>";
+	};
+	FAFE6FA80FA7AA6E00E680B8 /* main.m:13 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 29B97316FDCFA39411CA2CEA /* main.m */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 13;
+		location = "MonkSWF-Test-iPhone";
+		modificationTime = 264453359.998698;
+		state = 2;
+	};
+}
