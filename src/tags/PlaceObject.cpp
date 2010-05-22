@@ -51,23 +51,23 @@ namespace MonkSWF {
 		
 		if ( has_color_transform ) {
 		
-			const uint8_t has_add_terms = reader->getbits( 1 );
-			const uint8_t has_mult_terms = reader->getbits( 1 );
-			const uint8_t nbits = reader->getbits( 4 );
-			if( has_mult_terms ) {
-				coord_t red = reader->getsignedbits( nbits );
-				coord_t green = reader->getsignedbits( nbits );
-				coord_t blue = reader->getsignedbits( nbits );
-				coord_t alpha = reader->getsignedbits( nbits );
-
-			}
+//			const uint8_t has_add_terms = reader->getbits( 1 );
+//			const uint8_t has_mult_terms = reader->getbits( 1 );
+//			const uint8_t nbits = reader->getbits( 4 );
+//			if( has_mult_terms ) {
+//				coord_t red = reader->getsignedbits( nbits );
+//				coord_t green = reader->getsignedbits( nbits );
+//				coord_t blue = reader->getsignedbits( nbits );
+//				coord_t alpha = reader->getsignedbits( nbits );
+//
+//			}
 			
-			if( has_add_terms ) {
-				coord_t red = reader->getsignedbits( nbits );
-				coord_t green = reader->getsignedbits( nbits );
-				coord_t blue = reader->getsignedbits( nbits );
-				coord_t alpha = reader->getsignedbits( nbits );
-			}
+//			if( has_add_terms ) {
+//				coord_t red = reader->getsignedbits( nbits );
+//				coord_t green = reader->getsignedbits( nbits );
+//				coord_t blue = reader->getsignedbits( nbits );
+//				coord_t alpha = reader->getsignedbits( nbits );
+//			}
 		}
 		
 		if ( has_ratio ) {
