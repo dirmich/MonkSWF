@@ -24,7 +24,6 @@
 		FA7E7E950FB23C2300DC09A8 /* puppy.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA7E7E940FB23C2300DC09A8 /* puppy.swf */; };
 		FA7E7F280FB2567000DC09A8 /* monkey.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA7E7F270FB2567000DC09A8 /* monkey.swf */; };
 		FA8AE6520FB3A87100BDA0F6 /* giraffe.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA8AE6510FB3A87100BDA0F6 /* giraffe.swf */; };
-		FA9B6D3D0FBC9A8D006CEDA2 /* motorcycle.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA9B6D3C0FBC9A8D006CEDA2 /* motorcycle.swf */; };
 		FA9EA51B0F79A77600492ABC /* libMonkSWF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9EA51A0F79A75A00492ABC /* libMonkSWF.a */; };
 		FA9EA51C0F79A77E00492ABC /* libMonkVG-Quartz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9EA5140F79A75100492ABC /* libMonkVG-Quartz.a */; };
 		FAE67ACD0F7AFD670087C145 /* test.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAE67ACC0F7AFD670087C145 /* test.swf */; };
@@ -90,7 +89,6 @@
 		FA7E7E940FB23C2300DC09A8 /* puppy.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = puppy.swf; path = ../puppy.swf; sourceTree = SOURCE_ROOT; };
 		FA7E7F270FB2567000DC09A8 /* monkey.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = monkey.swf; path = ../monkey.swf; sourceTree = SOURCE_ROOT; };
 		FA8AE6510FB3A87100BDA0F6 /* giraffe.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = giraffe.swf; path = ../giraffe.swf; sourceTree = SOURCE_ROOT; };
-		FA9B6D3C0FBC9A8D006CEDA2 /* motorcycle.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = motorcycle.swf; path = ../motorcycle.swf; sourceTree = SOURCE_ROOT; };
 		FA9EA50F0F79A75100492ABC /* MonkVG-Quartz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-Quartz.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-Quartz/MonkVG-Quartz.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		FA9EA5150F79A75A00492ABC /* MonkSWF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MonkSWF.xcodeproj; path = ../../MonkSWF.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FAE67ACC0F7AFD670087C145 /* test.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.swf; path = ../test.swf; sourceTree = SOURCE_ROOT; };
@@ -184,7 +182,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FA9B6D3C0FBC9A8D006CEDA2 /* motorcycle.swf */,
 				FA8AE6510FB3A87100BDA0F6 /* giraffe.swf */,
 				FA7E7F270FB2567000DC09A8 /* monkey.swf */,
 				FA7E7E940FB23C2300DC09A8 /* puppy.swf */,
@@ -314,7 +311,6 @@
 				FA7E7E950FB23C2300DC09A8 /* puppy.swf in Resources */,
 				FA7E7F280FB2567000DC09A8 /* monkey.swf in Resources */,
 				FA8AE6520FB3A87100BDA0F6 /* giraffe.swf in Resources */,
-				FA9B6D3D0FBC9A8D006CEDA2 /* motorcycle.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

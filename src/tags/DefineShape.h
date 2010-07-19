@@ -11,8 +11,8 @@
 #define __DefineShape_h__
 
 #include "mkTag.h"
-#include <vg/openvg.h>
-#include <vg/vgu.h>
+#include <VG/openvg.h>
+#include <VG/vgu.h>
 #include <vector>
 #include <list>
 using namespace std;

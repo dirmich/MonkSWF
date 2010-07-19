@@ -28,7 +28,7 @@ using namespace std;
 		
 		// Drawing code
 		NSBundle      *mainBundle = [NSBundle mainBundle];
-		NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"motorcycle.swf"];
+		NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"monkey.swf"];
 		NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 		if (fromFile) {
 			NSData *data = [fromFile readDataToEndOfFile];

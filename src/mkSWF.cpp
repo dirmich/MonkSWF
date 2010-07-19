@@ -12,26 +12,20 @@
 #include "tags/PlaceObject.h"
 #include "tags/ShowFrame.h"
 #include "tags/RemoveObject.h"
-#include "tags/DoABC.h"
 
 namespace MonkSWF {
 	
 	bool SWF::initialize() {
 		
-		// setup the factories //
-		// shape object definitions
+		// setup the factories
 		addFactory( DEFINESHAPE, DefineShapeTag::create );		// DefineShape
 		addFactory( DEFINESHAPE2, DefineShapeTag::create );		// DefineShape2
 		addFactory( DEFINESHAPE3, DefineShapeTag::create );		// DefineShape3
 		addFactory( DEFINESHAPE4, DefineShapeTag::create );		// DefineShape4
 
-		// display list
 		addFactory( PLACEOBJECT2, PlaceObject2Tag::create );
 		addFactory( REMOVEOBJECT2, RemoveObjectTag::create );
 		addFactory( SHOWFRAME, ShowFrameTag::create );
-		
-		// script
-		addFactory( DOABC, DoABC::create );
 		
 		
 		return true;

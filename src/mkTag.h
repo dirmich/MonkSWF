@@ -186,44 +186,6 @@ namespace MonkSWF {
 		uint16_t	_depth;
 		
 	};
-
-#define DOABC	82
-	class IDoABC : public ITag {
-	public:
-		
-		uint32_t getFlags() const {
-			return _flags;
-		}
-		char* getName() const {
-			return _name;
-		}
-		uint8_t* getBytecode() const {
-			return _bytecode;
-		}
-		
-	protected:
-		IDoABC( TagHeader& header )
-		:	ITag( header )
-		,	_flags( 0 )
-		,	_name( 0 )
-		,	_bytecode( 0 )
-		{}
-		virtual ~IDoABC() {
-			if ( _name ) {
-				delete [] _name;
-				_name = 0;
-			}
-			if ( _bytecode ) {
-				delete [] _bytecode;
-				_bytecode = 0;
-			}
-		}
-	protected:
-		uint32_t	_flags;
-		char*		_name;
-		uint8_t*	_bytecode;
-	};
 	
-}	// namespace MonkSWF
-
+}
 #endif // __mkTag_h__

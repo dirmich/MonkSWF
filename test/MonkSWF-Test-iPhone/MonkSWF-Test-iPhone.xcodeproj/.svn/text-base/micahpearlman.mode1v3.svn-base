@@ -265,10 +265,10 @@
 						<key>_historyCapacity</key>
 						<integer>10</integer>
 						<key>bookmark</key>
-						<string>FAA6FC210FC5D457004003C7</string>
+						<string>FA9B6CAE0FBA2C46006CEDA2</string>
 						<key>history</key>
 						<array>
-							<string>FA5DDCE50FBE15F4009B9043</string>
+							<string>FA8AEBB90FB7BF1400BDA0F6</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -305,11 +305,11 @@
 						<key>_historyCapacity</key>
 						<integer>10</integer>
 						<key>bookmark</key>
-						<string>FAA6FC230FC5D457004003C7</string>
+						<string>FA9B6CAF0FBA2C46006CEDA2</string>
 						<key>history</key>
 						<array>
 							<string>FA8AE8C70FB4EFD100BDA0F6</string>
-							<string>FA5DDCE70FBE15F4009B9043</string>
+							<string>FA8AEBBB0FB7BF1400BDA0F6</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -350,10 +350,10 @@
 						<key>_historyCapacity</key>
 						<integer>10</integer>
 						<key>bookmark</key>
-						<string>FAA6FC250FC5D457004003C7</string>
+						<string>FA9B6CB00FBA2C46006CEDA2</string>
 						<key>history</key>
 						<array>
-							<string>FA5DDCE90FBE15F4009B9043</string>
+							<string>FA8AEBBD0FB7BF1400BDA0F6</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -390,10 +390,10 @@
 						<key>_historyCapacity</key>
 						<integer>10</integer>
 						<key>bookmark</key>
-						<string>FAA6FC270FC5D457004003C7</string>
+						<string>FA9B6CB10FBA2C46006CEDA2</string>
 						<key>history</key>
 						<array>
-							<string>FA5DDCEB0FBE15F4009B9043</string>
+							<string>FA8AEBBF0FB7BF1400BDA0F6</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -430,10 +430,10 @@
 						<key>_historyCapacity</key>
 						<integer>10</integer>
 						<key>bookmark</key>
-						<string>FAA6FC290FC5D457004003C7</string>
+						<string>FA9B6CB20FBA2C46006CEDA2</string>
 						<key>history</key>
 						<array>
-							<string>FA5DDCED0FBE15F4009B9043</string>
+							<string>FA8AEBC10FB7BF1400BDA0F6</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -537,12 +537,11 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>34</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {277, 619}}</string>
+							<string>{{0, 78}, {277, 619}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -591,7 +590,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>FAA6FC200FC5D457004003C7</string>
+										<string>FA9B6CAD0FBA2C46006CEDA2</string>
 										<key>history</key>
 										<array>
 											<string>FA01E46A0FAA3E090085275C</string>
@@ -601,7 +600,7 @@
 											<string>FA7E80CB0FB389A800DC09A8</string>
 											<string>FA8AE6720FB3AC0700BDA0F6</string>
 											<string>FA8AE8BE0FB4EFD100BDA0F6</string>
-											<string>FA5DDCE40FBE15F4009B9043</string>
+											<string>FA8AEBB80FB7BF1400BDA0F6</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -670,9 +669,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FAA6FB750FC33760004003C7</string>
+				<string>FA9B6C850FBA282B006CEDA2</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FAA6FB760FC33760004003C7</string>
+				<string>FA9B6C860FBA282B006CEDA2</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -805,7 +804,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>264623191.21483099</real>
+	<real>263859270.89256701</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -820,16 +819,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FAA6FB840FC33760004003C7</string>
-		<string>FAA6FB850FC33760004003C7</string>
-		<string>FA4047910EF1F60200B4EFF1</string>
+		<string>FA9B6C940FBA282B006CEDA2</string>
+		<string>FA9B6C950FBA282B006CEDA2</string>
 		<string>FA7E80F30FB389A800DC09A8</string>
 		<string>FA7E80F90FB389A800DC09A8</string>
 		<string>FA8AE6770FB3AC0700BDA0F6</string>
 		<string>FA8AE8C50FB4EFD100BDA0F6</string>
 		<string>FA7E80ED0FB389A800DC09A8</string>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>FA4047910EF1F60200B4EFF1</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/micahpearlman/dev/MonkSWF/test/MonkSWF-Test-iPhone/MonkSWF-Test-iPhone.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -871,6 +870,8 @@
 							<string>228pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -910,7 +911,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>FA4047910EF1F60200B4EFF1</string>
-				<string>FAA6FB7C0FC33760004003C7</string>
+				<string>FA9B6C8C0FBA282B006CEDA2</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -921,7 +922,7 @@
 			<key>WindowToolGUID</key>
 			<string>FA4047910EF1F60200B4EFF1</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -1030,13 +1031,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>FAA6FB7D0FC33760004003C7</string>
+				<string>FA9B6C8D0FBA282B006CEDA2</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>FAA6FB7E0FC33760004003C7</string>
-				<string>FAA6FB7F0FC33760004003C7</string>
-				<string>FAA6FB800FC33760004003C7</string>
-				<string>FAA6FB810FC33760004003C7</string>
-				<string>FAA6FB820FC33760004003C7</string>
+				<string>FA9B6C8E0FBA282B006CEDA2</string>
+				<string>FA9B6C8F0FBA282B006CEDA2</string>
+				<string>FA9B6C900FBA282B006CEDA2</string>
+				<string>FA9B6C910FBA282B006CEDA2</string>
+				<string>FA9B6C920FBA282B006CEDA2</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1192,7 +1193,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>FAA6FB830FC33760004003C7</string>
+				<string>FA9B6C930FBA282B006CEDA2</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

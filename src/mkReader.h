@@ -12,7 +12,6 @@
 
 #include "mkCommon.h"
 #include "mkTypes.h"
-#include <string.h>
 
 namespace MonkSWF {
 	
@@ -104,36 +103,6 @@ namespace MonkSWF {
 		inline uint8_t getBitPos() const {
 			return _bitpos;
 		}
-		
-		inline uint32_t getU30() {
-			uint32_t r = 0;
-			unsigned char c;
-			
-			for( int i = 0; i < 5; i++ ) {
-				c = _data[_cur++];
-				r |= (c & 0x7F) << (7 * i);
-				
-				if( !(c & 0x80) ) {
-					return r;
-				}
-				
-				if( _cur > _sz ) {
-					_cur = _sz+1;
-					return 0;
-				}
-			}
-		}
-		
-		inline char* getString() {
-			const char *src = (const char *)&_data[_cur];
-			size_t len = strlen(src) + 1;
-			char *dst = new char[len];
-			strcpy(dst, src);
-			_cur += len;
-			return( dst );
-		}
-		
-		
 		
 	private:
 	

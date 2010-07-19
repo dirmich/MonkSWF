@@ -20,16 +20,10 @@
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */; };
 		289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* RootViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
-		FA01E5B30FAB79960085275C /* tatoo.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA01E5B20FAB79960085275C /* tatoo.swf */; };
-		FA7E7E950FB23C2300DC09A8 /* puppy.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA7E7E940FB23C2300DC09A8 /* puppy.swf */; };
-		FA7E7F280FB2567000DC09A8 /* monkey.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA7E7F270FB2567000DC09A8 /* monkey.swf */; };
-		FA8AE6520FB3A87100BDA0F6 /* giraffe.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA8AE6510FB3A87100BDA0F6 /* giraffe.swf */; };
-		FA9B6D3D0FBC9A8D006CEDA2 /* motorcycle.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA9B6D3C0FBC9A8D006CEDA2 /* motorcycle.swf */; };
+		FA45321B11F5127500A33B09 /* puppy.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA45321A11F5127500A33B09 /* puppy.swf */; };
+		FA45322911F512AF00A33B09 /* monkey.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA45322811F512AF00A33B09 /* monkey.swf */; };
 		FA9EA51B0F79A77600492ABC /* libMonkSWF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9EA51A0F79A75A00492ABC /* libMonkSWF.a */; };
 		FA9EA51C0F79A77E00492ABC /* libMonkVG-Quartz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9EA5140F79A75100492ABC /* libMonkVG-Quartz.a */; };
-		FAE67ACD0F7AFD670087C145 /* test.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAE67ACC0F7AFD670087C145 /* test.swf */; };
-		FAE67BE80F7C00240087C145 /* dog.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAE67BE70F7C00240087C145 /* dog.swf */; };
-		FAE67BFF0F7C02460087C145 /* daisies.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAE67BFE0F7C02460087C145 /* daisies.swf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,16 +80,10 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MonkSWF_Test_iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkSWF_Test_iPhone_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA01E5B20FAB79960085275C /* tatoo.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = tatoo.swf; path = ../tatoo.swf; sourceTree = SOURCE_ROOT; };
-		FA7E7E940FB23C2300DC09A8 /* puppy.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = puppy.swf; path = ../puppy.swf; sourceTree = SOURCE_ROOT; };
-		FA7E7F270FB2567000DC09A8 /* monkey.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = monkey.swf; path = ../monkey.swf; sourceTree = SOURCE_ROOT; };
-		FA8AE6510FB3A87100BDA0F6 /* giraffe.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = giraffe.swf; path = ../giraffe.swf; sourceTree = SOURCE_ROOT; };
-		FA9B6D3C0FBC9A8D006CEDA2 /* motorcycle.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = motorcycle.swf; path = ../motorcycle.swf; sourceTree = SOURCE_ROOT; };
+		FA45321A11F5127500A33B09 /* puppy.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = puppy.swf; path = ../puppy.swf; sourceTree = SOURCE_ROOT; };
+		FA45322811F512AF00A33B09 /* monkey.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = monkey.swf; path = ../monkey.swf; sourceTree = SOURCE_ROOT; };
 		FA9EA50F0F79A75100492ABC /* MonkVG-Quartz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-Quartz.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-Quartz/MonkVG-Quartz.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		FA9EA5150F79A75A00492ABC /* MonkSWF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MonkSWF.xcodeproj; path = ../../MonkSWF.xcodeproj; sourceTree = SOURCE_ROOT; };
-		FAE67ACC0F7AFD670087C145 /* test.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.swf; path = ../test.swf; sourceTree = SOURCE_ROOT; };
-		FAE67BE70F7C00240087C145 /* dog.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = dog.swf; path = ../dog.swf; sourceTree = SOURCE_ROOT; };
-		FAE67BFE0F7C02460087C145 /* daisies.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = daisies.swf; path = ../daisies.swf; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,14 +172,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FA9B6D3C0FBC9A8D006CEDA2 /* motorcycle.swf */,
-				FA8AE6510FB3A87100BDA0F6 /* giraffe.swf */,
-				FA7E7F270FB2567000DC09A8 /* monkey.swf */,
-				FA7E7E940FB23C2300DC09A8 /* puppy.swf */,
-				FA01E5B20FAB79960085275C /* tatoo.swf */,
-				FAE67BFE0F7C02460087C145 /* daisies.swf */,
-				FAE67BE70F7C00240087C145 /* dog.swf */,
-				FAE67ACC0F7AFD670087C145 /* test.swf */,
+				FA45322811F512AF00A33B09 /* monkey.swf */,
+				FA45321A11F5127500A33B09 /* puppy.swf */,
 				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
@@ -307,14 +289,8 @@
 				280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */,
 				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
-				FAE67ACD0F7AFD670087C145 /* test.swf in Resources */,
-				FAE67BE80F7C00240087C145 /* dog.swf in Resources */,
-				FAE67BFF0F7C02460087C145 /* daisies.swf in Resources */,
-				FA01E5B30FAB79960085275C /* tatoo.swf in Resources */,
-				FA7E7E950FB23C2300DC09A8 /* puppy.swf in Resources */,
-				FA7E7F280FB2567000DC09A8 /* monkey.swf in Resources */,
-				FA8AE6520FB3A87100BDA0F6 /* giraffe.swf in Resources */,
-				FA9B6D3D0FBC9A8D006CEDA2 /* motorcycle.swf in Resources */,
+				FA45321B11F5127500A33B09 /* puppy.swf in Resources */,
+				FA45322911F512AF00A33B09 /* monkey.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: micah pearlman";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
@@ -363,12 +339,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MonkSWF_Test_iPhone_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
-					"~/dev/MonkVG/include",
-					"~/dev/MonkSWF",
+					../../../MonkVG/include,
+					../../../MonkSWF,
 				);
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = "MonkSWF-Test-iPhone";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DAF917AA-0B8B-4404-AC2E-ED78617742D3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -376,18 +353,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: micah pearlman";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MonkSWF_Test_iPhone_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
-					"~/dev/MonkVG/include",
-					"~/dev/MonkSWF",
+					../../../MonkVG/include,
+					../../../MonkSWF,
 				);
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = "MonkSWF-Test-iPhone";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DAF917AA-0B8B-4404-AC2E-ED78617742D3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};
