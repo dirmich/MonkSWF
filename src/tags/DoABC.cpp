@@ -11,6 +11,9 @@
 
 namespace MonkSWF {
 	bool DoABC::read( Reader* reader ) {
+		_flags = reader->get<uint32_t>();
+		_name = reader->getString();
+		
 		return true;
 	}
 }

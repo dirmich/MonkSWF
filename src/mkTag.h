@@ -194,7 +194,7 @@ namespace MonkSWF {
 		uint32_t getFlags() const {
 			return _flags;
 		}
-		uint8_t* getName() const {
+		char* getName() const {
 			return _name;
 		}
 		uint8_t* getBytecode() const {
@@ -220,7 +220,7 @@ namespace MonkSWF {
 		}
 	protected:
 		uint32_t	_flags;
-		uint8_t*	_name;
+		char*		_name;
 		uint8_t*	_bytecode;
 	};
 	
