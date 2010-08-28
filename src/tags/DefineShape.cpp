@@ -805,7 +805,7 @@ namespace MonkSWF {
 			for ( PathArrayIter contour_iter = contours.begin(); contour_iter != contours.end(); contour_iter++, k++) {
 				Path* path = *contour_iter;
 //				cout << "K = " << k << endl;
-				path->print();
+//				path->print();
 //				if( /* path->isClosed() */ k == 2 )
 //				if( path->isClosed() )
 					path->addToShapeWithStyle( this );
@@ -850,7 +850,7 @@ namespace MonkSWF {
 		
 		_shape_with_style.read( reader, this );
 		
-		this->print();
+//		this->print();
 		return true;
 	}
 	

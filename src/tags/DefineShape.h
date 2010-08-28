@@ -133,7 +133,7 @@ namespace MonkSWF {
 		virtual bool read( Reader* reader );
 		virtual void print();
 		
-		void draw();
+		virtual void draw();
 		
 		// regular DefineShape tag == 2
 		static ITag* create( TagHeader* header );

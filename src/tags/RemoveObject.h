@@ -30,15 +30,14 @@ namespace MonkSWF {
 				
 			_depth = reader->get<uint16_t>();
 			
-			if( code() == REMOVEOBJECT )
-				cout << "REMOVEOBJECT id = " << _character_id << " depth = " << _depth << endl;
-			else
-				cout << "REMOVEOBJECT2 depth = " << _depth << endl;
 			return true;
 		}
 		
 		virtual void print() {
-			
+			if( code() == REMOVEOBJECT )
+				cout << "REMOVEOBJECT id = " << _character_id << " depth = " << _depth << endl;
+			else
+				cout << "REMOVEOBJECT2 depth = " << _depth << endl;
 		}
 		
 		static ITag* create( TagHeader* header ) {

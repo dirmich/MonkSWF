@@ -27,9 +27,7 @@ namespace MonkSWF {
 		}
 		
 		virtual bool read( Reader* reader );
-		virtual void print() {
-			
-		}
+		virtual void print();
 		virtual void draw( SWF* swf );
 		virtual void copyTransform( IPlaceObjectTag* other );
 		

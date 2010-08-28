@@ -18,6 +18,16 @@ namespace MonkSWF {
 	
 	class Header {
 	public:
+		Header()
+		:	_outputBuffer(0) {
+			
+		}
+		virtual ~Header() {
+			if ( _outputBuffer ) {
+				delete [] _outputBuffer;
+			}
+		}
+		
 		bool read( Reader* reader );
 		void print();
 		
@@ -35,6 +45,7 @@ namespace MonkSWF {
 		RECT		_frame_size;
 		float		_frame_rate;
 		int16_t		_frame_count;
+		char*		_outputBuffer;		// used for compressed swf files
 	
 	};
 }

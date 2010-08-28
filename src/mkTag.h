@@ -11,10 +11,14 @@
 #define __mkTag_h__
 
 #include "mkReader.h"
+#include <iostream>
+#include <vector>
 
 namespace MonkSWF {
 	
 	class SWF;
+	
+	using namespace std;
 	
 	class TagHeader {
 	public:
@@ -70,6 +74,27 @@ namespace MonkSWF {
 		TagHeader	_header;
 	};
 	
+#define ENDTAG 0
+	class EndTag : public ITag {
+	public:
+		EndTag( TagHeader& header )
+		:	ITag( header )
+		{}
+		
+		virtual ~EndTag() {}
+		
+		virtual bool read( Reader* reader ) { return true; }
+		virtual void print() {
+			std::cout << "END TAG" << std::endl;
+		}
+		
+		static ITag* create( TagHeader* header ) {
+			return (ITag*)(new EndTag( *header ));
+		}				
+		
+		
+	};
+	
 #define DEFINESHAPE 2
 #define DEFINESHAPE2 22
 #define DEFINESHAPE3 32
@@ -77,11 +102,11 @@ namespace MonkSWF {
 	class IDefineShapeTag : public ITag {
 	public:
 	
-			virtual void draw() = 0;
-			
-			uint16_t shapeId() const {
-				return _shape_id;
-			}
+		virtual void draw() = 0;
+		
+		uint16_t shapeId() const {
+			return _shape_id;
+		}
 		
 	
 	protected:
@@ -110,6 +135,14 @@ namespace MonkSWF {
 			return _sprite_id;
 		}
 		
+		uint16_t frameCount() const {
+			return _frame_count;
+		}
+		
+		void setSWF( SWF* swf ) {
+			_swf = swf;
+		}
+		
 	protected:
 		IDefineSpriteTag( TagHeader& header )
 		:	ITag( header )
@@ -117,9 +150,18 @@ namespace MonkSWF {
 		{}
 		
 		virtual ~IDefineSpriteTag()
-		{}
+		{
+		}
+		
+		typedef std::vector<ITag*>		FrameTagList;
+		typedef vector<FrameTagList*>	FrameList;
+		
 		
 		uint16_t		_sprite_id;
+		uint16_t		_frame_count;
+		FrameList		_frames;
+		SWF*			_swf;
+		
 	};
 #define PLACEOBJECT2 0x1A 
 	class IPlaceObjectTag : public ITag {

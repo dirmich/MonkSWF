@@ -31,11 +31,11 @@ using namespace MonkSWF;
 
 - (void)drawRect:(CGRect)rect {
 	if( _swf ) {
-		int32_t num_frames = _swf->getNumFrames();
-		if( _current_frame_idx >= num_frames )
-			_current_frame_idx = 0;
-		_swf->drawFrame( _current_frame_idx );
-		_current_frame_idx++;
+//		int32_t num_frames = _swf->getNumFrames();
+//		if( _current_frame_idx >= num_frames )
+//			_current_frame_idx = 0;
+//		_swf->drawFrame( _current_frame_idx );
+//		_current_frame_idx++;
 	}
 		
 //	// Custom initialization

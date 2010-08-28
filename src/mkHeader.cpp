@@ -8,6 +8,8 @@
  */
 
 #include "mkHeader.h"
+#include <zlib.h>
+#define MAX_BUFFER 1000000
 
 #include <iostream>
 using namespace std;
@@ -35,6 +37,49 @@ namespace MonkSWF {
 		_version = reader->get<uint8_t>();
 		
 		_file_length = reader->get<uint32_t>();
+		
+		if ( _signature[0] == 'C' ) {
+			// compressed file
+			_outputBuffer = (char*)malloc( _file_length );
+			
+			z_stream stream;
+			static unsigned char inputBuffer[ MAX_BUFFER ];
+			int status;
+			
+			stream.avail_in = 0;
+			stream.next_in = inputBuffer;
+			stream.next_out = (Bytef*) _outputBuffer;
+			stream.zalloc = (alloc_func) NULL;
+			stream.zfree = (free_func) NULL;
+			stream.opaque = (voidpf) 0;
+			stream.avail_out = _file_length;
+			
+			status = inflateInit( &stream );
+			if( status != Z_OK ) {
+				fprintf( stderr, "Error decompressing SWF: %s\n", stream.msg );
+				return false;
+			}
+			
+			do {
+				if( stream.avail_in == 0 ) {
+					stream.next_in = inputBuffer;
+					stream.avail_in = reader->getBytes( MAX_BUFFER, inputBuffer );
+				}
+				
+				if( stream.avail_in == 0 ) break;
+				
+				status = inflate( &stream, Z_SYNC_FLUSH );
+			} while( status == Z_OK );
+			
+			if( status != Z_STREAM_END && status != Z_OK ) {
+				fprintf( stderr, "Error decompressing SWF: %s\n", stream.msg );
+				return false;
+			}
+			
+			reader->setNewData( _outputBuffer, _file_length );
+			
+		}
+		
 		
 		// get the bound rectangle
 		int32_t nbits;

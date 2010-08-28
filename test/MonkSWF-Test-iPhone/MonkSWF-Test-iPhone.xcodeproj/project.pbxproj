@@ -21,19 +21,14 @@
 		289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* RootViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
 		FA45321B11F5127500A33B09 /* puppy.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA45321A11F5127500A33B09 /* puppy.swf */; };
-		FA45322911F512AF00A33B09 /* monkey.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA45322811F512AF00A33B09 /* monkey.swf */; };
 		FA9EA51B0F79A77600492ABC /* libMonkSWF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9EA51A0F79A75A00492ABC /* libMonkSWF.a */; };
-		FA9EA51C0F79A77E00492ABC /* libMonkVG-Quartz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9EA5140F79A75100492ABC /* libMonkVG-Quartz.a */; };
+		FAD72ECC1229A27C00B99B94 /* libMonkVG_iOS_Quartz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD72EC51229A24C00B99B94 /* libMonkVG_iOS_Quartz.a */; };
+		FAD72F631229AC6900B99B94 /* monkey.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD72F621229AC6900B99B94 /* monkey.swf */; };
+		FAD72F681229ACB200B99B94 /* venus_fly_trap.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD72F671229ACB200B99B94 /* venus_fly_trap.swf */; };
+		FAD72FA31229AFC200B99B94 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD72FA21229AFC200B99B94 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FA9EA5130F79A75100492ABC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA9EA50F0F79A75100492ABC /* MonkVG-Quartz.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC046055464E500DB518D;
-			remoteInfo = "MonkVG-Quartz";
-		};
 		FA9EA5190F79A75A00492ABC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA9EA5150F79A75A00492ABC /* MonkSWF.xcodeproj */;
@@ -41,18 +36,32 @@
 			remoteGlobalIDString = D2AAC046055464E500DB518D;
 			remoteInfo = MonkSWF;
 		};
-		FA9EA5260F79A7EC00492ABC /* PBXContainerItemProxy */ = {
+		FAD72EC41229A24C00B99B94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FA9EA50F0F79A75100492ABC /* MonkVG-Quartz.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D;
-			remoteInfo = "MonkVG-Quartz";
+			containerPortal = FAD72EBF1229A24C00B99B94 /* MonkVG-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libMonkVG_iOS_Quartz.a */;
+			remoteInfo = "MonkVG-iOS-Quartz";
 		};
-		FA9EA5280F79A7F100492ABC /* PBXContainerItemProxy */ = {
+		FAD72EC61229A24C00B99B94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD72EBF1229A24C00B99B94 /* MonkVG-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FAE282E9121A08BB00823BCB /* libMonkVG_iOS_OpenGL.a */;
+			remoteInfo = "MonkVG-iOS-OpenGL";
+		};
+		FAD72EC81229A26800B99B94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD72EBF1229A24C00B99B94 /* MonkVG-iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* MonkVG-iOS-Quartz */;
+			remoteInfo = "MonkVG-iOS-Quartz";
+		};
+		FAD72ECA1229A26F00B99B94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA9EA5150F79A75A00492ABC /* MonkSWF.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteGlobalIDString = D2AAC045055464E500DB518D /* MonkSWF */;
 			remoteInfo = MonkSWF;
 		};
 /* End PBXContainerItemProxy section */
@@ -81,9 +90,11 @@
 		32CA4F630368D1EE00C91783 /* MonkSWF_Test_iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkSWF_Test_iPhone_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA45321A11F5127500A33B09 /* puppy.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = puppy.swf; path = ../puppy.swf; sourceTree = SOURCE_ROOT; };
-		FA45322811F512AF00A33B09 /* monkey.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = monkey.swf; path = ../monkey.swf; sourceTree = SOURCE_ROOT; };
-		FA9EA50F0F79A75100492ABC /* MonkVG-Quartz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-Quartz.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-Quartz/MonkVG-Quartz.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		FA9EA5150F79A75A00492ABC /* MonkSWF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MonkSWF.xcodeproj; path = ../../MonkSWF.xcodeproj; sourceTree = SOURCE_ROOT; };
+		FAD72EBF1229A24C00B99B94 /* MonkVG-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-iOS.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-iOS/MonkVG-iOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		FAD72F621229AC6900B99B94 /* monkey.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = monkey.swf; path = ../monkey.swf; sourceTree = SOURCE_ROOT; };
+		FAD72F671229ACB200B99B94 /* venus_fly_trap.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = venus_fly_trap.swf; path = ../venus_fly_trap.swf; sourceTree = SOURCE_ROOT; };
+		FAD72FA21229AFC200B99B94 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +102,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9EA51C0F79A77E00492ABC /* libMonkVG-Quartz.a in Frameworks */,
+				FAD72ECC1229A27C00B99B94 /* libMonkVG_iOS_Quartz.a in Frameworks */,
 				FA9EA51B0F79A77600492ABC /* libMonkSWF.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
+				FAD72FA31229AFC200B99B94 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +159,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FAD72EBF1229A24C00B99B94 /* MonkVG-iOS.xcodeproj */,
 				FA9EA5150F79A75A00492ABC /* MonkSWF.xcodeproj */,
-				FA9EA50F0F79A75100492ABC /* MonkVG-Quartz.xcodeproj */,
 				289233A00DB2D0730083E9F9 /* Main View */,
 				281C6CD70DB2D82200F60ACC /* Flipside View */,
 				080E96DDFE201D6D7F000001 /* Application Controllers */,
@@ -172,7 +184,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FA45322811F512AF00A33B09 /* monkey.swf */,
+				FAD72F671229ACB200B99B94 /* venus_fly_trap.swf */,
+				FAD72F621229AC6900B99B94 /* monkey.swf */,
 				FA45321A11F5127500A33B09 /* puppy.swf */,
 				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
@@ -188,22 +201,24 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
+				FAD72FA21229AFC200B99B94 /* libz.dylib */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FA9EA5100F79A75100492ABC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FA9EA5140F79A75100492ABC /* libMonkVG-Quartz.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		FA9EA5160F79A75A00492ABC /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				FA9EA51A0F79A75A00492ABC /* libMonkSWF.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAD72EC01229A24C00B99B94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAD72EC51229A24C00B99B94 /* libMonkVG_iOS_Quartz.a */,
+				FAD72EC71229A24C00B99B94 /* libMonkVG_iOS_OpenGL.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,8 +237,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				FA9EA5270F79A7EC00492ABC /* PBXTargetDependency */,
-				FA9EA5290F79A7F100492ABC /* PBXTargetDependency */,
+				FAD72EC91229A26800B99B94 /* PBXTargetDependency */,
+				FAD72ECB1229A26F00B99B94 /* PBXTargetDependency */,
 			);
 			name = "MonkSWF-Test-iPhone";
 			productName = "MonkSWF-Test-iPhone";
@@ -253,8 +268,8 @@
 					ProjectRef = FA9EA5150F79A75A00492ABC /* MonkSWF.xcodeproj */;
 				},
 				{
-					ProductGroup = FA9EA5100F79A75100492ABC /* Products */;
-					ProjectRef = FA9EA50F0F79A75100492ABC /* MonkVG-Quartz.xcodeproj */;
+					ProductGroup = FAD72EC01229A24C00B99B94 /* Products */;
+					ProjectRef = FAD72EBF1229A24C00B99B94 /* MonkVG-iOS.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -265,18 +280,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FA9EA5140F79A75100492ABC /* libMonkVG-Quartz.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libMonkVG-Quartz.a";
-			remoteRef = FA9EA5130F79A75100492ABC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		FA9EA51A0F79A75A00492ABC /* libMonkSWF.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libMonkSWF.a;
 			remoteRef = FA9EA5190F79A75A00492ABC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FAD72EC51229A24C00B99B94 /* libMonkVG_iOS_Quartz.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMonkVG_iOS_Quartz.a;
+			remoteRef = FAD72EC41229A24C00B99B94 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FAD72EC71229A24C00B99B94 /* libMonkVG_iOS_OpenGL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMonkVG_iOS_OpenGL.a;
+			remoteRef = FAD72EC61229A24C00B99B94 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -290,7 +312,8 @@
 				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				FA45321B11F5127500A33B09 /* puppy.swf in Resources */,
-				FA45322911F512AF00A33B09 /* monkey.swf in Resources */,
+				FAD72F631229AC6900B99B94 /* monkey.swf in Resources */,
+				FAD72F681229ACB200B99B94 /* venus_fly_trap.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,15 +337,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FA9EA5270F79A7EC00492ABC /* PBXTargetDependency */ = {
+		FAD72EC91229A26800B99B94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "MonkVG-Quartz";
-			targetProxy = FA9EA5260F79A7EC00492ABC /* PBXContainerItemProxy */;
+			name = "MonkVG-iOS-Quartz";
+			targetProxy = FAD72EC81229A26800B99B94 /* PBXContainerItemProxy */;
 		};
-		FA9EA5290F79A7F100492ABC /* PBXTargetDependency */ = {
+		FAD72ECB1229A26F00B99B94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MonkSWF;
-			targetProxy = FA9EA5280F79A7F100492ABC /* PBXContainerItemProxy */;
+			targetProxy = FAD72ECA1229A26F00B99B94 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

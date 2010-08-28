@@ -83,10 +83,6 @@ namespace MonkSWF {
 			assert( 0 );
 		}
 		
-		cout << "PLACEOBJECT2: id = " << _character_id << " depth = " << _depth << " DoMove = " << doMove() << endl;
-		_header.print();
-			
-		
 		return true;
 	}
 	
@@ -110,6 +106,12 @@ namespace MonkSWF {
 		if( character )
 			character->draw();
 	}
+	
+	void PlaceObject2Tag::print() {
+		cout << "PLACEOBJECT2: id = " << _character_id << " depth = " << _depth << " DoMove = " << doMove() << endl;
+		_header.print();
+	}
+
 //	PlaceFlagHasClipActions UB[1] SWF 5 and later: has
 //	clip actions (sprite
 //				  characters only)

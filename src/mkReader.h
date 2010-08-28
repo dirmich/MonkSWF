@@ -12,6 +12,7 @@
 
 #include "mkCommon.h"
 #include "mkTypes.h"
+#include <cstring>
 
 namespace MonkSWF {
 	
@@ -103,6 +104,26 @@ namespace MonkSWF {
 		inline uint8_t getBitPos() const {
 			return _bitpos;
 		}
+		
+		int32_t getBytes( int32_t s, uint8_t* b ) {
+			if ( _cur + s > _sz ) {
+				s = _sz - _cur;
+				if ( s == 0 ) {
+					return 0;
+				}
+			}
+			memcpy( b, &_data[_cur], s );
+			_cur += s;
+			return s;
+		}
+		
+		void setNewData( char* data, int32_t sz ) {
+			_data = data;
+			_sz = sz;
+			_cur = 0;
+			_bitpos = 0;
+		}
+		
 		
 	private:
 	
