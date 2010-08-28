@@ -3,7 +3,7 @@
  *  MonkSWF
  *
  *  Created by Micah Pearlman on 3/20/09.
- *  Copyright 2009 Monk Games. All rights reserved.
+ *  Copyright 2009 MP Engineering. All rights reserved.
  *
  */
 
@@ -19,11 +19,11 @@ namespace MonkSWF {
 	class TagHeader {
 	public:
 		
-		inline uint32_t getCode() const {
+		inline uint32_t code() const {
 			return _code;
 		}
 		
-		inline uint32_t getLength() const {
+		inline uint32_t length() const {
 			return _length;
 		}
 		
@@ -45,16 +45,16 @@ namespace MonkSWF {
 		virtual bool read( Reader* reader ) = 0;
 		virtual void print() = 0;
 		
-		const TagHeader& getHeader() {
+		const TagHeader& header() {
 			return _header;
 		}
 		
-		uint32_t getCode() const {
-			return _header.getCode();
+		uint32_t code() const {
+			return _header.code();
 		}
 		
-		int32_t getLength() const {
-			return _header.getLength();
+		int32_t length() const {
+			return _header.length();
 		}
 		
 	protected:
@@ -79,7 +79,7 @@ namespace MonkSWF {
 	
 			virtual void draw() = 0;
 			
-			uint16_t getShapeId() const {
+			uint16_t shapeId() const {
 				return _shape_id;
 			}
 		
@@ -99,6 +99,28 @@ namespace MonkSWF {
 		
 	
 	};
+	
+#define DEFINESPRITE 39
+	class IDefineSpriteTag : public ITag {
+	public:
+		
+		virtual void draw() = 0;
+		
+		uint16_t spriteId() const {
+			return _sprite_id;
+		}
+		
+	protected:
+		IDefineSpriteTag( TagHeader& header )
+		:	ITag( header )
+		,	_sprite_id( 0 )
+		{}
+		
+		virtual ~IDefineSpriteTag()
+		{}
+		
+		uint16_t		_sprite_id;
+	};
 #define PLACEOBJECT2 0x1A 
 	class IPlaceObjectTag : public ITag {
 	public:
@@ -111,15 +133,15 @@ namespace MonkSWF {
 			_has_character = other->_has_character;
 			_do_move = other->_do_move;
 		}	
-		uint16_t getDepth() const {
+		uint16_t depth() const {
 			return _depth;
 		}
 		
 		static bool compare( IPlaceObjectTag* a, IPlaceObjectTag* b ) {
-			return a->getDepth() < b->getDepth();
+			return a->depth() < b->depth();
 		}
 		
-		uint16_t getCharacterId() const {
+		uint16_t characterId() const {
 			return _character_id;
 		}
 		
@@ -163,10 +185,10 @@ namespace MonkSWF {
 #define REMOVEOBJECT2	28
 	class IRemoveObjectTag : public ITag {
 	public:	
-		uint16_t getCharacterId() const {
+		uint16_t characterId() const {
 			return _character_id;
 		}
-		uint16_t getDepth() const {
+		uint16_t depth() const {
 			return _depth;
 		}
 	protected:

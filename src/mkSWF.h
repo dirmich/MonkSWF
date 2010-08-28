@@ -3,7 +3,7 @@
  *  MonkSWF
  *
  *  Created by Micah Pearlman on 3/20/09.
- *  Copyright 2009 Monk Games. All rights reserved.
+ *  Copyright 2009 MP Engineering. All rights reserved.
  *
  */
 
@@ -43,7 +43,7 @@ namespace MonkSWF {
 		
 			for ( ShapeDictionaryIter it = _shape_dictionary.begin(); it != _shape_dictionary.end(); it++ ) {
 				IDefineShapeTag* shape = *it;
-				if( i == shape->getShapeId() )
+				if( i == shape->shapeId() )
 					return shape;
 			}
 			

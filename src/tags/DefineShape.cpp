@@ -3,7 +3,7 @@
  *  MonkSWF
  *
  *  Created by Micah Pearlman on 3/21/09.
- *  Copyright 2009 Monk Games. All rights reserved.
+ *  Copyright 2009 MP Engineering. All rights reserved.
  *
  */
 
@@ -585,8 +585,8 @@ namespace MonkSWF {
 	bool ShapeWithStyle::read( Reader* reader, DefineShapeTag* define_shape_tag ) {
 		
 		_define_shape_tag = define_shape_tag;
-		const TagHeader& shape_header = define_shape_tag->getHeader();
-		bool support_32bit_color = (shape_header.getCode() != DEFINESHAPE && shape_header.getCode() != DEFINESHAPE2);	// all shape definitions except DEFINESHAPE & DEFINESHAPE2 support 32 bit color
+		const TagHeader& shape_header = define_shape_tag->header();
+		bool support_32bit_color = (shape_header.code() != DEFINESHAPE && shape_header.code() != DEFINESHAPE2);	// all shape definitions except DEFINESHAPE & DEFINESHAPE2 support 32 bit color
 		// get the fill styles
 		uint8_t num_fill_styles = reader->get<uint8_t>();
 		if( num_fill_styles == 0xff )
@@ -856,7 +856,7 @@ namespace MonkSWF {
 	
 	void DefineShapeTag::print() {
 		//_header.print();
-		cout << "DEFINESHAPE code = " << getCode() << " id = " << _shape_id << endl;
+		cout << "DEFINESHAPE code = " << code() << " id = " << _shape_id << endl;
 //		cout << "shape id: "		<< _shape_id << endl;
 //		cout << "frame width: "		<< ((_bounds.xmax - _bounds.xmin)/20.0f) << endl;
 //		cout << "frame height: "	<< ((_bounds.ymax - _bounds.ymin)/20.0f) << endl;

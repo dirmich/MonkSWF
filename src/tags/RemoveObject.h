@@ -3,7 +3,7 @@
  *  MonkSWF
  *
  *  Created by Micah Pearlman on 5/7/09.
- *  Copyright 2009 Monk Games. All rights reserved.
+ *  Copyright 2009 MP Engineering. All rights reserved.
  *
  */
 
@@ -25,12 +25,12 @@ namespace MonkSWF {
 		}
 		
 		virtual bool read( Reader* reader ) {
-			if( getCode() == REMOVEOBJECT )
+			if( code() == REMOVEOBJECT )
 				_character_id = reader->get<uint16_t>();
 				
 			_depth = reader->get<uint16_t>();
 			
-			if( getCode() == REMOVEOBJECT )
+			if( code() == REMOVEOBJECT )
 				cout << "REMOVEOBJECT id = " << _character_id << " depth = " << _depth << endl;
 			else
 				cout << "REMOVEOBJECT2 depth = " << _depth << endl;

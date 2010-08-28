@@ -24,20 +24,11 @@
 		FA7E7EC00FB2427C00DC09A8 /* ShowFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA7E7EBE0FB2427C00DC09A8 /* ShowFrame.cpp */; };
 		FA8AE59B0FB3996200BDA0F6 /* RemoveObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FA8AE5990FB3996200BDA0F6 /* RemoveObject.h */; };
 		FA8AE59C0FB3996200BDA0F6 /* RemoveObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA8AE59A0FB3996200BDA0F6 /* RemoveObject.cpp */; };
-		FA9EA4D90F79A5F600492ABC /* libMonkVG-Quartz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9EA4D80F79A5CE00492ABC /* libMonkVG-Quartz.a */; };
+		FAD72E4112298F4900B99B94 /* DefineSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD72E3F12298F4900B99B94 /* DefineSprite.h */; };
+		FAD72E4212298F4900B99B94 /* DefineSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD72E4012298F4900B99B94 /* DefineSprite.cpp */; };
 		FAE67C460F7C09D10087C145 /* PlaceObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE67C440F7C09D10087C145 /* PlaceObject.h */; };
 		FAE67C470F7C09D10087C145 /* PlaceObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAE67C450F7C09D10087C145 /* PlaceObject.cpp */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FA9EA4D70F79A5CE00492ABC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA9EA4D30F79A5CE00492ABC /* MonkVG-Quartz.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC046055464E500DB518D;
-			remoteInfo = "MonkVG-Quartz";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D2AAC046055464E500DB518D /* libMonkSWF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMonkSWF.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +49,8 @@
 		FA7E7EBE0FB2427C00DC09A8 /* ShowFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShowFrame.cpp; sourceTree = "<group>"; };
 		FA8AE5990FB3996200BDA0F6 /* RemoveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoveObject.h; sourceTree = "<group>"; };
 		FA8AE59A0FB3996200BDA0F6 /* RemoveObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RemoveObject.cpp; sourceTree = "<group>"; };
-		FA9EA4D30F79A5CE00492ABC /* MonkVG-Quartz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-Quartz.xcodeproj"; path = "../MonkVG/projects/MonkVG-Quartz/MonkVG-Quartz.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		FAD72E3F12298F4900B99B94 /* DefineSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineSprite.h; sourceTree = "<group>"; };
+		FAD72E4012298F4900B99B94 /* DefineSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefineSprite.cpp; sourceTree = "<group>"; };
 		FAE67C440F7C09D10087C145 /* PlaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceObject.h; sourceTree = "<group>"; };
 		FAE67C450F7C09D10087C145 /* PlaceObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlaceObject.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9EA4D90F79A5F600492ABC /* libMonkVG-Quartz.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +69,6 @@
 		08FB7794FE84155DC02AAC07 /* MonkSWF */ = {
 			isa = PBXGroup;
 			children = (
-				FA9EA4D30F79A5CE00492ABC /* MonkVG-Quartz.xcodeproj */,
 				FA7002940F72FF070052FB7A /* include */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6A0FF2B0290797F04C91782 /* Documentation */,
@@ -131,6 +121,8 @@
 				FA7E7EBE0FB2427C00DC09A8 /* ShowFrame.cpp */,
 				FA8AE5990FB3996200BDA0F6 /* RemoveObject.h */,
 				FA8AE59A0FB3996200BDA0F6 /* RemoveObject.cpp */,
+				FAD72E3F12298F4900B99B94 /* DefineSprite.h */,
+				FAD72E4012298F4900B99B94 /* DefineSprite.cpp */,
 			);
 			name = tags;
 			path = src/tags;
@@ -142,14 +134,6 @@
 				FA7002950F72FF330052FB7A /* MonkSWF.h */,
 			);
 			name = include;
-			sourceTree = "<group>";
-		};
-		FA9EA4D40F79A5CE00492ABC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FA9EA4D80F79A5CE00492ABC /* libMonkVG-Quartz.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +154,7 @@
 				FAE67C460F7C09D10087C145 /* PlaceObject.h in Headers */,
 				FA7E7EBF0FB2427C00DC09A8 /* ShowFrame.h in Headers */,
 				FA8AE59B0FB3996200BDA0F6 /* RemoveObject.h in Headers */,
+				FAD72E4112298F4900B99B94 /* DefineSprite.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,28 +188,12 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 08FB7794FE84155DC02AAC07 /* MonkSWF */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = FA9EA4D40F79A5CE00492ABC /* Products */;
-					ProjectRef = FA9EA4D30F79A5CE00492ABC /* MonkVG-Quartz.xcodeproj */;
-				},
-			);
 			projectRoot = ..;
 			targets = (
 				D2AAC045055464E500DB518D /* MonkSWF */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		FA9EA4D80F79A5CE00492ABC /* libMonkVG-Quartz.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libMonkVG-Quartz.a";
-			remoteRef = FA9EA4D70F79A5CE00492ABC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2AAC044055464E500DB518D /* Sources */ = {
@@ -239,6 +208,7 @@
 				FAE67C470F7C09D10087C145 /* PlaceObject.cpp in Sources */,
 				FA7E7EC00FB2427C00DC09A8 /* ShowFrame.cpp in Sources */,
 				FA8AE59C0FB3996200BDA0F6 /* RemoveObject.cpp in Sources */,
+				FAD72E4212298F4900B99B94 /* DefineSprite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

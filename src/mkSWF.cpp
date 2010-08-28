@@ -3,7 +3,7 @@
  *  MonkSWF
  *
  *  Created by Micah Pearlman on 3/20/09.
- *  Copyright 2009 Monk Games. All rights reserved.
+ *  Copyright 2009 MP Engineering. All rights reserved.
  *
  */
 
@@ -40,38 +40,38 @@ namespace MonkSWF {
 				
 		// get all tags and build display and frame lists
 		DisplayList* display_list = new DisplayList();
-		while( tag_header->getCode() != 0 ) { // while not the end tag 
+		while( tag_header->code() != 0 ) { // while not the end tag 
 		
-			TagFactoryMapIter factory = _tag_factories.find( tag_header->getCode() );
+			TagFactoryMapIter factory = _tag_factories.find( tag_header->code() );
 			ITag* tag = 0;
 			
 			if( factory != _tag_factories.end() && factory->second ) {
 				tag = factory->second( tag_header );
-				int32_t end_pos = reader->getCurrentPos() + tag->getLength();
+				int32_t end_pos = reader->getCurrentPos() + tag->length();
 				tag->read( reader );
 				int32_t dif = (end_pos - reader->getCurrentPos()) - 1;
 				if( dif > 0 )
 					reader->skip( dif );
 				
-				if( tag_header->getCode() == DEFINESHAPE || tag_header->getCode() == DEFINESHAPE2 
-				   || tag_header->getCode() == DEFINESHAPE3 || tag_header->getCode() == DEFINESHAPE4 ) {
+				if( tag_header->code() == DEFINESHAPE || tag_header->code() == DEFINESHAPE2 
+				   || tag_header->code() == DEFINESHAPE3 || tag_header->code() == DEFINESHAPE4 ) {
 					_shape_dictionary.push_back( (IDefineShapeTag*)tag );
 				}
 				
-				if( tag_header->getCode() == PLACEOBJECT2 ) {	//PlaceObject2
+				if( tag_header->code() == PLACEOBJECT2 ) {	//PlaceObject2
 					IPlaceObjectTag* place_obj = (IPlaceObjectTag*)tag;
 					
 					if( place_obj->doMove() ) {	// just move the object at the current depth
-						IPlaceObjectTag* move_obj = (*display_list)[ place_obj->getDepth() ];
+						IPlaceObjectTag* move_obj = (*display_list)[ place_obj->depth() ];
 						place_obj->copyNoTransform( move_obj );
-						(*display_list)[ place_obj->getDepth() ] = place_obj;
+						(*display_list)[ place_obj->depth() ] = place_obj;
 //						move_obj->copyTransform( place_obj );
 					} else {
-						(*display_list)[ place_obj->getDepth() ] = place_obj;
+						(*display_list)[ place_obj->depth() ] = place_obj;
 					}
 				}
 				
-				if( tag_header->getCode() == SHOWFRAME ) {	// ShowFrame
+				if( tag_header->code() == SHOWFRAME ) {	// ShowFrame
 					_frame_list.push_back( display_list );
 					DisplayList *new_display_list = new DisplayList( display_list->begin(), display_list->end() );
 					
@@ -80,15 +80,15 @@ namespace MonkSWF {
 					cout << "### SHOWFRAME ###" << endl;
 				}
 				
-				if( tag_header->getCode() == REMOVEOBJECT2 ) {
+				if( tag_header->code() == REMOVEOBJECT2 ) {
 					IRemoveObjectTag* remove_object = (IRemoveObjectTag*)tag;
-					display_list->erase( remove_object->getDepth() );
+					display_list->erase( remove_object->depth() );
 				}
 					
 			} else {	// no registered factory so skip this tag
 				cout << "*** SKIPPING UNKOWN TAG ***" << endl;
 				tag_header->print();
-				reader->skip( tag_header->getLength() );
+				reader->skip( tag_header->length() );
 				delete tag_header;
 			}
 
