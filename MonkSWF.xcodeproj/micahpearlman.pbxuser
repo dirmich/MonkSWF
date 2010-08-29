@@ -8,12 +8,6 @@
 			D2AAC045055464E500DB518D /* MonkSWF */,
 		);
 		breakpoints = (
-			FAD72EF11229A2E300B99B94 /* DefineSprite.cpp:20 */,
-			FAD72F191229A41A00B99B94 /* DefineSprite.cpp:64 */,
-			FAD72F2E1229A50500B99B94 /* mkSWF.cpp:63 */,
-			FAD72F361229A53C00B99B94 /* mkSWF.cpp:107 */,
-			FAD72F3E1229A57B00B99B94 /* DefineSprite.cpp:75 */,
-			FAD72F401229A59A00B99B94 /* DefineSprite.h:22 */,
 		);
 		codeSenseManager = FA8239A00F6375D30091F305 /* Code sense */;
 		perUserDictionary = {
@@ -200,8 +194,8 @@
 	FA0C692F0F74787A0057F187 /* mkSWF.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1762}}";
-			sepNavSelRange = "{2024, 0}";
-			sepNavVisRange = "{0, 2192}";
+			sepNavSelRange = "{1362, 0}";
+			sepNavVisRange = "{0, 2347}";
 		};
 	};
 	FA0C69300F74787A0057F187 /* mkSWF.cpp */ = {
@@ -235,8 +229,8 @@
 	FA0C6A4B0F75867F0057F187 /* DefineShape.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1924}}";
-			sepNavSelRange = "{2113, 0}";
-			sepNavVisRange = "{168, 2698}";
+			sepNavSelRange = "{2671, 4}";
+			sepNavVisRange = "{195, 2671}";
 		};
 	};
 	FA0C6A4C0F75867F0057F187 /* DefineShape.cpp */ = {
@@ -249,9 +243,9 @@
 	};
 	FA4E45550F71788700E142CD /* mkReader.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 1762}}";
-			sepNavSelRange = "{761, 0}";
-			sepNavVisRange = "{0, 2270}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 1794}}";
+			sepNavSelRange = "{894, 0}";
+			sepNavVisRange = "{0, 2586}";
 			sepNavWindowFrame = "{{15, 40}, {1187, 733}}";
 		};
 	};
@@ -279,8 +273,8 @@
 	FA7002720F72F0790052FB7A /* mkHeader.cpp */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1762}}";
-			sepNavSelRange = "{1818, 0}";
-			sepNavVisRange = "{0, 2757}";
+			sepNavSelRange = "{687, 0}";
+			sepNavVisRange = "{0, 2802}";
 		};
 	};
 	FA7002950F72FF330052FB7A /* MonkSWF.h */ = {
@@ -496,7 +490,7 @@
 		fRef = FA0C692F0F74787A0057F187 /* mkSWF.h */;
 		name = "mkSWF.h: 64";
 		rLen = 0;
-		rLoc = 1713;
+		rLoc = 1868;
 		rType = 0;
 		vrLen = 1663;
 		vrLoc = 0;
@@ -833,7 +827,7 @@
 		fRef = FA0C692F0F74787A0057F187 /* mkSWF.h */;
 		name = "mkSWF.h: 70";
 		rLen = 0;
-		rLoc = 1336;
+		rLoc = 1491;
 		rType = 0;
 		vrLen = 2025;
 		vrLoc = 0;
@@ -858,24 +852,6 @@
 		vrLen = 2112;
 		vrLoc = 0;
 	};
-	FAD72EF11229A2E300B99B94 /* DefineSprite.cpp:20 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = FAD72E4012298F4900B99B94 /* DefineSprite.cpp */;
-		functionName = "DefineSpriteTag::read( Reader* reader )";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 20;
-		location = "MonkSWF-Test-iPhone";
-		modificationTime = 304721136.858732;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
 	FAD72EF71229A36300B99B94 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = FA0C69F60F75817A0057F187 /* mkTag.h */;
@@ -891,7 +867,7 @@
 		fRef = FA0C692F0F74787A0057F187 /* mkSWF.h */;
 		name = "mkSWF.h: 89";
 		rLen = 0;
-		rLoc = 2024;
+		rLoc = 2179;
 		rType = 0;
 		vrLen = 2192;
 		vrLoc = 0;
@@ -1056,24 +1032,6 @@
 		vrLen = 1798;
 		vrLoc = 0;
 	};
-	FAD72F191229A41A00B99B94 /* DefineSprite.cpp:64 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = FAD72E4012298F4900B99B94 /* DefineSprite.cpp */;
-		functionName = "DefineSpriteTag::print()";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 64;
-		location = "MonkSWF-Test-iPhone";
-		modificationTime = 304721136.85897;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
 	FAD72F1F1229A41F00B99B94 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = FAD72E4012298F4900B99B94 /* DefineSprite.cpp */;
@@ -1094,24 +1052,6 @@
 		vrLen = 1798;
 		vrLoc = 0;
 	};
-	FAD72F2E1229A50500B99B94 /* mkSWF.cpp:63 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = FA0C69300F74787A0057F187 /* mkSWF.cpp */;
-		functionName = "SWF::read( Reader* reader )";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 63;
-		location = "MonkSWF-Test-iPhone";
-		modificationTime = 304721136.859174;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
 	FAD72F321229A50700B99B94 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = FAD72E4012298F4900B99B94 /* DefineSprite.cpp */;
@@ -1122,24 +1062,6 @@
 		vrLen = 1798;
 		vrLoc = 0;
 	};
-	FAD72F361229A53C00B99B94 /* mkSWF.cpp:107 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = FA0C69300F74787A0057F187 /* mkSWF.cpp */;
-		functionName = "SWF::read( Reader* reader )";
-		hitCount = 3;
-		ignoreCount = 0;
-		lineNumber = 107;
-		location = "MonkSWF-Test-iPhone";
-		modificationTime = 304721157.907493;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
 	FAD72F3A1229A55200B99B94 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = FAD72E4012298F4900B99B94 /* DefineSprite.cpp */;
@@ -1149,42 +1071,6 @@
 		rType = 0;
 		vrLen = 1798;
 		vrLoc = 0;
-	};
-	FAD72F3E1229A57B00B99B94 /* DefineSprite.cpp:75 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = FAD72E4012298F4900B99B94 /* DefineSprite.cpp */;
-		functionName = "DefineSpriteTag::create( TagHeader* header )";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 75;
-		location = "MonkSWF-Test-iPhone";
-		modificationTime = 304721136.859558;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
-	FAD72F401229A59A00B99B94 /* DefineSprite.h:22 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = FAD72E3F12298F4900B99B94 /* DefineSprite.h */;
-		functionName = "DefineSpriteTag( TagHeader& h )";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 22;
-		location = "MonkSWF-Test-iPhone";
-		modificationTime = 304721136.859646;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
 	};
 	FAD72F421229A5A600B99B94 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

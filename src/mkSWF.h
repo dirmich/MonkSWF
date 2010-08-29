@@ -61,6 +61,13 @@ namespace MonkSWF {
 			return 0;
 		}
 		
+		int32_t numShapes() const {
+			return _shape_dictionary.size();
+		}
+		
+		IDefineShapeTag* shapeAt( int32_t idx ) {
+			return _shape_dictionary[idx];
+		}
 		
 		
 //		int32_t numFrames() const {
