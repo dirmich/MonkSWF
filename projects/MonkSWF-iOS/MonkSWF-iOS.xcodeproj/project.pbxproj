@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA747D9F0F9514B9006C5449 /* MonkSWF_iOS_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* MonkSWF_iOS_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		FAD730BD1229FD6F00B99B94 /* MonkSWF.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730BC1229FD6F00B99B94 /* MonkSWF.h */; };
+		FAD730F21229FE5700B99B94 /* DefineShape.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730DE1229FE5700B99B94 /* DefineShape.h */; };
+		FAD730F31229FE5700B99B94 /* DefineShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730DF1229FE5700B99B94 /* DefineShape.cpp */; };
+		FAD730F41229FE5700B99B94 /* PlaceObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730E01229FE5700B99B94 /* PlaceObject.h */; };
+		FAD730F51229FE5700B99B94 /* PlaceObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730E11229FE5700B99B94 /* PlaceObject.cpp */; };
+		FAD730F61229FE5700B99B94 /* ShowFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730E21229FE5700B99B94 /* ShowFrame.h */; };
+		FAD730F71229FE5700B99B94 /* ShowFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730E31229FE5700B99B94 /* ShowFrame.cpp */; };
+		FAD730F81229FE5700B99B94 /* RemoveObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730E41229FE5700B99B94 /* RemoveObject.h */; };
+		FAD730F91229FE5700B99B94 /* RemoveObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730E51229FE5700B99B94 /* RemoveObject.cpp */; };
+		FAD730FA1229FE5700B99B94 /* DefineSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730E61229FE5700B99B94 /* DefineSprite.h */; };
+		FAD730FB1229FE5700B99B94 /* DefineSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730E71229FE5700B99B94 /* DefineSprite.cpp */; };
+		FAD730FC1229FE5700B99B94 /* mkTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730E81229FE5700B99B94 /* mkTag.cpp */; };
+		FAD730FD1229FE5700B99B94 /* mkTag.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730E91229FE5700B99B94 /* mkTag.h */; };
+		FAD730FE1229FE5700B99B94 /* mkTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730EA1229FE5700B99B94 /* mkTypes.h */; };
+		FAD730FF1229FE5700B99B94 /* mkReader.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730EB1229FE5700B99B94 /* mkReader.h */; };
+		FAD731001229FE5700B99B94 /* mkReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730EC1229FE5700B99B94 /* mkReader.cpp */; };
+		FAD731011229FE5700B99B94 /* mkCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730ED1229FE5700B99B94 /* mkCommon.h */; };
+		FAD731021229FE5700B99B94 /* mkHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730EE1229FE5700B99B94 /* mkHeader.h */; };
+		FAD731031229FE5700B99B94 /* mkHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730EF1229FE5700B99B94 /* mkHeader.cpp */; };
+		FAD731041229FE5700B99B94 /* mkSWF.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730F01229FE5700B99B94 /* mkSWF.h */; };
+		FAD731051229FE5700B99B94 /* mkSWF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730F11229FE5700B99B94 /* mkSWF.cpp */; };
+		FAD73135122A001800B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD731321229FFFB00B99B94 /* libMonkVG_iOS_OpenGL.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAD7312F1229FFFB00B99B94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libMonkVG_iOS_Quartz.a */;
+			remoteInfo = "MonkVG-iOS-Quartz";
+		};
+		FAD731311229FFFB00B99B94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FAE282E9121A08BB00823BCB /* libMonkVG_iOS_OpenGL.a */;
+			remoteInfo = "MonkVG-iOS-OpenGL";
+		};
+		FAD73133122A000600B99B94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FAE282A8121A08BB00823BCB /* MonkVG-iOS-OpenGL */;
+			remoteInfo = "MonkVG-iOS-OpenGL";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA747D9E0F9514B9006C5449 /* MonkSWF_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkSWF_iOS_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libMonkSWF_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMonkSWF_iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD730BC1229FD6F00B99B94 /* MonkSWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MonkSWF.h; path = ../../MonkSWF.h; sourceTree = SOURCE_ROOT; };
+		FAD730DE1229FE5700B99B94 /* DefineShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineShape.h; sourceTree = "<group>"; };
+		FAD730DF1229FE5700B99B94 /* DefineShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefineShape.cpp; sourceTree = "<group>"; };
+		FAD730E01229FE5700B99B94 /* PlaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceObject.h; sourceTree = "<group>"; };
+		FAD730E11229FE5700B99B94 /* PlaceObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlaceObject.cpp; sourceTree = "<group>"; };
+		FAD730E21229FE5700B99B94 /* ShowFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowFrame.h; sourceTree = "<group>"; };
+		FAD730E31229FE5700B99B94 /* ShowFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShowFrame.cpp; sourceTree = "<group>"; };
+		FAD730E41229FE5700B99B94 /* RemoveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoveObject.h; sourceTree = "<group>"; };
+		FAD730E51229FE5700B99B94 /* RemoveObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RemoveObject.cpp; sourceTree = "<group>"; };
+		FAD730E61229FE5700B99B94 /* DefineSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineSprite.h; sourceTree = "<group>"; };
+		FAD730E71229FE5700B99B94 /* DefineSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefineSprite.cpp; sourceTree = "<group>"; };
+		FAD730E81229FE5700B99B94 /* mkTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mkTag.cpp; path = ../../src/mkTag.cpp; sourceTree = SOURCE_ROOT; };
+		FAD730E91229FE5700B99B94 /* mkTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mkTag.h; path = ../../src/mkTag.h; sourceTree = SOURCE_ROOT; };
+		FAD730EA1229FE5700B99B94 /* mkTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mkTypes.h; path = ../../src/mkTypes.h; sourceTree = SOURCE_ROOT; };
+		FAD730EB1229FE5700B99B94 /* mkReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mkReader.h; path = ../../src/mkReader.h; sourceTree = SOURCE_ROOT; };
+		FAD730EC1229FE5700B99B94 /* mkReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mkReader.cpp; path = ../../src/mkReader.cpp; sourceTree = SOURCE_ROOT; };
+		FAD730ED1229FE5700B99B94 /* mkCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mkCommon.h; path = ../../src/mkCommon.h; sourceTree = SOURCE_ROOT; };
+		FAD730EE1229FE5700B99B94 /* mkHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mkHeader.h; path = ../../src/mkHeader.h; sourceTree = SOURCE_ROOT; };
+		FAD730EF1229FE5700B99B94 /* mkHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mkHeader.cpp; path = ../../src/mkHeader.cpp; sourceTree = SOURCE_ROOT; };
+		FAD730F01229FE5700B99B94 /* mkSWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mkSWF.h; path = ../../src/mkSWF.h; sourceTree = SOURCE_ROOT; };
+		FAD730F11229FE5700B99B94 /* mkSWF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mkSWF.cpp; path = ../../src/mkSWF.cpp; sourceTree = SOURCE_ROOT; };
+		FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-iOS.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-iOS/MonkVG-iOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD73135122A001800B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */,
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libMonkSWF_iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* MonkSWF-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */,
+				FAD730DC1229FE5700B99B94 /* Source */,
+				FAD730BB1229FD6F00B99B94 /* include */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = "MonkSWF-iOS";
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* MonkSWF_iOS_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		FAD730BB1229FD6F00B99B94 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				FAD730BC1229FD6F00B99B94 /* MonkSWF.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		FAD730DC1229FE5700B99B94 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FAD730DD1229FE5700B99B94 /* tags */,
+				FAD730E81229FE5700B99B94 /* mkTag.cpp */,
+				FAD730E91229FE5700B99B94 /* mkTag.h */,
+				FAD730EA1229FE5700B99B94 /* mkTypes.h */,
+				FAD730EB1229FE5700B99B94 /* mkReader.h */,
+				FAD730EC1229FE5700B99B94 /* mkReader.cpp */,
+				FAD730ED1229FE5700B99B94 /* mkCommon.h */,
+				FAD730EE1229FE5700B99B94 /* mkHeader.h */,
+				FAD730EF1229FE5700B99B94 /* mkHeader.cpp */,
+				FAD730F01229FE5700B99B94 /* mkSWF.h */,
+				FAD730F11229FE5700B99B94 /* mkSWF.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		FAD730DD1229FE5700B99B94 /* tags */ = {
+			isa = PBXGroup;
+			children = (
+				FAD730DE1229FE5700B99B94 /* DefineShape.h */,
+				FAD730DF1229FE5700B99B94 /* DefineShape.cpp */,
+				FAD730E01229FE5700B99B94 /* PlaceObject.h */,
+				FAD730E11229FE5700B99B94 /* PlaceObject.cpp */,
+				FAD730E21229FE5700B99B94 /* ShowFrame.h */,
+				FAD730E31229FE5700B99B94 /* ShowFrame.cpp */,
+				FAD730E41229FE5700B99B94 /* RemoveObject.h */,
+				FAD730E51229FE5700B99B94 /* RemoveObject.cpp */,
+				FAD730E61229FE5700B99B94 /* DefineSprite.h */,
+				FAD730E71229FE5700B99B94 /* DefineSprite.cpp */,
+			);
+			name = tags;
+			path = ../../src/tags;
+			sourceTree = SOURCE_ROOT;
+		};
+		FAD7312B1229FFFB00B99B94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAD731301229FFFB00B99B94 /* libMonkVG_iOS_Quartz.a */,
+				FAD731321229FFFB00B99B94 /* libMonkVG_iOS_OpenGL.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* MonkSWF_iOS_Prefix.pch in Headers */,
+				FAD730BD1229FD6F00B99B94 /* MonkSWF.h in Headers */,
+				FAD730F21229FE5700B99B94 /* DefineShape.h in Headers */,
+				FAD730F41229FE5700B99B94 /* PlaceObject.h in Headers */,
+				FAD730F61229FE5700B99B94 /* ShowFrame.h in Headers */,
+				FAD730F81229FE5700B99B94 /* RemoveObject.h in Headers */,
+				FAD730FA1229FE5700B99B94 /* DefineSprite.h in Headers */,
+				FAD730FD1229FE5700B99B94 /* mkTag.h in Headers */,
+				FAD730FE1229FE5700B99B94 /* mkTypes.h in Headers */,
+				FAD730FF1229FE5700B99B94 /* mkReader.h in Headers */,
+				FAD731011229FE5700B99B94 /* mkCommon.h in Headers */,
+				FAD731021229FE5700B99B94 /* mkHeader.h in Headers */,
+				FAD731041229FE5700B99B94 /* mkSWF.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* MonkSWF-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "MonkSWF-iOS" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAD73134122A000600B99B94 /* PBXTargetDependency */,
+			);
+			name = "MonkSWF-iOS";
+			productName = "MonkSWF-iOS";
+			productReference = D2AAC07E0554694100DB518D /* libMonkSWF_iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "MonkSWF-iOS" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* MonkSWF-iOS */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FAD7312B1229FFFB00B99B94 /* Products */;
+					ProjectRef = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* MonkSWF-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FAD731301229FFFB00B99B94 /* libMonkVG_iOS_Quartz.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMonkVG_iOS_Quartz.a;
+			remoteRef = FAD7312F1229FFFB00B99B94 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FAD731321229FFFB00B99B94 /* libMonkVG_iOS_OpenGL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMonkVG_iOS_OpenGL.a;
+			remoteRef = FAD731311229FFFB00B99B94 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD730F31229FE5700B99B94 /* DefineShape.cpp in Sources */,
+				FAD730F51229FE5700B99B94 /* PlaceObject.cpp in Sources */,
+				FAD730F71229FE5700B99B94 /* ShowFrame.cpp in Sources */,
+				FAD730F91229FE5700B99B94 /* RemoveObject.cpp in Sources */,
+				FAD730FB1229FE5700B99B94 /* DefineSprite.cpp in Sources */,
+				FAD730FC1229FE5700B99B94 /* mkTag.cpp in Sources */,
+				FAD731001229FE5700B99B94 /* mkReader.cpp in Sources */,
+				FAD731031229FE5700B99B94 /* mkHeader.cpp in Sources */,
+				FAD731051229FE5700B99B94 /* mkSWF.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAD73134122A000600B99B94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MonkVG-iOS-OpenGL";
+			targetProxy = FAD73133122A000600B99B94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/MonkSWF_iOS.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MonkSWF_iOS_Prefix.pch;
+				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = MonkSWF_iOS;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/MonkSWF_iOS.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MonkSWF_iOS_Prefix.pch;
+				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = MonkSWF_iOS;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "MonkSWF-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "MonkSWF-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
