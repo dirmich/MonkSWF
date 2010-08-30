@@ -29,6 +29,8 @@
 		FAD730281229F67000B99B94 /* bottom_right_arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD730261229F67000B99B94 /* bottom_right_arrow_left.png */; };
 		FAD730291229F67000B99B94 /* bottom_right_arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD730271229F67000B99B94 /* bottom_right_arrow_right.png */; };
 		FAD730C81229FDE100B99B94 /* libMonkSWF_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD730C51229FDC700B99B94 /* libMonkSWF_iOS.a */; };
+		FAD7321E122B583E00B99B94 /* whitebird1.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD7321D122B583E00B99B94 /* whitebird1.swf */; };
+		FAD73240122B5B0C00B99B94 /* cupid.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD7323F122B5B0C00B99B94 /* cupid.swf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		FAD730261229F67000B99B94 /* bottom_right_arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_right_arrow_left.png; sourceTree = "<group>"; };
 		FAD730271229F67000B99B94 /* bottom_right_arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_right_arrow_right.png; sourceTree = "<group>"; };
 		FAD730C01229FDC700B99B94 /* MonkSWF-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkSWF-iOS.xcodeproj"; path = "../../projects/MonkSWF-iOS/MonkSWF-iOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		FAD7321D122B583E00B99B94 /* whitebird1.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = whitebird1.swf; path = ../whitebird1.swf; sourceTree = SOURCE_ROOT; };
+		FAD7323F122B5B0C00B99B94 /* cupid.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = cupid.swf; path = ../cupid.swf; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAD7323F122B5B0C00B99B94 /* cupid.swf */,
+				FAD7321D122B583E00B99B94 /* whitebird1.swf */,
 				FAD730261229F67000B99B94 /* bottom_right_arrow_left.png */,
 				FAD730271229F67000B99B94 /* bottom_right_arrow_right.png */,
 				FAD7301E1229F63F00B99B94 /* venus_fly_trap.swf */,
@@ -311,6 +317,8 @@
 				FAD730231229F63F00B99B94 /* puppy.swf in Resources */,
 				FAD730281229F67000B99B94 /* bottom_right_arrow_left.png in Resources */,
 				FAD730291229F67000B99B94 /* bottom_right_arrow_right.png in Resources */,
+				FAD7321E122B583E00B99B94 /* whitebird1.swf in Resources */,
+				FAD73240122B5B0C00B99B94 /* cupid.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

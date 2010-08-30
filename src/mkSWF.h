@@ -70,18 +70,27 @@ namespace MonkSWF {
 		}
 		
 		IDefineSpriteTag* spriteAt( int32_t idx ) {
+			if ( _sprite_dictionary.size() == 0 || idx >= _sprite_dictionary.size() ) {
+				return 0;
+			}
 			SpriteDictionary::iterator i = _sprite_dictionary.begin();
 			advance(i, idx);
 			return i->second;
 		}
 		
-//		int32_t numFrames() const {
-//			return _frame_list.size();
-//		}
+		IDefineSpriteTag* getSprite( uint16_t i ) {
+			SpriteDictionary::iterator it = _sprite_dictionary.find( i );
+			return it->second;
+		}
+		
+		int32_t numFrames() const {
+			return _frame_list.size();
+		}
 		
 		Reader* reader() const {
 			return _reader;
 		}
+		
 		void drawFrame( int32_t frame_idx );
 		
 		
@@ -91,19 +100,20 @@ namespace MonkSWF {
 		typedef std::vector< IDefineShapeTag* >				ShapeDictionary;
 		typedef ShapeDictionary::iterator					ShapeDictionaryIter;
 		typedef std::map< uint16_t, IDefineSpriteTag* >		SpriteDictionary;
-//		typedef std::map< uint16_t, IPlaceObjectTag* >		DisplayList;
-//		typedef DisplayList::iterator						DisplayListIter;
-//		typedef std::vector< DisplayList* >					FrameList;
-//		typedef FrameList::iterator							FrameListIter;
+		typedef std::map< uint16_t, IPlaceObjectTag* >		DisplayList;
+		typedef DisplayList::iterator						DisplayListIter;
+		typedef std::vector< DisplayList* >					FrameList;
+		typedef FrameList::iterator							FrameListIter;
 		
 		
 		ShapeDictionary		_shape_dictionary;
 		SpriteDictionary	_sprite_dictionary;
-		//DisplayList			_display_list;
-		//FrameList			_frame_list;
+		DisplayList			_display_list;
+		FrameList			_frame_list;
 		Header				_header;
 		TagFactoryMap		_tag_factories;
 		Reader*				_reader;
+		int32_t				_frame;
 	
 	};
 }

@@ -102,9 +102,16 @@ namespace MonkSWF {
 		vgScale( _scale[0], _scale[1] );
 		vgRotate( degrees( _rotation ) );
 		
-		IDefineShapeTag* character = swf->getShape( _character_id );
-		if( character )
-			character->draw();
+		IDefineShapeTag* shape = swf->getShape( _character_id );
+		if( shape )
+			shape->draw();
+		else {
+			IDefineSpriteTag* sprite = swf->getSprite( _character_id );
+			if ( sprite ) {
+				sprite->draw(0);		// TOOD: have swf store the current frame
+			}
+		}
+
 	}
 	
 	void PlaceObject2Tag::print() {

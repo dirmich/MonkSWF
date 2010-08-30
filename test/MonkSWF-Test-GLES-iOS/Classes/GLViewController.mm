@@ -29,7 +29,7 @@ using namespace MonkSWF;
     [super viewDidLoad];
 	
 	NSBundle      *mainBundle = [NSBundle mainBundle];
-	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"monkey.swf"];
+	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"cupid.swf"];
 	NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 	if (fromFile) {
 		NSData *data = [fromFile readDataToEndOfFile];
@@ -91,15 +91,19 @@ using namespace MonkSWF;
 	vgTranslate(320/2,480/2);
 	//vgScale(2, 2);
 	
-	if ( _sprite ) {
-		_sprite->draw( _frame++ );
-		if ( _frame >= _sprite->frameCount() ) {
-			_frame = 0;
-		}
-		
-	} else if ( _shape ) {
-		_shape->draw();
+	_swf->drawFrame( _frame++ );
+	if ( _frame >= _swf->numFrames() ) {
+		_frame = 0;
 	}
+//	if ( _sprite ) {
+//		_sprite->draw( _frame++ );
+//		if ( _frame >= _sprite->frameCount() ) {
+//			_frame = 0;
+//		}
+//		
+//	} else if ( _shape ) {
+//		_shape->draw();
+//	}
 	
 }
 

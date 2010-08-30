@@ -342,7 +342,7 @@
 		fRef = FA0C69300F74787A0057F187 /* mkSWF.cpp */;
 		name = "mkSWF.cpp: 98";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3189;
 		rType = 0;
 		vrLen = 4070;
 		vrLoc = 0;
@@ -362,7 +362,7 @@
 		fRef = FAE67C450F7C09D10087C145 /* PlaceObject.cpp */;
 		name = "PlaceObject.cpp: 111";
 		rLen = 130;
-		rLoc = 2838;
+		rLoc = 2991;
 		rType = 0;
 		vrLen = 3529;
 		vrLoc = 0;
