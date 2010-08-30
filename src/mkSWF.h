@@ -69,6 +69,11 @@ namespace MonkSWF {
 			return _shape_dictionary[idx];
 		}
 		
+		IDefineSpriteTag* spriteAt( int32_t idx ) {
+			SpriteDictionary::iterator i = _sprite_dictionary.begin();
+			advance(i, idx);
+			return i->second;
+		}
 		
 //		int32_t numFrames() const {
 //			return _frame_list.size();

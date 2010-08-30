@@ -15,8 +15,11 @@
 @private
 	EAGLView*		_glview;
 	MonkSWF::SWF*	_swf;
-	MonkSWF::IDefineShapeTag* _shape;	// current shape
-	int						  _shapeIdx;
+	MonkSWF::IDefineShapeTag*	_shape;	// current shape
+	int							_shapeIdx;
+	MonkSWF::IDefineSpriteTag*	_sprite;
+	int							_spriteIdx;
+	int							_frame;
 
 }
 @property (nonatomic, retain) IBOutlet EAGLView* glview;

@@ -12,6 +12,7 @@
 
 #include "mkTag.h"
 #include <VG/openvg.h>
+#include <map>
 
 namespace MonkSWF {
 
@@ -28,12 +29,16 @@ namespace MonkSWF {
 		virtual bool read( Reader* reader );
 		virtual void print();
 		
-		virtual void draw();
+		virtual void draw( const int32_t frame );
 		
 		// regular DefineSpriteTag tag == 39
 		static ITag* create( TagHeader* header );
 		
 	private:
+		typedef std::map< uint16_t, IPlaceObjectTag* >		DisplayList;
+		typedef DisplayList::iterator						DisplayListIter;
+
+		DisplayList			_display_list;
 		
 		
 	};

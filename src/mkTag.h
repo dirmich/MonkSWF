@@ -129,7 +129,7 @@ namespace MonkSWF {
 	class IDefineSpriteTag : public ITag {
 	public:
 		
-		virtual void draw() = 0;
+		virtual void draw( const int32_t frame ) = 0;
 		
 		uint16_t spriteId() const {
 			return _sprite_id;
