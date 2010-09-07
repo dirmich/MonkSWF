@@ -41,6 +41,11 @@ namespace MonkSWF {
 	
 	class FillStyle {
 	public:
+		FillStyle()
+		:	_type(-1)
+		,	_paint(0)
+		{}
+		
 		bool read( Reader* reader, bool support_32bit_color );
 		
 		inline VGPaint getPaint() {
@@ -61,6 +66,11 @@ namespace MonkSWF {
 	
 	class LineStyle {
 	public:
+		
+		LineStyle()
+		:	_paint(0)
+		{}
+		
 		bool read( Reader* reader, bool support_32bit_color );
 
 		inline VGPaint getPaint() {

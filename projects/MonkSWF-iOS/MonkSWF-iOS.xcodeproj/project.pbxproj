@@ -38,21 +38,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libMonkVG_iOS_Quartz.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = "MonkVG-iOS-Quartz";
 		};
 		FAD731311229FFFB00B99B94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FAE282E9121A08BB00823BCB /* libMonkVG_iOS_OpenGL.a */;
+			remoteGlobalIDString = FAE282E9121A08BB00823BCB;
 			remoteInfo = "MonkVG-iOS-OpenGL";
 		};
 		FAD73133122A000600B99B94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = FAE282A8121A08BB00823BCB /* MonkVG-iOS-OpenGL */;
+			remoteGlobalIDString = FAE282A8121A08BB00823BCB;
 			remoteInfo = "MonkVG-iOS-OpenGL";
 		};
 /* End PBXContainerItemProxy section */
