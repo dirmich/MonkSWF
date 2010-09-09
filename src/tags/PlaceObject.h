@@ -19,11 +19,15 @@ namespace MonkSWF {
 	class PlaceObject2Tag : public IPlaceObjectTag {
 	public:
 		PlaceObject2Tag( TagHeader& h ) 
-			: IPlaceObjectTag( h )
+			:	IPlaceObjectTag( h )
+			,	_name(0)
 		{}
 		
 		virtual ~PlaceObject2Tag() {
-			
+			if ( _name ) {
+				delete [] _name;
+				_name = 0;
+			}
 		}
 		
 		virtual bool read( Reader* reader );
@@ -41,6 +45,7 @@ namespace MonkSWF {
 		VGfloat		_translation[2];
 		VGfloat		_scale[2];
 		VGfloat		_rotation;
+		char*		_name;
 	};
 }
 #endif // __PlaceObject_h__

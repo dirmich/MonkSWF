@@ -27,16 +27,13 @@ namespace MonkSWF {
 		_has_character = reader->getbits( 1 );
 		_do_move = reader->getbits( 1 );
 		
-		if( has_clip_actions || has_clip_depth || has_name || has_ratio )
+		if( has_clip_actions || has_clip_depth || has_ratio )
 			assert( 0 );
 			
 		_depth = reader->get<uint16_t>();
 		if( _has_character )
 			_character_id = reader->get<uint16_t>();
 			
-		if( _depth == 35 ) {
-			cout << "at 26" << endl;
-		}
 			
 		if( has_matrix ) {
 			MATRIX m;
@@ -74,7 +71,7 @@ namespace MonkSWF {
 			reader->get<uint16_t>();
 		}
 		if( has_name ) {
-			assert( 0 );
+			_name = reader->getString();
 		}
 		if( has_clip_depth ) {
 			reader->get<uint16_t>();

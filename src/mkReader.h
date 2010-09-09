@@ -124,6 +124,15 @@ namespace MonkSWF {
 			_bitpos = 0;
 		}
 		
+		inline char* getString() {
+			const char *src = (const char *)&_data[_cur];
+			size_t len = strlen(src) + 1;
+			char *dst = new char[len];
+			strcpy(dst, src);
+			_cur += len;
+			return( dst );
+		}
+		
 		
 	private:
 	

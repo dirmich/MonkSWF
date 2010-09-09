@@ -19,13 +19,13 @@
 		28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* EAGLView.m */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		FA25C8A61236E50500E46025 /* stuff.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA25C8A51236E50500E46025 /* stuff.swf */; };
+		FA25C8FB123733C800E46025 /* intersect.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA25C8FA123733C800E46025 /* intersect.swf */; };
 		FAB041D012359B8100573D04 /* island_plateau10.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAB041CF12359B8100573D04 /* island_plateau10.swf */; };
 		FAD72FCD1229EE8900B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD72FC51229EE5100B99B94 /* libMonkVG_iOS_OpenGL.a */; };
 		FAD730001229F1AB00B99B94 /* GLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD72FFE1229F1AB00B99B94 /* GLViewController.mm */; };
 		FAD730011229F1AB00B99B94 /* GLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD72FFF1229F1AB00B99B94 /* GLViewController.xib */; };
 		FAD730191229F61000B99B94 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD730181229F61000B99B94 /* libz.dylib */; };
-		FAD730211229F63F00B99B94 /* venus_fly_trap.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD7301E1229F63F00B99B94 /* venus_fly_trap.swf */; };
-		FAD730221229F63F00B99B94 /* monkey.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD7301F1229F63F00B99B94 /* monkey.swf */; };
 		FAD730231229F63F00B99B94 /* puppy.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD730201229F63F00B99B94 /* puppy.swf */; };
 		FAD730281229F67000B99B94 /* bottom_right_arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD730261229F67000B99B94 /* bottom_right_arrow_left.png */; };
 		FAD730291229F67000B99B94 /* bottom_right_arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD730271229F67000B99B94 /* bottom_right_arrow_right.png */; };
@@ -94,14 +94,14 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MonkSWF_Test_GLES_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkSWF_Test_GLES_iOS_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MonkSWF_Test_GLES_iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MonkSWF_Test_GLES_iOS-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		FA25C8A51236E50500E46025 /* stuff.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stuff.swf; sourceTree = "<group>"; };
+		FA25C8FA123733C800E46025 /* intersect.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = intersect.swf; sourceTree = "<group>"; };
 		FAB041CF12359B8100573D04 /* island_plateau10.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = island_plateau10.swf; sourceTree = "<group>"; };
 		FAD72FBA1229EE5100B99B94 /* MonkVG-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-iOS.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-iOS/MonkVG-iOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		FAD72FFD1229F1AB00B99B94 /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
 		FAD72FFE1229F1AB00B99B94 /* GLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLViewController.mm; sourceTree = "<group>"; };
 		FAD72FFF1229F1AB00B99B94 /* GLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLViewController.xib; sourceTree = "<group>"; };
 		FAD730181229F61000B99B94 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		FAD7301E1229F63F00B99B94 /* venus_fly_trap.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = venus_fly_trap.swf; sourceTree = "<group>"; };
-		FAD7301F1229F63F00B99B94 /* monkey.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monkey.swf; sourceTree = "<group>"; };
 		FAD730201229F63F00B99B94 /* puppy.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = puppy.swf; sourceTree = "<group>"; };
 		FAD730261229F67000B99B94 /* bottom_right_arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_right_arrow_left.png; sourceTree = "<group>"; };
 		FAD730271229F67000B99B94 /* bottom_right_arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_right_arrow_right.png; sourceTree = "<group>"; };
@@ -192,14 +192,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA25C8FA123733C800E46025 /* intersect.swf */,
+				FA25C8A51236E50500E46025 /* stuff.swf */,
 				FAB041CF12359B8100573D04 /* island_plateau10.swf */,
 				FAD7324F122B5CF000B99B94 /* clown.swf */,
 				FAD7323F122B5B0C00B99B94 /* cupid.swf */,
 				FAD7321D122B583E00B99B94 /* whitebird1.swf */,
 				FAD730261229F67000B99B94 /* bottom_right_arrow_left.png */,
 				FAD730271229F67000B99B94 /* bottom_right_arrow_right.png */,
-				FAD7301E1229F63F00B99B94 /* venus_fly_trap.swf */,
-				FAD7301F1229F63F00B99B94 /* monkey.swf */,
 				FAD730201229F63F00B99B94 /* puppy.swf */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* MonkSWF_Test_GLES_iOS-Info.plist */,
@@ -318,8 +318,6 @@
 				2514C27C10084DCA00A42282 /* Shader.vsh in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				FAD730011229F1AB00B99B94 /* GLViewController.xib in Resources */,
-				FAD730211229F63F00B99B94 /* venus_fly_trap.swf in Resources */,
-				FAD730221229F63F00B99B94 /* monkey.swf in Resources */,
 				FAD730231229F63F00B99B94 /* puppy.swf in Resources */,
 				FAD730281229F67000B99B94 /* bottom_right_arrow_left.png in Resources */,
 				FAD730291229F67000B99B94 /* bottom_right_arrow_right.png in Resources */,
@@ -327,6 +325,8 @@
 				FAD73240122B5B0C00B99B94 /* cupid.swf in Resources */,
 				FAD73250122B5CF000B99B94 /* clown.swf in Resources */,
 				FAB041D012359B8100573D04 /* island_plateau10.swf in Resources */,
+				FA25C8A61236E50500E46025 /* stuff.swf in Resources */,
+				FA25C8FB123733C800E46025 /* intersect.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

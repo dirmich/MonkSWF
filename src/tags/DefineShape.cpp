@@ -626,7 +626,7 @@ namespace MonkSWF {
 		int fill_idx1 = -1;
 		int line_idx = -1;
 		bool move_to = false;
-		Path* path = new Path();//0;
+		Path* path = 0;//new Path();//0;
 		PathArray path_array;
 		
 		while ( !end ) {
@@ -640,20 +640,27 @@ namespace MonkSWF {
 			
 				if( flags ) {
 				
-					if( path != 0 ) {
-						path->_line = line_idx;
-						path->_fill0 = fill_idx0;
-						path->_fill1 = fill_idx1;
-						path_array.push_back( path );
-//						path->print();
-					}
-					
-					path = new Path();
+//					if( path != 0 ) {
+//						path->_line = line_idx;
+//						path->_fill0 = fill_idx0;
+//						path->_fill1 = fill_idx1;
+//						path_array.push_back( path );
+////						path->print();
+//					}
+//					
+//					path = new Path();
 					
 					if( flags & SF_MOVETO ) {
 						uint8_t nbits = reader->getbits( 5 );
 						startxy[0] = reader->getsignedbits( nbits ) / 20.0f;
 						startxy[1] = reader->getsignedbits( nbits ) / 20.0f;
+						if ( path ) {
+							path->_line = line_idx;
+							path->_fill0 = fill_idx0;
+							path->_fill1 = fill_idx1;
+							path_array.push_back( path );
+						}
+						path = new Path();
 //??						move_to = true;
 					} 
 					
@@ -672,19 +679,31 @@ namespace MonkSWF {
 
 					if( flags & SF_NEWSTYLE ) { 
 //						assert( 0 );
-						cout << "new style" << endl;
+						cout << "NEW STYLE" << endl;
 						// get the fill styles
-						uint8_t num_fill_styles = reader->get<uint8_t>();
+						num_fill_styles = reader->get<uint8_t>();
 						if( num_fill_styles == 0xff )
 							num_fill_styles = reader->get<uint16_t>();
+						cout << "\tnum fill styles: " << int(num_fill_styles) << endl;
 						
 						
 						for ( int i = 0; i < num_fill_styles; i++ ) {
 							FillStyle fill;
 							fill.read( reader, support_32bit_color );
 							_fill_styles.push_back( fill );
-							
 						}
+						
+//						num_line_styles = reader->get<uint8_t>();
+//						if ( num_line_styles == 0xff )
+//							num_line_styles = reader->get<uint16_t>();
+//						cout << "\tnum line styles: " << int(num_line_styles) << endl;
+//						
+//						for ( int i = 0; i < num_line_styles; i++ ) {
+//							LineStyle line;
+//							line.read( reader, support_32bit_color );
+//							_line_styles.push_back( line );
+//							
+//						}
 						
 					}
 					
@@ -849,6 +868,8 @@ namespace MonkSWF {
 		reader->getRectangle( _bounds );
 		
 		_shape_with_style.read( reader, this );
+		
+// todo: DEFINESHAPE4!		
 		
 //		this->print();
 		return true;
