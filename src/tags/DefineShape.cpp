@@ -650,10 +650,7 @@ namespace MonkSWF {
 //					
 //					path = new Path();
 					
-					if( flags & SF_MOVETO ) {
-						uint8_t nbits = reader->getbits( 5 );
-						startxy[0] = reader->getsignedbits( nbits ) / 20.0f;
-						startxy[1] = reader->getsignedbits( nbits ) / 20.0f;
+					if ( (flags & SF_MOVETO) || (flags & SF_FILL0) || (flags & SF_FILL1) ) {
 						if ( path ) {
 							path->_line = line_idx;
 							path->_fill0 = fill_idx0;
@@ -661,6 +658,12 @@ namespace MonkSWF {
 							path_array.push_back( path );
 						}
 						path = new Path();
+					}
+					
+					if( flags & SF_MOVETO ) {
+						uint8_t nbits = reader->getbits( 5 );
+						startxy[0] = reader->getsignedbits( nbits ) / 20.0f;
+						startxy[1] = reader->getsignedbits( nbits ) / 20.0f;
 //??						move_to = true;
 					} 
 					

@@ -33,6 +33,7 @@
 		FAD7321E122B583E00B99B94 /* whitebird1.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD7321D122B583E00B99B94 /* whitebird1.swf */; };
 		FAD73240122B5B0C00B99B94 /* cupid.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD7323F122B5B0C00B99B94 /* cupid.swf */; };
 		FAD73250122B5CF000B99B94 /* clown.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAD7324F122B5CF000B99B94 /* clown.swf */; };
+		FAF30AD7123BEFDB0072E30C /* beer.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAF30AD6123BEFDB0072E30C /* beer.swf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		FAD7321D122B583E00B99B94 /* whitebird1.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = whitebird1.swf; path = ../whitebird1.swf; sourceTree = SOURCE_ROOT; };
 		FAD7323F122B5B0C00B99B94 /* cupid.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = cupid.swf; path = ../cupid.swf; sourceTree = SOURCE_ROOT; };
 		FAD7324F122B5CF000B99B94 /* clown.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = clown.swf; path = ../clown.swf; sourceTree = SOURCE_ROOT; };
+		FAF30AD6123BEFDB0072E30C /* beer.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = beer.swf; path = ../beer.swf; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAF30AD6123BEFDB0072E30C /* beer.swf */,
 				FA25C8FA123733C800E46025 /* intersect.swf */,
 				FA25C8A51236E50500E46025 /* stuff.swf */,
 				FAB041CF12359B8100573D04 /* island_plateau10.swf */,
@@ -265,7 +268,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MonkSWF-Test-GLES-iOS" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectReferences = (
@@ -327,6 +337,7 @@
 				FAB041D012359B8100573D04 /* island_plateau10.swf in Resources */,
 				FA25C8A61236E50500E46025 /* stuff.swf in Resources */,
 				FA25C8FB123733C800E46025 /* intersect.swf in Resources */,
+				FAF30AD7123BEFDB0072E30C /* beer.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +389,7 @@
 				);
 				INFOPLIST_FILE = "MonkSWF_Test_GLES_iOS-Info.plist";
 				PRODUCT_NAME = "MonkSWF-Test-GLES-iOS";
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -391,6 +403,7 @@
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "MonkSWF_Test_GLES_iOS-Info.plist";
 				PRODUCT_NAME = "MonkSWF-Test-GLES-iOS";
+				SDKROOT = iphoneos4.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -29,7 +29,7 @@ using namespace MonkSWF;
     [super viewDidLoad];
 	
 	NSBundle      *mainBundle = [NSBundle mainBundle];
-	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"intersect.swf"];
+	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"beer.swf"];
 	NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 	if (fromFile) {
 		NSData *data = [fromFile readDataToEndOfFile];
@@ -88,8 +88,8 @@ using namespace MonkSWF;
 - (void)drawView:(id)sender {
 	vgSeti(VG_MATRIX_MODE, VG_MATRIX_PATH_USER_TO_SURFACE);
 	vgLoadIdentity();
-//	vgTranslate(320/2,480/2);
-	vgScale(0.5, 0.5);
+	vgTranslate(320/2,480/2);
+	vgScale(1.0, 1.0);
 	
 //	_swf->drawFrame( _frame++ );
 //	if ( _frame >= _swf->numFrames() ) {
