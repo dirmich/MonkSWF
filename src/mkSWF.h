@@ -80,7 +80,14 @@ namespace MonkSWF {
 		
 		IDefineSpriteTag* getSprite( uint16_t i ) {
 			SpriteDictionary::iterator it = _sprite_dictionary.find( i );
+			if (it == _sprite_dictionary.end() ) {
+				return 0;
+			}
 			return it->second;
+		}
+		
+		void addSprite( IDefineSpriteTag* sprite, uint16_t cid ) {
+			_sprite_dictionary[cid] = sprite;
 		}
 		
 		int32_t numFrames() const {

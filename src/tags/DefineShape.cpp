@@ -559,12 +559,14 @@ namespace MonkSWF {
 		_paint = vgCreatePaint();
 		
 		_type = reader->get<uint8_t>();
+		assert( _type == 0 && "unsupported fill style" );
 		
 		// todo set vg paint mode...
 		
 		_color[0] = (reader->get<uint8_t>()/255.0f);
 		_color[1] = (reader->get<uint8_t>()/255.0f);
 		_color[2] = (reader->get<uint8_t>()/255.0f);
+		
 		if( support_32bit_color )
 			_color[3] = (reader->get<uint8_t>()/255.0f);
 		else
@@ -572,10 +574,12 @@ namespace MonkSWF {
 		
 		vgSetParameterfv( _paint, VG_PAINT_COLOR, 4, &_color[0] );
 
+		cout << "\t\tFill Style: " << int(_color[0] * 255) << ", " << int(_color[1] * 255) << ", " << int(_color[2] * 255) << ", " << int(_color[3] * 255) << endl;
 		
 		if( _type == GRADIENT_LINEAR || _type == GRADIENT_RADIAL ) {
 			reader->getMatrix( _gradient_matrix );
 			_gradient.read( reader );
+			assert(0);
 		}
 		
 		return true;
@@ -611,7 +615,7 @@ namespace MonkSWF {
 			_line_styles.push_back( line );
 		}
 		
-		uint8_t num_fill_bits = reader->getbits( 4 ) ;
+		uint8_t num_fill_bits = reader->getbits( 4 );
 		uint8_t num_line_bits = reader->getbits( 4 );
 
 #define SF_MOVETO       0x01
@@ -664,6 +668,7 @@ namespace MonkSWF {
 						uint8_t nbits = reader->getbits( 5 );
 						startxy[0] = reader->getsignedbits( nbits ) / 20.0f;
 						startxy[1] = reader->getsignedbits( nbits ) / 20.0f;
+						cout << "\tMoveTo: " << int(startxy[0] * 20) << ", " << int(startxy[1] * 20) << endl;
 //??						move_to = true;
 					} 
 					
@@ -696,17 +701,20 @@ namespace MonkSWF {
 							_fill_styles.push_back( fill );
 						}
 						
-//						num_line_styles = reader->get<uint8_t>();
-//						if ( num_line_styles == 0xff )
-//							num_line_styles = reader->get<uint16_t>();
-//						cout << "\tnum line styles: " << int(num_line_styles) << endl;
-//						
-//						for ( int i = 0; i < num_line_styles; i++ ) {
-//							LineStyle line;
-//							line.read( reader, support_32bit_color );
-//							_line_styles.push_back( line );
-//							
-//						}
+						num_line_styles = reader->get<uint8_t>();
+						if ( num_line_styles == 0xff )
+							num_line_styles = reader->get<uint16_t>();
+						cout << "\tnum line styles: " << int(num_line_styles) << endl;
+						
+						for ( int i = 0; i < num_line_styles; i++ ) {
+							LineStyle line;
+							line.read( reader, support_32bit_color );
+							_line_styles.push_back( line );
+							
+						}
+						
+						num_fill_bits = reader->getbits( 4 );
+						num_line_bits = reader->getbits( 4 );
 						
 					}
 					

@@ -29,10 +29,18 @@ namespace MonkSWF {
 			if( tag_factory ) {
 				tag = tag_factory( tag_header );
 				int32_t end_pos = reader->getCurrentPos() + tag->length();
+				
+				if ( tag_header->code() == DEFINESPRITE ) {
+					IDefineSpriteTag* sprite = (IDefineSpriteTag*)tag;
+					sprite->setSWF( _swf );
+					_swf->addSprite( sprite, sprite->code());
+				}
+				
 				tag->read( reader );
 				int32_t dif = (end_pos - reader->getCurrentPos()) - 1;
 				if( dif > 0 )
 					reader->skip( dif );
+				
 				
 				
 				if( tag_header->code() == SHOWFRAME ) {	// ShowFrame

@@ -59,16 +59,20 @@ namespace MonkSWF {
 					_shape_dictionary.push_back( (IDefineShapeTag*)tag );
 				}
 				
-				if ( tag_header->code() == DEFINESPRITE ) {
+				if ( tag_header->code() == DEFINESPRITE ) {		// tell the sprite about the SWF...
 					IDefineSpriteTag* sprite = (IDefineSpriteTag*)tag;
 					sprite->setSWF(this);
-					_sprite_dictionary[sprite->code()] = sprite;
 				}
 				
 				tag->read( reader );
 				int32_t dif = (end_pos - reader->getCurrentPos()) - 1;
 				if( dif > 0 )
 					reader->skip( dif );
+
+				if ( tag_header->code() == DEFINESPRITE ) {
+					IDefineSpriteTag* sprite = (IDefineSpriteTag*)tag;
+					addSprite( sprite, sprite->spriteId() );
+				}
 				
 				
 				if( tag_header->code() == PLACEOBJECT2 ) {	//PlaceObject2

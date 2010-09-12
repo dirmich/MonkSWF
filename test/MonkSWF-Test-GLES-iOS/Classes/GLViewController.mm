@@ -29,7 +29,7 @@ using namespace MonkSWF;
     [super viewDidLoad];
 	
 	NSBundle      *mainBundle = [NSBundle mainBundle];
-	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"beer.swf"];
+	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"puppy.swf"];
 	NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 	if (fromFile) {
 		NSData *data = [fromFile readDataToEndOfFile];
@@ -89,21 +89,21 @@ using namespace MonkSWF;
 	vgSeti(VG_MATRIX_MODE, VG_MATRIX_PATH_USER_TO_SURFACE);
 	vgLoadIdentity();
 	vgTranslate(320/2,480/2);
-	vgScale(1.0, 1.0);
+	vgScale(0.8, 0.8);
 	
-//	_swf->drawFrame( _frame++ );
-//	if ( _frame >= _swf->numFrames() ) {
-//		_frame = 0;
-//	}
-	if ( _sprite ) {
-		_sprite->draw( _frame++ );
-		if ( _frame >= _sprite->frameCount() ) {
-			_frame = 0;
-		}
-		
-	} else if ( _shape ) {
-		_shape->draw();
+	_swf->drawFrame( _frame++ );
+	if ( _frame >= _swf->numFrames() ) {
+		_frame = 0;
 	}
+//	if ( _sprite ) {
+//		_sprite->draw( _frame++ );
+//		if ( _frame >= _sprite->frameCount() ) {
+//			_frame = 0;
+//		}
+//		
+//	} else if ( _shape ) {
+//		_shape->draw();
+//	}
 	
 }
 
