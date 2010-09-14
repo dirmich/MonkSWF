@@ -37,8 +37,9 @@ namespace MonkSWF {
 				}
 				
 				tag->read( reader );
-				int32_t dif = (end_pos - reader->getCurrentPos()) - 1;
-				if( dif > 0 )
+				reader->align();
+				int32_t dif = end_pos - reader->getCurrentPos();
+				if( dif != 0 )
 					reader->skip( dif );
 				
 				

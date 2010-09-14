@@ -65,9 +65,14 @@ namespace MonkSWF {
 				}
 				
 				tag->read( reader );
-				int32_t dif = (end_pos - reader->getCurrentPos()) - 1;
-				if( dif > 0 )
+				reader->align();
+				int32_t dif = end_pos - reader->getCurrentPos();
+				if( dif != 0 ) {
+					cout << "WARNING: tag not read correctly. trying to skip. " << dif << endl;
+					cout << "\t\t"; tag->print();
 					reader->skip( dif );
+				}
+					
 
 				if ( tag_header->code() == DEFINESPRITE ) {
 					IDefineSpriteTag* sprite = (IDefineSpriteTag*)tag;

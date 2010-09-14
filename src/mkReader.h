@@ -37,6 +37,13 @@ namespace MonkSWF {
 		
 		inline void skip( int32_t bytes ) {
 			_cur += bytes;
+			_bitpos = 0;
+		}
+		
+		inline void align() {
+			if( _bitpos > 0 && _bitpos < 8)
+				_cur++;
+			_bitpos = 0;
 		}
 		
 		inline uint32_t getbit() {

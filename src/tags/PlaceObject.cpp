@@ -27,7 +27,7 @@ namespace MonkSWF {
 		_has_character = reader->getbits( 1 );
 		_do_move = reader->getbits( 1 );
 		
-		if( has_clip_actions || has_clip_depth || has_ratio )
+		if( has_clip_actions || has_clip_depth )
 			assert( 0 );
 			
 		_depth = reader->get<uint16_t>();

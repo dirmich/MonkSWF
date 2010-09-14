@@ -46,10 +46,16 @@ namespace MonkSWF {
 		,	_paint(0)
 		{}
 		
+		
 		bool read( Reader* reader, bool support_32bit_color );
 		
 		inline VGPaint getPaint() {
 			return _paint;
+		}
+		
+		void print() {
+			cout << "FillStyle: " << int(_type) << endl;
+			cout << "\tColor: " << int(_color[0] * 255) << ", " << int(_color[1] * 255) << ", " << int(_color[2] * 255) << ", " << int(_color[3] * 255) << endl;
 		}
 	
 	private:
@@ -81,6 +87,12 @@ namespace MonkSWF {
 			return _width;
 		}
 		
+		void print() {
+			cout << "LineStyle: " << endl;
+			cout << "\tWidth: " << _width << endl;
+			cout << "\tColor: " << int(_color[0] * 255) << ", " << int(_color[1] * 255) << ", " << int(_color[2] * 255) << ", " << int(_color[3] * 255) << endl;
+		}
+		
 	private:
 		VGfloat		_width;
 		VGfloat		_color[4];
@@ -88,12 +100,10 @@ namespace MonkSWF {
 	};
 
 	struct OpenVGPath {
-		OpenVGPath() : _fill_style( 0 ), _line_style( 0 )  {
-		}
 		
 		VGPath			_vgpath;
-		FillStyle*		_fill_style;
-		LineStyle*		_line_style;
+		FillStyle		_fill_style;
+		LineStyle		_line_style;
 	};
 	
 	class DefineShapeTag;
@@ -102,24 +112,17 @@ namespace MonkSWF {
 		bool read( Reader* reader, DefineShapeTag* define_shape_tag );
 		void draw();
 		
-		void addVGPath( VGPath vgpath, int fill_idx, int line_idx ) {
+		void addVGPath( VGPath vgpath, const FillStyle& fill, const LineStyle& line ) {
 			OpenVGPath path;
 			path._vgpath = vgpath;
-			if( fill_idx != -1 )
-				path._fill_style = &_fill_styles[fill_idx];
-			if( line_idx != -1 )
-				path._line_style = &_line_styles[line_idx];
+			path._fill_style = fill;
+			path._line_style = line;
 				
 			_paths.push_back( path );
 				
 		}
 		
 	private:
-		typedef std::vector<FillStyle> FillStyleArray;
-		typedef std::vector<LineStyle> LineStyleArray;
-		
-		FillStyleArray	_fill_styles;
-		LineStyleArray	_line_styles;
 		
 		
 		typedef std::list<OpenVGPath> OpenVGPathArray;
