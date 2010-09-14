@@ -100,10 +100,12 @@ namespace MonkSWF {
 	};
 
 	struct OpenVGPath {
+		OpenVGPath() : _fill_style( 0 ), _line_style( 0 )  {
+		}
 		
 		VGPath			_vgpath;
-		FillStyle		_fill_style;
-		LineStyle		_line_style;
+		FillStyle*		_fill_style;
+		LineStyle*		_line_style;
 	};
 	
 	class DefineShapeTag;
@@ -112,14 +114,16 @@ namespace MonkSWF {
 		bool read( Reader* reader, DefineShapeTag* define_shape_tag );
 		void draw();
 		
-		void addVGPath( VGPath vgpath, const FillStyle& fill, const LineStyle& line ) {
+		void addVGPath( VGPath vgpath, int fill_idx, int line_idx ) {
 			OpenVGPath path;
 			path._vgpath = vgpath;
-			path._fill_style = fill;
-			path._line_style = line;
-				
+			if( fill_idx != -1 )
+				path._fill_style = &_fill_styles[fill_idx];
+			if( line_idx != -1 )
+				path._line_style = &_line_styles[line_idx];
+			
 			_paths.push_back( path );
-				
+			
 		}
 		
 	private:
@@ -127,7 +131,11 @@ namespace MonkSWF {
 		
 		typedef std::list<OpenVGPath> OpenVGPathArray;
 		typedef OpenVGPathArray::iterator OpenVGPathArrayIter;
+		typedef std::vector<FillStyle> FillStyleArray;
+		typedef std::vector<LineStyle> LineStyleArray;
 
+		FillStyleArray	_fill_styles;
+		LineStyleArray	_line_styles;		
 		OpenVGPathArray		_paths;
 		DefineShapeTag*		_define_shape_tag;
 	};
