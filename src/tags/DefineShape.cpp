@@ -626,6 +626,8 @@ namespace MonkSWF {
 		
 		uint8_t end = 0;
 		VGfloat startxy[2] = { 0.0f, 0.0f };
+		int	base_fill_idx = 0;
+		int base_line_idx = 0;
 		int fill_idx0 = -1;
 		int fill_idx1 = -1;
 		int line_idx = -1;
@@ -656,9 +658,9 @@ namespace MonkSWF {
 					
 					if ( (flags & SF_MOVETO) || (flags & SF_FILL0) || (flags & SF_FILL1) ) {
 						if ( path ) {
-							path->_line = line_idx;
-							path->_fill0 = fill_idx0;
-							path->_fill1 = fill_idx1;
+							path->_line = base_line_idx + line_idx;
+							path->_fill0 = base_fill_idx + fill_idx0;
+							path->_fill1 = base_fill_idx + fill_idx1;
 							path_array.push_back( path );
 						}
 						path = new Path();
@@ -693,6 +695,9 @@ namespace MonkSWF {
 						if( num_fill_styles == 0xff )
 							num_fill_styles = reader->get<uint16_t>();
 						cout << "\tnum fill styles: " << int(num_fill_styles) << endl;
+						if ( num_fill_styles ) {
+							base_fill_idx += _fill_styles.size() - 1;
+						}
 						
 						
 						for ( int i = 0; i < num_fill_styles; i++ ) {
@@ -705,6 +710,9 @@ namespace MonkSWF {
 						if ( num_line_styles == 0xff )
 							num_line_styles = reader->get<uint16_t>();
 						cout << "\tnum line styles: " << int(num_line_styles) << endl;
+						if ( num_line_styles ) {
+							base_line_idx += _line_styles.size() - 1;
+						}
 						
 						for ( int i = 0; i < num_line_styles; i++ ) {
 							LineStyle line;
@@ -721,9 +729,9 @@ namespace MonkSWF {
 				} else { // end record
 					end = 1;
 					if( path != 0 ) {
-						path->_line = line_idx;
-						path->_fill0 = fill_idx0;
-						path->_fill1 = fill_idx1;
+						path->_line = base_line_idx + line_idx;
+						path->_fill0 = base_fill_idx + fill_idx0;
+						path->_fill1 = base_fill_idx + fill_idx1;
 						path_array.push_back( path );
 						//						path->print();
 					}

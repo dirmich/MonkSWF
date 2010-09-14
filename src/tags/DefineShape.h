@@ -15,6 +15,7 @@
 #include <VG/vgu.h>
 #include <vector>
 #include <list>
+#include <map>
 using namespace std;
 
 namespace MonkSWF {
@@ -56,6 +57,15 @@ namespace MonkSWF {
 		void print() {
 			cout << "FillStyle: " << int(_type) << endl;
 			cout << "\tColor: " << int(_color[0] * 255) << ", " << int(_color[1] * 255) << ", " << int(_color[2] * 255) << ", " << int(_color[3] * 255) << endl;
+		}
+		
+		uint64_t hash() {
+			uint64_t hash = (_type << 32) | (uint8_t(_color[0] * 255) << 24)
+				| (uint8_t(_color[1] * 255) << 16)
+				| (uint8_t(_color[2] * 255) << 8)
+				| (uint8_t(_color[3] * 255) << 0);
+			
+			return hash;
 		}
 	
 	private:
@@ -133,9 +143,11 @@ namespace MonkSWF {
 		typedef OpenVGPathArray::iterator OpenVGPathArrayIter;
 		typedef std::vector<FillStyle> FillStyleArray;
 		typedef std::vector<LineStyle> LineStyleArray;
+		typedef std::map<uint64_t, FillStyle>	FillStyleMap;
 
-		FillStyleArray	_fill_styles;
-		LineStyleArray	_line_styles;		
+		FillStyleMap		_fill_style_map;
+		FillStyleArray		_fill_styles;
+		LineStyleArray		_line_styles;		
 		OpenVGPathArray		_paths;
 		DefineShapeTag*		_define_shape_tag;
 	};

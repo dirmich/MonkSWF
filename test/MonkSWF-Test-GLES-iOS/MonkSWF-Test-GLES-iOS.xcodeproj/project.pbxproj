@@ -23,6 +23,7 @@
 		FA68BEA3123EC29800BF08FF /* test.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68BEA2123EC29800BF08FF /* test.swf */; };
 		FA68BEB4123EE1A900BF08FF /* squares.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68BEB3123EE1A900BF08FF /* squares.swf */; };
 		FA68BFD5123F060E00BF08FF /* intersect3.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68BFD4123F060E00BF08FF /* intersect3.swf */; };
+		FA68C0E8123FFEC000BF08FF /* tatoo.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68C0E7123FFEC000BF08FF /* tatoo.swf */; };
 		FAB041D012359B8100573D04 /* island_plateau10.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAB041CF12359B8100573D04 /* island_plateau10.swf */; };
 		FAD72FCD1229EE8900B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD72FC51229EE5100B99B94 /* libMonkVG_iOS_OpenGL.a */; };
 		FAD730001229F1AB00B99B94 /* GLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD72FFE1229F1AB00B99B94 /* GLViewController.mm */; };
@@ -101,6 +102,7 @@
 		FA68BEA2123EC29800BF08FF /* test.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.swf; path = ../test.swf; sourceTree = SOURCE_ROOT; };
 		FA68BEB3123EE1A900BF08FF /* squares.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = squares.swf; path = ../squares.swf; sourceTree = SOURCE_ROOT; };
 		FA68BFD4123F060E00BF08FF /* intersect3.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = intersect3.swf; path = ../intersect3.swf; sourceTree = SOURCE_ROOT; };
+		FA68C0E7123FFEC000BF08FF /* tatoo.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = tatoo.swf; path = ../tatoo.swf; sourceTree = SOURCE_ROOT; };
 		FAB041CF12359B8100573D04 /* island_plateau10.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = island_plateau10.swf; sourceTree = "<group>"; };
 		FAD72FBA1229EE5100B99B94 /* MonkVG-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-iOS.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-iOS/MonkVG-iOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		FAD72FFD1229F1AB00B99B94 /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA68C0E7123FFEC000BF08FF /* tatoo.swf */,
 				FA68BFD4123F060E00BF08FF /* intersect3.swf */,
 				FA68BEB3123EE1A900BF08FF /* squares.swf */,
 				FA68BEA2123EC29800BF08FF /* test.swf */,
@@ -346,6 +349,7 @@
 				FA68BEA3123EC29800BF08FF /* test.swf in Resources */,
 				FA68BEB4123EE1A900BF08FF /* squares.swf in Resources */,
 				FA68BFD5123F060E00BF08FF /* intersect3.swf in Resources */,
+				FA68C0E8123FFEC000BF08FF /* tatoo.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
