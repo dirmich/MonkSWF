@@ -220,7 +220,8 @@ namespace MonkSWF {
 	class Path {
 	public:
 		Path()
-			:	_fill_idx( -1 )
+			:	_fill_idx0( -1 )
+			,	_fill_idx1( -1 )
 			,	_line_idx( -1 )
 			,	_is_reversed( false )
 		{
@@ -265,17 +266,28 @@ namespace MonkSWF {
 			_is_reversed = reversed;
 		}
 		
-		int32_t fillIdx() {
-			return _fill_idx;
+		int32_t fillIdx0() {
+			return _fill_idx0;
 		}
-		void setFillIdx( int32_t i ) {
-			_fill_idx = i;
+		void setFillIdx0( int32_t i ) {
+			_fill_idx0 = i;
 		}
+		int32_t fillIdx1() {
+			return _fill_idx1;
+		}
+		void setFillIdx1( int32_t i ) {
+			_fill_idx1 = i;
+		}
+		
 		int32_t lineIdx() {
 			return _line_idx;
 		}
 		void setLineIdx( int32_t i ) {
 			_line_idx = i;
+		}
+		
+		EdgeArray& edges() {
+			return _edges;
 		}
 		
 		
@@ -286,7 +298,8 @@ namespace MonkSWF {
 			
 			_fill = p->_fill;
 			_line = p->_line;
-			_fill_idx = p->_fill_idx;
+			_fill_idx0 = p->_fill_idx0;
+			_fill_idx1 = p->_fill_idx1;			
 			_line_idx = p->_line_idx;
 		}
 		
@@ -381,7 +394,8 @@ namespace MonkSWF {
 		
 		void print() {
 			cout << "Path: " << endl;
-			cout << "FillIdx: " << _fill_idx << endl;
+			cout << "FillIdx0: " << _fill_idx0 << endl;
+			cout << "FillIdx1: " << _fill_idx1 << endl;
 			cout << "LineIdx: " << _line_idx << endl;
 			cout << "Closed: " << isClosed() << endl;
 			cout << "Reversed: " << isReversed() << endl;
@@ -400,7 +414,8 @@ namespace MonkSWF {
 		
 		FillStyle	_fill;
 		LineStyle	_line;
-		int32_t		_fill_idx;
+		int32_t		_fill_idx0;
+		int32_t		_fill_idx1;
 		int32_t		_line_idx;
 		bool _is_reversed;
 		
@@ -419,11 +434,7 @@ namespace MonkSWF {
 		for (PathArrayConstIter it = path_vec.begin(), end = path_vec.end(); it != end; ++it) {
 			Path* cur_path = *it;
 			
-			if ( cur_path->isReversed() ) {
-				cur_path->reverse();
-			}
-			
-			if ( cur_path->fillIdx() == style ) {
+			if ( cur_path->fillIdx0() == style || cur_path->fillIdx1() == style ) {
 				
 				paths.push_back( cur_path );
 			}
@@ -433,52 +444,50 @@ namespace MonkSWF {
 	}
 		
 	
-//	PathArray normalize_paths(const PathArray &paths)
-//	{
-//		PathArray normalized;
-//		
-//		for ( PathArrayConstIter it = paths.begin(), end = paths.end();it != end; ++it) {
-//		
-//			Path* cur_path = *it;
-//			
-//			if (cur_path->_edges.empty()) {
-//				continue;
-//				
-//			} else if (cur_path->_fill0 != -1 && cur_path->_fill1 != -1 ) {     
-//				
-//				// Two fill styles; duplicate and then reverse the left-filled one.
-////				normalized.push_back(cur_path);
-//				
-//				Path* new_path = new Path( cur_path );
-//				new_path->reverse();
-//				new_path->_fill1 = new_path->_fill0;
-//				new_path->_fill0 = -1;        
-//				cur_path->_fill0 = -1; 
-//				normalized.push_back(cur_path);
-//				normalized.push_back(new_path);       
-//				
-//				
-//			} else if ( cur_path->_fill0 != -1 ) {
-//				// Left fill style.
-//				//Path *newpath = reverse_path(cur_path);
-//				cur_path->reverse();
-//				cur_path->_fill1 = cur_path->_fill0;
-//				cur_path->_fill0 = -1;
-//				
-//				normalized.push_back(cur_path);
-//			} else if ( cur_path->_fill1 != -1 ) {
-//				// Right fill style.
-//				
-//				normalized.push_back(cur_path);
-//			} else {
-//				// No fill styles; copy without modifying.
-//				normalized.push_back(cur_path);
-//			}
-//			
-//		}
-//		
-//		return normalized;
-//	}
+	PathArray normalize_paths(const PathArray &paths)
+	{
+		PathArray normalized;
+		
+		for ( PathArrayConstIter it = paths.begin(), end = paths.end();it != end; ++it) {
+		
+			Path* cur_path = *it;
+			
+			if (cur_path->edges().empty()) {
+				continue;
+				
+			} else if (cur_path->fillIdx0() != -1 && cur_path->fillIdx1() != -1 ) {     
+				
+				// Two fill styles; duplicate and then reverse the left-filled one.
+				Path* new_path = new Path( cur_path );
+				new_path->reverse();
+				new_path->setFillIdx1( new_path->fillIdx0() );
+				new_path->setFillIdx0( -1 );
+				cur_path->setFillIdx1( -1 );
+				normalized.push_back(cur_path);
+				normalized.push_back(new_path);       
+				
+				
+			} else if ( cur_path->fillIdx0() != -1 ) {
+				// Left fill style.
+				//Path *newpath = reverse_path(cur_path);
+				cur_path->reverse();
+				cur_path->setFillIdx1( cur_path->fillIdx0() );
+				cur_path->setFillIdx0( -1 );
+				
+				normalized.push_back(cur_path);
+			} else if ( cur_path->fillIdx1() != -1 ) {
+				// Right fill style.
+				
+				normalized.push_back(cur_path);
+			} else {
+				// No fill styles; copy without modifying.
+				normalized.push_back(cur_path);
+			}
+			
+		}
+		
+		return normalized;
+	}
 	
 	template <class T>
 	T next(T x) { return ++x; }
@@ -657,8 +666,7 @@ namespace MonkSWF {
 		int fill_idx0 = -1;
 		int fill_idx1 = -1;
 		int line_idx = -1;
-		Path* path0 = 0;
-		Path* path1 = 0;
+		Path* path = 0;
 		
 		PathArray path_array;
 		
@@ -673,130 +681,77 @@ namespace MonkSWF {
 			
 				if( flags ) {
 					
-//					if ( (flags & SF_MOVETO) || (flags & SF_FILL0) || (flags & SF_FILL1) ) {
-//						
-//						if ( path0 ) {
-//							path_array.push_back( path0 );
-//							path0 = 0;
-//						}
-//						if ( path1 ) {
-//							path_array.push_back( path1 );
-//							path1 = 0;
-//						}
-//						
-//						
-//					}
+					if ( (flags & SF_MOVETO) || (flags & SF_FILL0) || (flags & SF_FILL1) ) {
+						
+						if ( path ) {
+							path->setLineIdx( line_idx );
+							path->setFillIdx0( fill_idx0 );
+							path->setFillIdx1( fill_idx1 );
+							path_array.push_back( path );
+						}
+						
+						path = new Path();
+					}
 					
 					if( flags & SF_MOVETO ) {
 						uint8_t nbits = reader->getbits( 5 );
 						startxy[0] = reader->getsignedbits( nbits ) / 20.0f;
 						startxy[1] = reader->getsignedbits( nbits ) / 20.0f;
 						//cout << "\tMoveTo: " << int(startxy[0] * 20) << ", " << int(startxy[1] * 20) << endl;
-						
-						if ( path0 ) {
-							path_array.push_back( path0 );
-							if ( !(flags & SF_FILL0) && !(flags & SF_FILL1) ) {
-								path0 = new Path();
-								path0->setFill( fill_styles[fill_idx0] );
-								path0->setFillIdx( fill_idx0 );
-								path0->setReversed( true );
-								
-							}
-						}
-						if ( path1 ) {
-							path_array.push_back( path1 );
-							if ( !(flags & SF_FILL1) && !(flags & SF_FILL0)) {
-								path1 = new Path();
-								path1->setFill( fill_styles[fill_idx1] );
-								path1->setFillIdx( fill_idx1 );
-								path1->setReversed( false );
-							}
-						}
-						
-						
 					} 
 					
 					if( flags & SF_FILL0 ) { 
 						fill_idx0 = reader->getbits( num_fill_bits ) - 1;
-						if ( fill_idx0 != -1 ) {
-							if ( path0 )
-								path_array.push_back( path0 );
-							path0 = new Path();
-							path0->setFill( fill_styles[fill_idx0] );
-							path0->setFillIdx( fill_idx0 );
-							path0->setReversed( true );
-						}
-						
-						if ( !(flags & SF_FILL1) ) {
-							if ( path1 )
-								path_array.push_back( path1 );
-							path1 = 0;
-						}
-																				  
 					} 
 
 					if( flags & SF_FILL1 ) {
 						fill_idx1 = reader->getbits( num_fill_bits ) - 1;
-						if ( fill_idx1 != -1 ) {
-							if ( path1 )
-								path_array.push_back( path1 );
-							path1 = new Path();
-							path1->setFill( fill_styles[fill_idx1] );
-							path1->setFillIdx( fill_idx1 );
-							path1->setReversed( false );
-						}
-						
-						if ( !(flags & SF_FILL0) ) {
-							if ( path0 )
-								path_array.push_back( path0 );
-							path0 = 0;
-						}
-						
 					} 
 
 					
 					if( flags & SF_LINE) { 
 						line_idx = reader->getbits( num_line_bits ) - 1;
-						if ( path0 ) {
-							path0->setLine( line_styles[ line_idx ] );
-							path0->setLineIdx( line_idx );
-						}
-						if ( path1 ) {
-							path1->setLine( line_styles[ line_idx ] );
-							path1->setLineIdx( line_idx );
-						}
 					} 
 					
 
 					if( flags & SF_NEWSTYLE ) { 
 						
-						// find the path contours...
-						for (size_t i = 0; i < fill_styles.size(); ++i) {
-							PathArray paths = get_paths_by_style( path_array, i );
-							
-							if (!paths.size()) {
-								continue;
-							}
-							
-							PathArray contours = get_contours2( paths );
-							int k = 0;
-							for ( PathArrayIter contour_iter = contours.begin(); contour_iter != contours.end(); contour_iter++, k++) {
-								Path* path = *contour_iter;
-								path->print();
-								if ( !path->isClosed() ) {
-									cout << "path not closed" << endl;
-								}
-								
-								path->addToShapeWithStyle( this );
-							}
-						}	
-						
-						// TODO: path line styles need to be done as welll
-						
-						// reset the style array
-						fill_styles.clear();
-						line_styles.clear();
-						path_array.clear();
+//						PathArray normalized_array = normalize_paths( path_array );
+//						
+//						// find the path contours...
+//						for (size_t i = 0; i < fill_styles.size(); ++i) {
+//							PathArray paths_by_style = get_paths_by_style( normalized_array, i );
+//							FillStyle &fill = fill_styles[i];
+//							
+//							if (!paths_by_style.size()) {
+//								continue;
+//							}
+//							
+//							PathArray contours = get_contours2( paths_by_style );
+//							int k = 0;
+//							for ( PathArrayIter contour_iter = contours.begin(); contour_iter != contours.end(); contour_iter++, k++) {
+//								Path* contour = *contour_iter;
+//								contour->setFill( fill );
+//								if ( contour->lineIdx() != -1 ) {
+//									contour->setLine( line_styles[ contour->lineIdx() ] );
+//								}
+//								
+//								contour->print();
+//								contour->addToShapeWithStyle( this );
+//								
+//								if ( !contour->isClosed() ) {
+//									cout << "path not closed" << endl;
+//								}
+//							}
+//						}	
+//						
+//						
+//						// TODO: path line styles need to be done as welll
+//						
+//						// reset the style array
+//						fill_styles.clear();
+//						line_styles.clear();
+//						path_array.clear();
 						
 						//todo: fix up the lines...
 						
@@ -837,43 +792,48 @@ namespace MonkSWF {
 					
 				} else { // end record
 					end = 1;
-					if ( path0 ) {
-						path_array.push_back( path0 );
-						path0 = 0;
-					}
-					if ( path1 ) {
-						path_array.push_back( path1 );
-						path1 = 0;
+					if ( path ) {
+						path->setLineIdx( line_idx );
+						path->setFillIdx0( fill_idx0 );
+						path->setFillIdx1( fill_idx1 );
+						path_array.push_back( path );
 					}
 					
-					// find the path contours...
-					for (size_t i = 0; i < fill_styles.size(); ++i) {
-						PathArray paths = get_paths_by_style( path_array, i );
-						
-						if (!paths.size()) {
-							continue;
-						}
-						
-						PathArray contours = get_contours2( paths );
-						int k = 0;
-						for ( PathArrayIter contour_iter = contours.begin(); contour_iter != contours.end(); contour_iter++, k++) {
-							Path* path = *contour_iter;
-							path->print();
-							path->addToShapeWithStyle( this );
-							
-							if ( !path->isClosed() ) {
-								cout << "path not closed" << endl;
-							}
-							
-						}
-					}	
-					
-					// TODO: path line styles need to be done as welll
-					
-					// reset the style array
-					fill_styles.clear();
-					line_styles.clear();
-					path_array.clear();
+//					PathArray normalized_array = normalize_paths( path_array );
+//					
+//					// find the path contours...
+//					for (size_t i = 0; i < fill_styles.size(); ++i) {
+//						PathArray paths_by_style = get_paths_by_style( normalized_array, i );
+//						FillStyle &fill = fill_styles[i];
+//						
+//						if (!paths_by_style.size()) {
+//							continue;
+//						}
+//						
+//						PathArray contours = get_contours2( paths_by_style );
+//						int k = 0;
+//						for ( PathArrayIter contour_iter = contours.begin(); contour_iter != contours.end(); contour_iter++, k++) {
+//							Path* contour = *contour_iter;
+//							contour->setFill( fill );
+//							if ( contour->lineIdx() != -1 ) {
+//								contour->setLine( line_styles[ contour->lineIdx() ] );
+//							}
+//							
+//							contour->print();
+//							contour->addToShapeWithStyle( this );
+//							
+//							if ( !contour->isClosed() ) {
+//								cout << "path not closed" << endl;
+//							}
+//						}
+//					}	
+//					
+//					// TODO: path line styles need to be done as welll
+//					
+//					// reset the style array
+//					fill_styles.clear();
+//					line_styles.clear();
+//					path_array.clear();
 					
 				}	// if( flags )
 				
@@ -893,12 +853,7 @@ namespace MonkSWF {
 						dxy[1] = startxy[1] + (reader->getsignedbits( nbits ) / 20.0f);
 						
 						IEdge* edge = new StraightEdge( startxy, dxy );
-						if ( path0 ) {
-							path0->addEdge( edge );
-						}
-						if ( path1 ) {
-							path1->addEdge( edge );
-						}
+						path->addEdge( edge );
 
 						startxy[0] = dxy[0];
 						startxy[1] = dxy[1];
@@ -914,12 +869,7 @@ namespace MonkSWF {
 							dxy[1] = startxy[1] + (reader->getsignedbits( nbits ) / 20.0f);
 							
 							IEdge* edge = new StraightEdge( startxy, dxy );
-							if ( path0 ) {
-								path0->addEdge( edge );
-							}
-							if ( path1 ) {
-								path1->addEdge( edge );
-							}
+							path->addEdge( edge );
 							
 							startxy[0] = dxy[0];
 							startxy[1] = dxy[1];
@@ -929,12 +879,7 @@ namespace MonkSWF {
 							dxy[1] = startxy[1];
 							
 							IEdge* edge = new StraightEdge( startxy, dxy );
-							if ( path0 ) {
-								path0->addEdge( edge );
-							}
-							if ( path1 ) {
-								path1->addEdge( edge );
-							}
+							path->addEdge( edge );							
 							
 							startxy[0] = dxy[0];
 							startxy[1] = dxy[1];
@@ -963,13 +908,7 @@ namespace MonkSWF {
 					cxy2[1] = cxy1[1] + 1.0f/3.0f * (axy2[1] - axy1[1]);
 					
 					IEdge* curve = new CurveEdge( axy1, cxy1, cxy2, axy2 );
-					if ( path0 ) {
-						path0->addEdge( curve );
-					}
-					if ( path1 ) {
-						path1->addEdge( curve );
-					}
-					
+					path->addEdge( curve );					
 					
 					startxy[0] = axy2[0];
 					startxy[1] = axy2[1];
@@ -1009,7 +948,37 @@ namespace MonkSWF {
 //			}
 //
 //			
-//		}			
+//		}	
+		
+		PathArray normalized_array = normalize_paths( path_array );
+		
+		// find the path contours...
+		for (size_t i = 0; i < fill_styles.size(); ++i) {
+			PathArray paths_by_style = get_paths_by_style( normalized_array, i );
+			FillStyle &fill = fill_styles[i];
+			
+			if (!paths_by_style.size()) {
+				continue;
+			}
+			
+			PathArray contours = get_contours2( paths_by_style );
+			int k = 0;
+			for ( PathArrayIter contour_iter = contours.begin(); contour_iter != contours.end(); contour_iter++, k++) {
+				Path* contour = *contour_iter;
+				contour->setFill( fill );
+				if ( contour->lineIdx() != -1 ) {
+					contour->setLine( line_styles[ contour->lineIdx() ] );
+				}
+				
+				contour->print();
+				contour->addToShapeWithStyle( this );
+				
+				if ( !contour->isClosed() ) {
+					cout << "path not closed" << endl;
+				}
+			}
+		}	
+		
 		
 		return true;
 	}
