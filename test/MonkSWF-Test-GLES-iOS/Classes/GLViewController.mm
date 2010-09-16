@@ -29,7 +29,7 @@ using namespace MonkSWF;
     [super viewDidLoad];
 	
 	NSBundle      *mainBundle = [NSBundle mainBundle];
-	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"hole.swf"];
+	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"intersect3.swf"];
 	NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 	if (fromFile) {
 		NSData *data = [fromFile readDataToEndOfFile];

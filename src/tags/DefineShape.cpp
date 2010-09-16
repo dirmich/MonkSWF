@@ -384,6 +384,20 @@ namespace MonkSWF {
 			return false;
 		}
 		
+		bool isClockWise() {
+			VGfloat area = 0;
+			for ( EdgeArrayIter i = _edges.begin(); i != _edges.end(); i++ ) {
+				IEdge* edge = *i;
+				VGfloat* start = edge->getStartPoint();
+				VGfloat* end = edge->getEndPoint();
+					
+				// area += (pointList[i].X * pointList[i + 1].Y) - (pointList[i + 1].X * pointList[i].Y);
+				area += (start[0] * end[1]) - (end[0] * start[1]);
+			}
+			
+			return area < 0;
+		}
+		
 		inline bool _checkPointAgainstEdge( VGfloat* point, VGfloat* start, VGfloat* end ) {
 			if ( (start[1] < point[1] && end[1] >= point[1]) 
 				|| (end[1] < point[1] && start[1] >= point[1])) {
@@ -673,9 +687,11 @@ namespace MonkSWF {
 			for ( PathArrayIter j = paths.begin(); j != paths.end(); j++ ) {
 				Path* pathA = *i;
 				Path* pathB = *j;
-				if ( pathA == pathB )
+				if ( pathA == pathB )	// don't check against self
 					continue;
-				if ( pathA->_fill1 != pathB->_fill1 )
+				if ( pathA->_fill1 != pathB->_fill1 )	// skip if fill types are not equal
+					continue;
+				if ( pathA->isClockWise() == pathB->isClockWise() ) // inner has to be counter direction to outer
 					continue;
 				
 				bool is_contained = pathA->isContaintedBy( pathB );
@@ -992,9 +1008,9 @@ namespace MonkSWF {
 			}
 		}
 		
-		for ( PathArrayIter c = path_array.begin(); c != path_array.end(); c++) {
-			(*c)->print();
-		}
+//		for ( PathArrayIter c = path_array.begin(); c != path_array.end(); c++) {
+//			(*c)->print();
+//		}
 		
 		
 		PathArray normalized_array = normalize_paths( path_array );
@@ -1011,15 +1027,18 @@ namespace MonkSWF {
 			}
 			
 			PathArray contours = get_contours2( paths );
-//			for ( PathArrayIter c = contours.begin(); c != contours.end(); c++) {
-//				(*c)->print();
-//			}
 			PathArray combined_contours = combine_hole_interiors( contours );
 			for ( PathArrayIter contour_iter = combined_contours.begin(); contour_iter != combined_contours.end(); contour_iter++ ) {
 				Path* path = *contour_iter;
 				path->addToShapeWithStyle( this );
 			}
-		}			
+			
+//			for ( PathArrayIter c = contours.begin(); c != contours.end(); c++) {
+//				(*c)->print();
+//			}
+		}
+		
+		
 		
 		return true;
 	}
