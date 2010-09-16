@@ -20,6 +20,17 @@ using namespace std;
 
 namespace MonkSWF {
 	
+	static inline VGfloat calcCubicBezier1d( VGfloat x0, VGfloat x1, VGfloat x2, VGfloat x3, VGfloat t ) {
+		// see openvg 1.0 spec section 8.3.2 Cubic Bezier Curves
+		VGfloat oneT = 1.0f - t;
+		VGfloat x =		x0 * (oneT * oneT * oneT)
+		+	3.0f * x1 * (oneT * oneT) * t
+		+	3.0f * x2 * oneT * (t * t)
+		+	x3 * (t * t * t);
+		return x;	
+	}
+	
+	
 	static const VGfloat eps = 0.1f;
 	struct IEdge {
 		
@@ -30,7 +41,7 @@ namespace MonkSWF {
 		{}
 		
 		
-		VGbyte getType() {
+		VGbyte type() {
 			return _type;
 		}
 		
@@ -38,7 +49,7 @@ namespace MonkSWF {
 			return _original;
 		}
 		
-		virtual void appendToVGPath( VGPath path ) = 0;
+		virtual void appendToVGPath( VGPath path, bool is_subpath = false ) = 0;
 		virtual void reverse() = 0;
 		
 		virtual VGfloat* getStartPoint() = 0;
@@ -107,9 +118,9 @@ namespace MonkSWF {
 			return new StraightEdge( this );
 		}
 		
-		virtual void appendToVGPath( VGPath path ) {
+		virtual void appendToVGPath( VGPath path, bool is_subpath = false ) {
 			const VGint numSegments = vgGetParameteri( path, VG_PATH_NUM_SEGMENTS );
-			if( numSegments == 0 ) {	// no path segments so starting a path 
+			if( numSegments == 0 || is_subpath ) {	// no path segments so starting a path 
 				VGubyte segments[1] = { VG_MOVE_TO | VG_ABSOLUTE };
 				vgAppendPathData( path, 1, segments, _start );
 			}
@@ -181,9 +192,9 @@ namespace MonkSWF {
 			_control2[1] = tmp[1];
 		}
 		
-		virtual void appendToVGPath( VGPath path ) {
+		virtual void appendToVGPath( VGPath path, bool is_subpath = false ) {
 			const VGint numSegments = vgGetParameteri( path, VG_PATH_NUM_SEGMENTS );
-			if( numSegments == 0 ) {	// no path segments so starting a path 
+			if( numSegments == 0 || is_subpath ) {	// no path segments so starting a path 
 				VGubyte segments[1] = { VG_MOVE_TO | VG_ABSOLUTE };
 				vgAppendPathData( path, 1, segments, _start );
 			}
@@ -217,6 +228,15 @@ namespace MonkSWF {
 	typedef std::list< IEdge* > EdgeArray;
 	typedef EdgeArray::iterator EdgeArrayIter;
 	
+	class Path;
+	typedef std::list< Path* > PathArray;
+	typedef PathArray::iterator PathArrayIter;
+	typedef PathArray::const_iterator PathArrayConstIter;
+	typedef PathArray::reverse_iterator PathArrayReverseIter;
+	typedef std::vector< PathArray > FillPathMap;
+	typedef FillPathMap::iterator FillPathMapIter;
+	
+	
 	class Path {
 	public:
 		Path()
@@ -225,7 +245,6 @@ namespace MonkSWF {
 		,	_line( -1 )
 		,	_final_fill( -1 )
 		,	_is_reversed( false )
-		,	_original( 0 )
 		{
 			
 		}
@@ -236,7 +255,6 @@ namespace MonkSWF {
 		,	_line( line )
 		,	_final_fill( -1 )
 		,	_is_reversed( false )
-		,	_original( 0 )
 		{
 			
 		}
@@ -258,12 +276,8 @@ namespace MonkSWF {
 			return _is_reversed;
 		}
 		
-		Path* getOriginal() {
-			return _original;
-		}
 		
 		void copy( Path* p ) {
-			_original = p;
 			for ( EdgeArrayIter i = p->_edges.begin(); i != p->_edges.end(); i++ ) {
 				addEdge( (*i)->copy() );
 			}
@@ -290,11 +304,18 @@ namespace MonkSWF {
 			std::reverse( _edges.begin(), _edges.end() );
 		}
 		
-		void appendToVGPath( VGPath path ) {
+		void appendToVGPath( VGPath vgpath, bool is_subpath = false ) {
 			for ( EdgeArrayIter i = _edges.begin(); i != _edges.end(); i++ ) {
 				IEdge* edge = *i;
-				edge->appendToVGPath( path );
+				edge->appendToVGPath( vgpath, is_subpath );
+				is_subpath = false;
 			}
+			
+			for ( PathArrayIter i = _interior_hole_paths.begin(); i != _interior_hole_paths.end(); i++ ) {
+				Path* hole = *i;
+				hole->appendToVGPath( vgpath, true );
+			}
+			
 		}
 		
 		void addToShapeWithStyle( ShapeWithStyle* sws ) {
@@ -303,7 +324,10 @@ namespace MonkSWF {
 			
 			VGPath vgpath = vgCreatePath(VG_PATH_FORMAT_STANDARD, VG_PATH_DATATYPE_F,1,0,0,0, VG_PATH_CAPABILITY_ALL);
 			this->appendToVGPath( vgpath );
+			
+			
 			sws->addVGPath( vgpath, fill_idx, _line );
+
 			
 		}
 		
@@ -313,8 +337,9 @@ namespace MonkSWF {
 		}
 		
 		void prepend( Path* other ) {
-			std::copy (other->_edges.begin(), other->_edges.end(), front_inserter( this->_edges ) );
+			std::copy (other->_edges.rbegin(), other->_edges.rend(), front_inserter( this->_edges ) );
 		}
+		
 		
 		bool isClosed() {
 			IEdge* this_end = _edges.back();
@@ -335,8 +360,6 @@ namespace MonkSWF {
 			//				return false;
 			
 			IEdge* this_end = _edges.back();
-			//			IEdge* this_start = _edges.front(); 
-			//			IEdge* other_end = other->_edges.back();
 			IEdge* other_start = other->_edges.front();
 			
 			// if it is just a reversed edge of itself skip
@@ -348,16 +371,121 @@ namespace MonkSWF {
 				append( other );
 				return true;
 			}
-			
-			//			if( this_start->canConnectToStart( other_end ) ) {
-			//				cout << "\n***PREPEND***" << endl;
-			//				prepend( other );
-			//				return true;
-			//			}
+
+			IEdge* this_start = _edges.front(); 
+			IEdge* other_end = other->_edges.back();
+
+			if( this_start->canConnectToStart( other_end ) ) {
+//				cout << "\n***PREPEND***" << endl;
+				prepend( other );
+				return true;
+			}
 			
 			return false;
 		}
 		
+		inline bool _checkPointAgainstEdge( VGfloat* point, VGfloat* start, VGfloat* end ) {
+			if ( (start[1] < point[1] && end[1] >= point[1]) 
+				|| (end[1] < point[1] && start[1] >= point[1])) {
+				
+				if ( (start[0] + (point[1] - start[1])/(end[1]-start[1])*(end[0]-start[0])) < point[0] ) {
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		bool isPointInside( VGfloat* point ) {
+			
+			bool oddnodes = false;
+			
+			for ( EdgeArrayIter i = _edges.begin(); i != _edges.end(); i++ ) {
+				IEdge* edge = *i;
+				if ( edge->type() == (VG_LINE_TO | VG_ABSOLUTE) ) {
+					StraightEdge* straight_edge = (StraightEdge*)edge;
+					VGfloat* start = straight_edge->_start;
+					VGfloat* end = straight_edge->_end;
+					
+					if ( _checkPointAgainstEdge( point, start, end) ) {
+						oddnodes = !oddnodes;
+					}
+					
+				} else if ( edge->type() ==  (VG_CUBIC_TO | VG_ABSOLUTE) ) {
+					CurveEdge* curve_edge = (CurveEdge*)edge;
+					VGfloat c[2]; 
+
+					
+					VGfloat* start = curve_edge->_start;
+					VGfloat* end = 0;
+					
+					VGfloat cp1x = curve_edge->_control1[0];
+					VGfloat cp1y = curve_edge->_control1[1];
+					VGfloat cp2x = curve_edge->_control2[0];
+					VGfloat cp2y = curve_edge->_control2[1];
+					VGfloat p3x = curve_edge->_end[0];
+					VGfloat p3y = curve_edge->_end[1];
+					
+					VGfloat increment = 1.0f / 4.0f;
+					for ( VGfloat t = increment; t < 1.0f + increment; t+=increment ) {
+						c[0] = calcCubicBezier1d( curve_edge->_start[0], cp1x, cp2x, p3x, t );
+						c[1] = calcCubicBezier1d( curve_edge->_start[1], cp1y, cp2y, p3y, t );
+						end = c;
+						if ( _checkPointAgainstEdge( point, start, end ) ) {
+							oddnodes = !oddnodes;
+						}
+						start = end;
+					}
+				}
+			}
+		
+			return oddnodes;
+		}
+		
+		bool isContaintedBy( Path* other ) {
+			for ( EdgeArrayIter i = _edges.begin(); i != _edges.end(); i++ ) {
+				IEdge* edge = *i;
+				if ( edge->type() == (VG_LINE_TO | VG_ABSOLUTE) ) {
+					StraightEdge* straight_edge = (StraightEdge*)edge;
+					
+					if ( !other->isPointInside( straight_edge->_start) ) {
+						return false;
+					}
+					
+				} else if ( edge->type() ==  (VG_CUBIC_TO | VG_ABSOLUTE) ) {
+					CurveEdge* curve_edge = (CurveEdge*)edge;
+					VGfloat c[2]; 
+					
+					
+					VGfloat* start = curve_edge->_start;
+					VGfloat* end = 0;
+					
+					VGfloat cp1x = curve_edge->_control1[0];
+					VGfloat cp1y = curve_edge->_control1[1];
+					VGfloat cp2x = curve_edge->_control2[0];
+					VGfloat cp2y = curve_edge->_control2[1];
+					VGfloat p3x = curve_edge->_end[0];
+					VGfloat p3y = curve_edge->_end[1];
+					
+					VGfloat increment = 1.0f / 4.0f;
+					for ( VGfloat t = increment; t < 1.0f + increment; t+=increment ) {
+						c[0] = calcCubicBezier1d( curve_edge->_start[0], cp1x, cp2x, p3x, t );
+						c[1] = calcCubicBezier1d( curve_edge->_start[1], cp1y, cp2y, p3y, t );
+						end = c;
+						if ( !other->isPointInside( c ) ) {
+							return false;
+ 						}
+						start = end;
+					}
+				}
+			}
+			
+			return true;
+		}
+		
+		void addInterior( Path* hole ) {
+			_interior_hole_paths.push_back(hole);
+		}
 		
 		
 		void print() {
@@ -381,17 +509,30 @@ namespace MonkSWF {
 		int _line;
 		int _final_fill;
 		bool _is_reversed;
-		Path* _original;
+		
+		PathArray	_interior_hole_paths;	// these paths are holes inside the polygon
 		
 	};
 	
-	typedef std::list< Path* > PathArray;
-	typedef PathArray::iterator PathArrayIter;
-	typedef PathArray::const_iterator PathArrayConstIter;
-	typedef PathArray::reverse_iterator PathArrayReverseIter;
-	typedef std::vector< PathArray > FillPathMap;
-	typedef FillPathMap::iterator FillPathMapIter;
 	
+	PathArray get_paths_by_hashed_style( const PathArray& path_vec, const FillStyleArray& fill_style_array, const FillStyle& fill_style ) {
+		PathArray paths;
+		uint64_t style_hash = fill_style.hash();
+		
+		for (PathArrayConstIter it = path_vec.begin(), end = path_vec.end(); it != end; ++it) {
+			Path* cur_path = *it;
+			const FillStyle& current_path_fill_style = fill_style_array[cur_path->_fill1];
+			uint64_t current_path_style_hash = current_path_fill_style.hash();
+			
+			if ( style_hash == current_path_style_hash ) {
+				paths.push_back( cur_path );
+			}
+			
+		}
+		
+		return paths;
+	}
+
 	PathArray get_paths_by_style(const PathArray& path_vec, unsigned int style)
 	{
 		PathArray paths;
@@ -498,6 +639,7 @@ namespace MonkSWF {
 		}
 		
 		bool found_connection = false;
+		// ??? should we be using path_refs or paths?
 		for ( PathArrayIter it = path_refs.begin(); it != path_refs.end(); it++ ) {
 			
 			if( found_connection )
@@ -515,6 +657,36 @@ namespace MonkSWF {
 		}
 		
 		return path_refs;
+	}
+	
+	PathArray combine_hole_interiors( PathArray& paths ) {
+		
+		PathArray combined;
+		
+		for (PathArrayIter it = paths.begin(), end = paths.end(); it != end; ++it) {
+			Path* cur_path = *it;
+			combined.push_back( cur_path );
+		}
+		
+		
+		for ( PathArrayIter i = paths.begin(); i != paths.end(); i++ ) {
+			for ( PathArrayIter j = paths.begin(); j != paths.end(); j++ ) {
+				Path* pathA = *i;
+				Path* pathB = *j;
+				if ( pathA == pathB )
+					continue;
+				if ( pathA->_fill1 != pathB->_fill1 )
+					continue;
+				
+				bool is_contained = pathA->isContaintedBy( pathB );
+				if ( is_contained ) {
+					pathA->addInterior( pathB );
+					combined.remove( pathB );
+				}
+			}
+		}
+		
+		return combined;
 	}
 	
 	bool Gradient::read( Reader* reader ) {
@@ -820,36 +992,33 @@ namespace MonkSWF {
 			}
 		}
 		
-		//		shape.addToShapeWithStyle( this );
+		for ( PathArrayIter c = path_array.begin(); c != path_array.end(); c++) {
+			(*c)->print();
+		}
 		
-		//		cout << "START BEFORE NORMALIZE" << endl;
-		//		for ( PathArrayIter it = path_array.begin(); it != path_array.end(); it++ ) {
-		//			Path *path = *it;
-		//			path->print();
-		//		}
-		//		cout << "END BEFORE NORMALIZE" << endl;
 		
 		PathArray normalized_array = normalize_paths( path_array );
 		
 		for (size_t i = 0; i < _fill_styles.size(); ++i) {
-			PathArray paths = get_paths_by_style( normalized_array, i );
+			//PathArray paths = get_paths_by_style( normalized_array, i );
+			PathArray paths = get_paths_by_hashed_style( normalized_array, _fill_styles, _fill_styles[i] );
+//			for ( PathArrayIter c = paths.begin(); c != paths.end(); c++) {
+//				(*c)->print();
+//			}
 			
 			if (!paths.size()) {
 				continue;
 			}
 			
 			PathArray contours = get_contours2( paths );
-			int k = 0;
-			for ( PathArrayIter contour_iter = contours.begin(); contour_iter != contours.end(); contour_iter++, k++) {
+//			for ( PathArrayIter c = contours.begin(); c != contours.end(); c++) {
+//				(*c)->print();
+//			}
+			PathArray combined_contours = combine_hole_interiors( contours );
+			for ( PathArrayIter contour_iter = combined_contours.begin(); contour_iter != combined_contours.end(); contour_iter++ ) {
 				Path* path = *contour_iter;
-				//				cout << "K = " << k << endl;
-				//				path->print();
-				//				if( /* path->isClosed() */ k == 2 )
-				//				if( path->isClosed() )
 				path->addToShapeWithStyle( this );
 			}
-			
-			
 		}			
 		
 		return true;

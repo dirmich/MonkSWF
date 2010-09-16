@@ -59,11 +59,11 @@ namespace MonkSWF {
 			cout << "\tColor: " << int(_color[0] * 255) << ", " << int(_color[1] * 255) << ", " << int(_color[2] * 255) << ", " << int(_color[3] * 255) << endl;
 		}
 		
-		uint64_t hash() {
-			uint64_t hash = (_type << 32) | (uint8_t(_color[0] * 255) << 24)
-				| (uint8_t(_color[1] * 255) << 16)
-				| (uint8_t(_color[2] * 255) << 8)
-				| (uint8_t(_color[3] * 255) << 0);
+		uint64_t hash() const {
+			uint64_t hash = (uint64_t(_type) << 32) | (uint64_t(_color[0] * 255) << 24)
+				| (uint64_t(_color[1] * 255) << 16)
+				| (uint64_t(_color[2] * 255) << 8)
+				| (uint64_t(_color[3] * 255) << 0);
 			
 			return hash;
 		}
@@ -118,6 +118,9 @@ namespace MonkSWF {
 		LineStyle*		_line_style;
 	};
 	
+	typedef std::vector<FillStyle> FillStyleArray;
+	typedef std::vector<LineStyle> LineStyleArray;
+	
 	class DefineShapeTag;
 	class ShapeWithStyle {
 	public:
@@ -141,8 +144,6 @@ namespace MonkSWF {
 		
 		typedef std::list<OpenVGPath> OpenVGPathArray;
 		typedef OpenVGPathArray::iterator OpenVGPathArrayIter;
-		typedef std::vector<FillStyle> FillStyleArray;
-		typedef std::vector<LineStyle> LineStyleArray;
 		typedef std::map<uint64_t, FillStyle>	FillStyleMap;
 
 		FillStyleMap		_fill_style_map;
