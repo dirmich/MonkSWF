@@ -440,7 +440,7 @@ namespace MonkSWF {
 					VGfloat p3x = curve_edge->_end[0];
 					VGfloat p3y = curve_edge->_end[1];
 					
-					VGfloat increment = 1.0f / 4.0f;
+					VGfloat increment = 1.0f;// / 4.0f;
 					for ( VGfloat t = increment; t < 1.0f + increment; t+=increment ) {
 						c[0] = calcCubicBezier1d( curve_edge->_start[0], cp1x, cp2x, p3x, t );
 						c[1] = calcCubicBezier1d( curve_edge->_start[1], cp1y, cp2y, p3y, t );
@@ -481,7 +481,7 @@ namespace MonkSWF {
 					VGfloat p3x = curve_edge->_end[0];
 					VGfloat p3y = curve_edge->_end[1];
 					
-					VGfloat increment = 1.0f / 4.0f;
+					VGfloat increment = 1.0f;// / 4.0f;
 					for ( VGfloat t = increment; t < 1.0f + increment; t+=increment ) {
 						c[0] = calcCubicBezier1d( curve_edge->_start[0], cp1x, cp2x, p3x, t );
 						c[1] = calcCubicBezier1d( curve_edge->_start[1], cp1y, cp2y, p3y, t );
@@ -644,7 +644,6 @@ namespace MonkSWF {
 	}
 	
 	PathArray get_contours2( PathArray& paths ) {
-		//		PathArray contours;
 		PathArray path_refs;
 		
 		for (PathArrayIter it = paths.begin(), end = paths.end(); it != end; ++it) {
@@ -666,14 +665,12 @@ namespace MonkSWF {
 			} else {
 				found_connection = false;
 			}
-			
-			
 		}
 		
 		return path_refs;
 	}
 	
-	PathArray combine_hole_interiors( PathArray& paths ) {
+	PathArray combine_hole_interiors( const FillStyleArray& fill_style_array, PathArray& paths ) {
 		
 		PathArray combined;
 		
@@ -689,15 +686,19 @@ namespace MonkSWF {
 				Path* pathB = *j;
 				if ( pathA == pathB )	// don't check against self
 					continue;
-				if ( pathA->_fill1 != pathB->_fill1 )	// skip if fill types are not equal
+				const FillStyle& fillA = fill_style_array[pathA->_fill1];
+				const FillStyle& fillB = fill_style_array[pathB->_fill1];
+				if ( fillA.hash() != fillB.hash() )	// skip if fill types are not equal
 					continue;
 				if ( pathA->isClockWise() == pathB->isClockWise() ) // inner has to be counter direction to outer
 					continue;
+//				if ( !pathA->isClosed() || !pathB->isClosed() )
+//					continue;
 				
 				bool is_contained = pathA->isContaintedBy( pathB );
 				if ( is_contained ) {
-					pathA->addInterior( pathB );
-					combined.remove( pathB );
+					pathB->addInterior( pathA );
+					combined.remove( pathA );
 				}
 			}
 		}
@@ -847,8 +848,10 @@ namespace MonkSWF {
 					if ( (flags & SF_MOVETO) || (flags & SF_FILL0) || (flags & SF_FILL1) ) {
 						if ( path ) {
 							path->_line = base_line_idx + line_idx;
-							path->_fill0 = base_fill_idx + fill_idx0;
-							path->_fill1 = base_fill_idx + fill_idx1;
+							if ( fill_idx0 != -1 )
+								path->_fill0 = base_fill_idx + fill_idx0;
+							if ( fill_idx1 != -1 )
+								path->_fill1 = base_fill_idx + fill_idx1;
 							path_array.push_back( path );
 						}
 						path = new Path();
@@ -884,7 +887,7 @@ namespace MonkSWF {
 							num_fill_styles = reader->get<uint16_t>();
 						cout << "\tnum fill styles: " << int(num_fill_styles) << endl;
 						if ( num_fill_styles ) {
-							base_fill_idx += _fill_styles.size() - 1;
+							base_fill_idx = _fill_styles.size();
 						}
 						
 						
@@ -1008,36 +1011,25 @@ namespace MonkSWF {
 			}
 		}
 		
-//		for ( PathArrayIter c = path_array.begin(); c != path_array.end(); c++) {
-//			(*c)->print();
-//		}
-		
 		
 		PathArray normalized_array = normalize_paths( path_array );
-		
+		PathArray contours;
 		for (size_t i = 0; i < _fill_styles.size(); ++i) {
-			//PathArray paths = get_paths_by_style( normalized_array, i );
-			PathArray paths = get_paths_by_hashed_style( normalized_array, _fill_styles, _fill_styles[i] );
-//			for ( PathArrayIter c = paths.begin(); c != paths.end(); c++) {
-//				(*c)->print();
-//			}
+			PathArray paths = get_paths_by_style( normalized_array, i );
 			
 			if (!paths.size()) {
 				continue;
 			}
 			
-			PathArray contours = get_contours2( paths );
-			PathArray combined_contours = combine_hole_interiors( contours );
-			for ( PathArrayIter contour_iter = combined_contours.begin(); contour_iter != combined_contours.end(); contour_iter++ ) {
-				Path* path = *contour_iter;
-				path->addToShapeWithStyle( this );
-			}
-			
-//			for ( PathArrayIter c = contours.begin(); c != contours.end(); c++) {
-//				(*c)->print();
-//			}
+			PathArray tmp_contours = get_contours2( paths );
+			contours.insert( contours.end(), tmp_contours.begin(), tmp_contours.end() );
 		}
 		
+		PathArray combined_contours = combine_hole_interiors( _fill_styles, contours );
+		for ( PathArrayIter contour_iter = combined_contours.begin(); contour_iter != combined_contours.end(); contour_iter++ ) {
+			Path* path = *contour_iter;
+			path->addToShapeWithStyle( this );
+		}
 		
 		
 		return true;
