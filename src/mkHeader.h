@@ -36,7 +36,10 @@ namespace MonkSWF {
 		}
 		float getFrameHeight() const {
 			return ((_frame_size.ymax - _frame_size.ymin)/20.0f);
-		}		
+		}
+		float getFrameRate() const {
+			return _frame_rate;
+		}
 	
 	private:
 		uint8_t		_signature[3];

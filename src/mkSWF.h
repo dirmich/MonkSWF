@@ -100,6 +100,17 @@ namespace MonkSWF {
 		
 		void drawFrame( int32_t frame_idx );
 		
+		float getFrameWidth() const {
+			return _header.getFrameWidth();
+		}
+		float getFrameHeight() const {
+			return _header.getFrameHeight();
+		}
+		float getFrameRate() const {
+			return _header.getFrameRate();
+		}
+		
+		
 		
 	private:
 		typedef std::map< uint32_t, SWF::TagFactoryFunc >	TagFactoryMap;

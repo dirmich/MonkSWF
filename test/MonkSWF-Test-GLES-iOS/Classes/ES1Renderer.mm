@@ -30,7 +30,21 @@
         glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
         glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, colorRenderbuffer);
 		
-		
+		//Generate our MSAA Frame and Render buffers 
+//		glGenFramebuffersOES(1, &msaaFramebuffer);
+//		glGenRenderbuffersOES(1, &msaaRenderBuffer);   
+//		//Bind our MSAA buffers 
+//		glBindFramebufferOES(GL_FRAMEBUFFER_OES, msaaFramebuffer); 
+//		glBindRenderbufferOES(GL_RENDERBUFFER_OES, msaaRenderBuffer);   
+//		// Generate the msaaDepthBuffer. 
+//		// 4 will be the number of pixels that the MSAA buffer will use in order to make one pixel on the render buffer. 
+//		glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER_OES, 4, GL_RGB5_A1_OES, backingWidth, backingHeight); 
+//		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, msaaRenderBuffer); 
+//		glGenRenderbuffersOES(1, &msaaDepthBuffer);   
+//		//Bind the msaa depth buffer. 
+//		glBindRenderbufferOES(GL_RENDERBUFFER_OES, msaaDepthBuffer); 
+//		glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER_OES, 4, GL_DEPTH_COMPONENT16_OES, backingWidth , backingHeight); 
+//		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, msaaDepthBuffer);		
     }
 
     return self;

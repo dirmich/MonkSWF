@@ -23,6 +23,9 @@
     // The OpenGL ES names for the framebuffer and renderbuffer used to render to this view
     GLuint defaultFramebuffer, colorRenderbuffer;
 	
+	//Buffer definitions for the MSAA 
+	GLuint msaaFramebuffer, msaaRenderBuffer, msaaDepthBuffer;
+	
 }
 
 - (void)render;
