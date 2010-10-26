@@ -114,8 +114,12 @@ namespace MonkSWF {
 		// draw the display list
 		for (DisplayListIter iter = _display_list.begin(); iter != _display_list.end(); iter++ ) {
 			IPlaceObjectTag *place_obj = iter->second;
-			if( place_obj )
+			if( place_obj ) {
+				place_obj->setOffsetScale( _scale );
+				place_obj->setOffsetTranslate( _translate );
 				place_obj->draw( _swf );
+			}
+				
 		}
 		
 	}

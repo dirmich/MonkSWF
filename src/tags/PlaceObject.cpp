@@ -95,8 +95,8 @@ namespace MonkSWF {
 	static inline float degrees (float radians) {return radians * (180.0f/3.14159f);}	
 	void PlaceObject2Tag::draw( SWF* swf ) {
 		vgLoadIdentity();
-		vgTranslate( _translation[0], _translation[1] );
-		vgScale( _scale[0], _scale[1] );
+		vgTranslate( _translation[0] + _offsetTranslate[0], _translation[1] + _offsetTranslate[1] );
+		vgScale( _scale[0] * _offsetScale, _scale[1] * _offsetScale );
 		vgRotate( degrees( _rotation ) );
 		
 		IDefineShapeTag* shape = swf->getShape( _character_id );

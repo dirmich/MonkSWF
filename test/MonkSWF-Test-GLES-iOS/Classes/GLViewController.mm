@@ -93,16 +93,18 @@ using namespace MonkSWF;
 }
 
 - (void)drawView:(id)sender {
-	vgSeti(VG_MATRIX_MODE, VG_MATRIX_PATH_USER_TO_SURFACE);
-	vgLoadIdentity();
-	vgTranslate(320/2,480/2);
-	vgScale(2.0, 2.0);
+//	vgSeti(VG_MATRIX_MODE, VG_MATRIX_PATH_USER_TO_SURFACE);
+//	vgLoadIdentity();
+//	vgTranslate(320/2,480/2);
+//	vgScale(2.0, 2.0);
 	
 //	_swf->drawFrame( _frame++ );
 //	if ( _frame >= _swf->numFrames() ) {
 //		_frame = 0;
 //	}
 	if ( _sprite ) {
+		float offset[2] = { self.view.frame.size.width/2, self.view.frame.size.height/2};
+		_sprite->setTranslate( offset );
 		_sprite->draw( _frame++ );
 		if ( _frame >= _sprite->frameCount() ) {
 			_frame = 0;

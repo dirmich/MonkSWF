@@ -130,6 +130,10 @@ namespace MonkSWF {
 	public:
 		
 		virtual void draw( const int32_t frame ) = 0;
+		virtual void setTranslate( float t[2] ) = 0;
+		virtual void getTranslate( float t[2] ) const = 0;
+		virtual void setScale( float s ) = 0;
+		virtual float scale() const = 0;
 		
 		uint16_t spriteId() const {
 			return _sprite_id;
@@ -190,6 +194,12 @@ namespace MonkSWF {
 		bool doMove() {
 			return !_has_character && _do_move;
 		}
+		
+		virtual void setOffsetTranslate( float t[2] ) = 0;
+		virtual void getOffsetTranslate( float t[2] ) const = 0;
+		virtual void setOffsetScale( float s ) = 0;
+		virtual float offsetScale() const = 0;
+		
 		
 		
 	protected:

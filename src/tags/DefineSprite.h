@@ -20,7 +20,10 @@ namespace MonkSWF {
 	public:
 		DefineSpriteTag( TagHeader& h )
 		:	IDefineSpriteTag( h )
-		{}
+		,	_scale(1.0f)
+		{
+			_translate[0] = _translate[1] = 0.0f;
+		}
 		
 		virtual ~DefineSpriteTag() {
 			
@@ -31,6 +34,22 @@ namespace MonkSWF {
 		
 		virtual void draw( const int32_t frame );
 		
+		virtual void setTranslate( float t[2] ) {
+			_translate[0] = t[0];
+			_translate[1] = t[1];
+		}
+		virtual void getTranslate( float t[2] ) const  {
+			t[0] = _translate[0];
+			t[1] = _translate[1];
+		}
+		virtual void setScale( float s ) {
+			_scale = s;
+		}
+		virtual float scale() const {
+			return _scale;
+		}
+		
+		
 		// regular DefineSpriteTag tag == 39
 		static ITag* create( TagHeader* header );
 		
@@ -40,6 +59,8 @@ namespace MonkSWF {
 
 		DisplayList			_display_list;
 		
+		float		_translate[2];
+		float		_scale;
 		
 	};
 }
