@@ -20,6 +20,8 @@
 	MonkSWF::IDefineSpriteTag*	_sprite;
 	int							_spriteIdx;
 	int							_frame;
+	
+	NSTimeInterval				_lastTime;
 
 }
 @property (nonatomic, retain) IBOutlet EAGLView* glview;

@@ -67,6 +67,8 @@ using namespace MonkSWF;
 	_frame = 0;
 	_sprite = _swf->spriteAt( _spriteIdx );
 	
+	_lastTime = [NSDate timeIntervalSinceReferenceDate];
+	
 	[_glview startAnimation];
 	
 }
@@ -102,10 +104,17 @@ using namespace MonkSWF;
 //	if ( _frame >= _swf->numFrames() ) {
 //		_frame = 0;
 //	}
+	
 	if ( _sprite ) {
 		float offset[2] = { self.view.frame.size.width/2, self.view.frame.size.height/2};
 		_sprite->setTranslate( offset );
-		_sprite->draw( _frame++ );
+		_sprite->draw( _frame );
+		
+		NSTimeInterval deltaTime = [NSDate timeIntervalSinceReferenceDate] - _lastTime;
+		if ( deltaTime > 1.0f / _swf->getFrameRate() ) {
+			_frame++;
+			_lastTime = [NSDate timeIntervalSinceReferenceDate];
+		}
 		if ( _frame >= _sprite->frameCount() ) {
 			_frame = 0;
 		}
