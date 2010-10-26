@@ -93,16 +93,19 @@ namespace MonkSWF {
 						IPlaceObjectTag* move_obj = _display_list[ place_obj->depth() ];
 						
 						// hmmm.  not sure if this is correct need to re-think this
-						place_obj->copyNoTransform( move_obj );
+						//place_obj->copyNoTransform( move_obj );
 						//place_obj->copyTransform( move_obj );
-						_display_list[ place_obj->depth() ] = place_obj;
+						move_obj->copyTransform( place_obj );
+						//_display_list[ place_obj->depth() ] = place_obj;
 						//move_obj->copyTransform( place_obj );
 					} else {
 						_display_list[ place_obj->depth() ] = place_obj;
 					}
 					
 				} break;
-				case REMOVEOBJECT: {
+				case REMOVEOBJECT:
+				case REMOVEOBJECT2:	
+				{
 					IRemoveObjectTag* remove_object = (IRemoveObjectTag*)*tag;
 					_display_list.erase( remove_object->depth() );
 				} break;
