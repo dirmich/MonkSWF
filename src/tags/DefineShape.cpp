@@ -867,7 +867,7 @@ namespace MonkSWF {
 						uint8_t nbits = reader->getbits( 5 );
 						startxy[0] = reader->getsignedbits( nbits ) / 20.0f;
 						startxy[1] = reader->getsignedbits( nbits ) / 20.0f;
-						cout << "\tMoveTo: " << int(startxy[0] * 20) << ", " << int(startxy[1] * 20) << endl;
+						//cout << "\tMoveTo: " << int(startxy[0] * 20) << ", " << int(startxy[1] * 20) << endl;
 						//??						move_to = true;
 					} 
 					

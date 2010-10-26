@@ -39,11 +39,29 @@ namespace MonkSWF {
 			MATRIX m;
 			reader->getMatrix( m );
 			
-			_translation[0] = m.tx/20.0f;
-			_translation[1] = m.ty/20.0f;
-			_scale[0] = m.sx/65536.0f;
-			_scale[1] = m.sy/65536.0f;
-			_rotation = asin( m.r0/65536.0f ); //todo 
+			//	OpenVG:
+			//	sx	shx	tx
+			//	shy	sy	ty
+			//	0	0	1
+			
+			// also see MATRIX in swf file format spec
+			
+			// translation
+			_transform[0][2] = m.tx/20.0f;
+			_transform[1][2] = m.ty/20.0f;
+			
+			// scale
+			_transform[0][0] = m.sx/65536.0f;
+			_transform[1][1] = m.sy/65536.0f;
+			
+			// rotate and skew
+			_transform[0][1] = m.r0/65536.0f;
+			_transform[1][0] = m.r1/65536.0f;
+//			_translation[0] = m.tx/20.0f;
+//			_translation[1] = m.ty/20.0f;
+//			_scale[0] = m.sx/65536.0f;
+//			_scale[1] = m.sy/65536.0f;
+//			_rotation = m.r0/65536.0f; 
 		}
 		
 		if ( has_color_transform ) {
@@ -84,20 +102,27 @@ namespace MonkSWF {
 	}
 	
 	void PlaceObject2Tag::copyTransform( IPlaceObjectTag* o ) {
+		//copyNoTransform( o );
 		PlaceObject2Tag* other = (PlaceObject2Tag*)o;
-		_translation[0] = other->_translation[0];
-		_translation[1] = other->_translation[1];
-		_scale[0] = other->_scale[0];
-		_scale[1] = other->_scale[1];
-		_rotation = other->_rotation; //todo 
+		for ( int i = 0; i < 3; i++ ) {
+			for ( int p = 0; p < 3; p++ ) {
+				_transform[i][p] = other->_transform[i][p];
+			}
+		}
+//		_translation[0] = other->_translation[0];
+//		_translation[1] = other->_translation[1];
+//		_scale[0] = other->_scale[0];
+//		_scale[1] = other->_scale[1];
+//		_rotation = other->_rotation; //todo 
 	}
 	
-	static inline float degrees (float radians) {return radians * (180.0f/3.14159f);}	
+//	static inline float degrees (float radians) {return radians * (180.0f/3.14159f);}	
 	void PlaceObject2Tag::draw( SWF* swf ) {
 		vgLoadIdentity();
-		vgTranslate( _translation[0] + _offsetTranslate[0], _translation[1] + _offsetTranslate[1] );
-		vgScale( _scale[0] * _offsetScale, _scale[1] * _offsetScale );
-		vgRotate( degrees( _rotation ) );
+		vgLoadMatrix( (VGfloat*)&_transform[0][0] );
+		vgTranslate( _offsetTranslate[0], _offsetTranslate[1] );
+		vgScale( _offsetScale, _offsetScale );
+//		vgRotate( degrees( _rotation ) );
 		
 		IDefineShapeTag* shape = swf->getShape( _character_id );
 		if( shape )

@@ -22,11 +22,16 @@ namespace MonkSWF {
 			:	IPlaceObjectTag( h )
 			,	_name(0)
 			,	_offsetScale(1.0f)
-			,	_rotation(0)
 		{
 			_offsetTranslate[0] = _offsetTranslate[1] = 0.0f;
-			_translation[0] = _translation[1] = 0.0f;
-			_scale[0] = _scale[1] = 1.0f;
+			for ( int i = 0; i < 3; i++ ) {
+				for ( int p = 0; p < 3; p++ ) {
+					_transform[i][p] = 0.0f;
+					if ( i == p) {	// set identity
+						_transform[i][p] = 1.0f;
+					}
+				}
+			}
 		}
 		
 		virtual ~PlaceObject2Tag() {
@@ -68,9 +73,10 @@ namespace MonkSWF {
 		VGfloat		_offsetTranslate[2];
 		VGfloat		_offsetScale;
 		
-		VGfloat		_translation[2];
-		VGfloat		_scale[2];
-		VGfloat		_rotation;
+		VGfloat		_transform[3][3];
+//		VGfloat		_translation[2];
+//		VGfloat		_scale[2];
+//		VGfloat		_rotation;
 		char*		_name;
 	};
 }
