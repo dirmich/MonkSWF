@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<swf version="7" compressed="1">
+  <Header framerate="12" frames="1">
+    <size>
+      <Rectangle left="0" right="6400" top="0" bottom="9600"/>
+    </size>
+    <tags>
+      <SetBackgroundColor>
+        <color>
+          <Color red="255" green="255" blue="255"/>
+        </color>
+      </SetBackgroundColor>
+      <DefineShape3 objectID="4">
+        <bounds>
+          <Rectangle left="871" right="5614" top="1499" bottom="8386"/>
+        </bounds>
+        <styles>
+          <StyleList>
+            <fillStyles>
+              <Solid>
+                <color>
+                  <Color red="0" green="0" blue="255" alpha="255"/>
+                </color>
+              </Solid>
+            </fillStyles>
+            <lineStyles/>
+          </StyleList>
+        </styles>
+        <shapes>
+          <Shape>
+            <edges>
+              <ShapeSetup x="871" y="1500" fillStyle0="1"/>
+              <LineTo x="0" y="6886"/>
+              <LineTo x="4743" y="0"/>
+              <LineTo x="0" y="-6886"/>
+              <LineTo x="-4743" y="0"/>
+              <ShapeSetup x="1957" y="2529" fillStyle0="1"/>
+              <LineTo x="2872" y="0"/>
+              <LineTo x="0" y="5128"/>
+              <LineTo x="-2872" y="0"/>
+              <LineTo x="0" y="-5128"/>
+              <ShapeSetup/>
+            </edges>
+          </Shape>
+        </shapes>
+      </DefineShape3>
+      <DefineSprite objectID="3" frames="1">
+        <tags>
+          <PlaceObject2 replace="0" depth="1" objectID="4">
+            <transform>
+              <Transform scaleX="1.000000000000000" scaleY="1.000000000000000" skewX="0.000000000000000" skewY="0.000000000000000" transX="0" transY="11447"/>
+            </transform>
+          </PlaceObject2>
+          <ShowFrame/>
+          <End/>
+        </tags>
+      </DefineSprite>
+      <Export>
+        <symbols>
+          <Symbol objectID="3" name="rect3944"/>
+        </symbols>
+      </Export>
+      <DefineSprite objectID="5" frames="1">
+        <tags>
+          <PlaceObject2 replace="0" depth="2" objectID="3" name="rect3944">
+            <transform>
+              <Transform transX="0" transY="0"/>
+            </transform>
+          </PlaceObject2>
+          <ShowFrame/>
+          <End/>
+        </tags>
+      </DefineSprite>
+      <DefineSprite objectID="2" frames="1">
+        <tags>
+          <PlaceObject2 replace="0" depth="3" objectID="5">
+            <transform>
+              <Transform scaleX="1.000000000000000" scaleY="1.000000000000000" skewX="0.000000000000000" skewY="0.000000000000000" transX="0" transY="-11447"/>
+            </transform>
+          </PlaceObject2>
+          <ShowFrame/>
+          <End/>
+        </tags>
+      </DefineSprite>
+      <Export>
+        <symbols>
+          <Symbol objectID="2" name="layer1"/>
+        </symbols>
+      </Export>
+      <DefineSprite objectID="1" frames="1">
+        <tags>
+          <PlaceObject2 replace="0" depth="4" objectID="2" name="Layer 1">
+            <transform>
+              <Transform transX="0" transY="0"/>
+            </transform>
+          </PlaceObject2>
+          <ShowFrame/>
+          <End/>
+        </tags>
+      </DefineSprite>
+      <Export>
+        <symbols>
+          <Symbol objectID="1" name="square"/>
+        </symbols>
+      </Export>
+      <PlaceObject2 replace="0" depth="1" objectID="1" morph="0" name="mySquare">
+        <transform>
+          <Transform scaleX="1.000000000000000" scaleY="1.000000000000000" skewX="0.000000000000000" skewY="0.000000000000000" transX="0" transY="0"/>
+        </transform>
+      </PlaceObject2>
+      <ShowFrame/>
+      <End/>
+    </tags>
+  </Header>
+</swf>

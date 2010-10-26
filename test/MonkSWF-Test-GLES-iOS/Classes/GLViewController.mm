@@ -29,7 +29,7 @@ using namespace MonkSWF;
     [super viewDidLoad];
 	
 	NSBundle      *mainBundle = [NSBundle mainBundle];
-	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"tatoo.swf"];
+	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"MSB_test_01.swf"];
 	NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 	if (fromFile) {
 		NSData *data = [fromFile readDataToEndOfFile];
@@ -50,15 +50,22 @@ using namespace MonkSWF;
 	[fromFile closeFile];
 
 	_glview.delegate = self;
+
+	vgCreateContextSH( self.view.frame.size.width, self.view.frame.size.height );
+//	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {	
+//		vgCreateContextSH( 768, 1024 );
+//	} else { // iPhone
+//		vgCreateContextSH( 320, 480 );
+//	}
+
 	
-	vgCreateContextSH( 320, 480 );
 
 	_shapeIdx = 0;
 	_shape = _swf->shapeAt( _shapeIdx );
 	
 	_spriteIdx = 0;
 	_frame = 0;
-	_sprite = 0;//_swf->spriteAt( _spriteIdx );
+	_sprite = _swf->spriteAt( _spriteIdx );
 	
 	[_glview startAnimation];
 	
@@ -91,19 +98,19 @@ using namespace MonkSWF;
 	vgTranslate(320/2,480/2);
 	vgScale(2.0, 2.0);
 	
-	_swf->drawFrame( _frame++ );
-	if ( _frame >= _swf->numFrames() ) {
-		_frame = 0;
-	}
-//	if ( _sprite ) {
-//		_sprite->draw( _frame++ );
-//		if ( _frame >= _sprite->frameCount() ) {
-//			_frame = 0;
-//		}
-//		
-//	} else if ( _shape ) {
-//		_shape->draw();
+//	_swf->drawFrame( _frame++ );
+//	if ( _frame >= _swf->numFrames() ) {
+//		_frame = 0;
 //	}
+	if ( _sprite ) {
+		_sprite->draw( _frame++ );
+		if ( _frame >= _sprite->frameCount() ) {
+			_frame = 0;
+		}
+		
+	} else if ( _shape ) {
+		_shape->draw();
+	}
 	
 }
 

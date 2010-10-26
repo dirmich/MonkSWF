@@ -25,6 +25,9 @@
 		FA68BFD5123F060E00BF08FF /* intersect3.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68BFD4123F060E00BF08FF /* intersect3.swf */; };
 		FA68C0E8123FFEC000BF08FF /* tatoo.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68C0E7123FFEC000BF08FF /* tatoo.swf */; };
 		FA68C3621241948600BF08FF /* hole.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68C3611241948600BF08FF /* hole.swf */; };
+		FA6AEEA912765498004079EE /* MSB_test_01.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEEA812765498004079EE /* MSB_test_01.swf */; };
+		FA6AEF2A127659BC004079EE /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEF29127659BC004079EE /* MainWindow-iPad.xib */; };
+		FA6AEF3D12765CFB004079EE /* GLViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */; };
 		FAD72FCD1229EE8900B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD72FC51229EE5100B99B94 /* libMonkVG_iOS_OpenGL.a */; };
 		FAD730001229F1AB00B99B94 /* GLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD72FFE1229F1AB00B99B94 /* GLViewController.mm */; };
 		FAD730011229F1AB00B99B94 /* GLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD72FFF1229F1AB00B99B94 /* GLViewController.xib */; };
@@ -104,6 +107,9 @@
 		FA68BFD4123F060E00BF08FF /* intersect3.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = intersect3.swf; path = ../intersect3.swf; sourceTree = SOURCE_ROOT; };
 		FA68C0E7123FFEC000BF08FF /* tatoo.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = tatoo.swf; path = ../tatoo.swf; sourceTree = SOURCE_ROOT; };
 		FA68C3611241948600BF08FF /* hole.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hole.swf; path = ../hole.swf; sourceTree = SOURCE_ROOT; };
+		FA6AEEA812765498004079EE /* MSB_test_01.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MSB_test_01.swf; sourceTree = "<group>"; };
+		FA6AEF29127659BC004079EE /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GLViewController-iPad.xib"; sourceTree = "<group>"; };
 		FAD72FBA1229EE5100B99B94 /* MonkVG-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-iOS.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-iOS/MonkVG-iOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		FAD72FFD1229F1AB00B99B94 /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
 		FAD72FFE1229F1AB00B99B94 /* GLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLViewController.mm; sourceTree = "<group>"; };
@@ -182,8 +188,10 @@
 				2514C27610084DB600A42282 /* Shaders */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				FA6AEF28127659BC004079EE /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -200,6 +208,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA6AEEA812765498004079EE /* MSB_test_01.swf */,
 				FA68C3611241948600BF08FF /* hole.swf */,
 				FA68C0E7123FFEC000BF08FF /* tatoo.swf */,
 				FA68BFD4123F060E00BF08FF /* intersect3.swf */,
@@ -229,6 +238,14 @@
 				FAD730181229F61000B99B94 /* libz.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA6AEF28127659BC004079EE /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				FA6AEF29127659BC004079EE /* MainWindow-iPad.xib */,
+			);
+			name = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 		FAD72FBB1229EE5100B99B94 /* Products */ = {
@@ -350,6 +367,9 @@
 				FA68BFD5123F060E00BF08FF /* intersect3.swf in Resources */,
 				FA68C0E8123FFEC000BF08FF /* tatoo.swf in Resources */,
 				FA68C3621241948600BF08FF /* hole.swf in Resources */,
+				FA6AEEA912765498004079EE /* MSB_test_01.swf in Resources */,
+				FA6AEF2A127659BC004079EE /* MainWindow-iPad.xib in Resources */,
+				FA6AEF3D12765CFB004079EE /* GLViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -401,7 +422,8 @@
 				);
 				INFOPLIST_FILE = "MonkSWF_Test_GLES_iOS-Info.plist";
 				PRODUCT_NAME = "MonkSWF-Test-GLES-iOS";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -409,13 +431,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MonkSWF_Test_GLES_iOS_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				HEADER_SEARCH_PATHS = (
+					../../../MonkSWF,
+					../../../MonkVG/include,
+				);
 				INFOPLIST_FILE = "MonkSWF_Test_GLES_iOS-Info.plist";
 				PRODUCT_NAME = "MonkSWF-Test-GLES-iOS";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

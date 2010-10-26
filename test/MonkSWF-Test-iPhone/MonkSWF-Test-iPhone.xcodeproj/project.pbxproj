@@ -40,28 +40,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = FAD72EBF1229A24C00B99B94 /* MonkVG-iOS.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libMonkVG_iOS_Quartz.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = "MonkVG-iOS-Quartz";
 		};
 		FAD72EC61229A24C00B99B94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAD72EBF1229A24C00B99B94 /* MonkVG-iOS.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FAE282E9121A08BB00823BCB /* libMonkVG_iOS_OpenGL.a */;
+			remoteGlobalIDString = FAE282E9121A08BB00823BCB;
 			remoteInfo = "MonkVG-iOS-OpenGL";
 		};
 		FAD72EC81229A26800B99B94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAD72EBF1229A24C00B99B94 /* MonkVG-iOS.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* MonkVG-iOS-Quartz */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = "MonkVG-iOS-Quartz";
 		};
 		FAD72ECA1229A26F00B99B94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA9EA5150F79A75A00492ABC /* MonkSWF.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D /* MonkSWF */;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
 			remoteInfo = MonkSWF;
 		};
 /* End PBXContainerItemProxy section */
@@ -252,6 +252,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MonkSWF-Test-iPhone" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,

@@ -850,8 +850,14 @@ namespace MonkSWF {
 							path->_line = base_line_idx + line_idx;
 							if ( fill_idx0 != -1 )
 								path->_fill0 = base_fill_idx + fill_idx0;
+							else 
+								path->_fill0 = -1;
+							
 							if ( fill_idx1 != -1 )
 								path->_fill1 = base_fill_idx + fill_idx1;
+							else 
+								path->_fill1 = -1;
+							
 							path_array.push_back( path );
 						}
 						path = new Path();

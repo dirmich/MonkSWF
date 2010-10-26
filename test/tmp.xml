@@ -1,0 +1,9 @@
+<movie width="320" height="480" framerate="12">
+<background color="#ffffff"/>
+<frame>
+<library>
+<clip id="square" import="hole.svg"/>
+</library>
+<place id="square" name="mySquare" x="0" y="0" depth="1"/>
+</frame>
+</movie>
