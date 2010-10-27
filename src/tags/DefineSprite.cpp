@@ -92,12 +92,10 @@ namespace MonkSWF {
 					if( place_obj->doMove() ) {	// just move the object at the current depth
 						IPlaceObjectTag* move_obj = _display_list[ place_obj->depth() ];
 						
-						// hmmm.  not sure if this is correct need to re-think this
-						//place_obj->copyNoTransform( move_obj );
-						//place_obj->copyTransform( move_obj );
-						move_obj->copyTransform( place_obj );
-						//_display_list[ place_obj->depth() ] = place_obj;
-						//move_obj->copyTransform( place_obj );
+						place_obj->copyNoTransform( move_obj );
+						_display_list[ place_obj->depth() ] = place_obj;
+						
+						// this should work but doesnt: move_obj->copyTransform( place_obj );
 					} else {
 						_display_list[ place_obj->depth() ] = place_obj;
 					}
