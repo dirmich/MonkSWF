@@ -15,6 +15,7 @@
 @private
 	Texture2D*		_texture;
 	GLuint			_frameBuffer;
+	GLint			_oldFrameBuffer;
 }
 
 @property (readonly) Texture2D* texture;

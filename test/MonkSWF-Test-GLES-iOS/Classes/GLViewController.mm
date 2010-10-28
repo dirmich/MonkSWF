@@ -51,14 +51,13 @@ using namespace MonkSWF;
 
 	_glview.delegate = self;
 
-	vgCreateContextSH( self.view.frame.size.width, self.view.frame.size.height );
+	vgCreateContextSH( _glview.frame.size.width*2, _glview.frame.size.height*2);
 //	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {	
-//		vgCreateContextSH( 768, 1024 );
+//		vgCreateContextSH( self.view.frame.size.width, self.view.frame.size.height );
 //	} else { // iPhone
-//		vgCreateContextSH( 320, 480 );
+//		vgCreateContextSH( self.view.frame.size.width, self.view.frame.size.height );
 //	}
 
-	
 
 	_shapeIdx = 0;
 	_shape = _swf->shapeAt( _shapeIdx );
@@ -68,6 +67,8 @@ using namespace MonkSWF;
 	_sprite = _swf->spriteAt( _spriteIdx );
 	
 	_lastTime = [NSDate timeIntervalSinceReferenceDate];
+	
+	//_background = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"IMG_1350.JPG"]];
 	
 	[_glview startAnimation];
 	
@@ -94,19 +95,23 @@ using namespace MonkSWF;
     // e.g. self.myOutlet = nil;
 }
 
-- (void)drawView:(id)sender {
-//	vgSeti(VG_MATRIX_MODE, VG_MATRIX_PATH_USER_TO_SURFACE);
-//	vgLoadIdentity();
-//	vgTranslate(320/2,480/2);
-//	vgScale(2.0, 2.0);
+- (void)postLayoutSubviews:(id)sender {
+	_renderTexture =[[RenderTexture alloc] initWithSize: CGSizeMake( _glview.frame.size.width*2, _glview.frame.size.width*2) ];
+}
+
+
+- (void)preDrawView:(id)sender {
 	
-//	_swf->drawFrame( _frame++ );
-//	if ( _frame >= _swf->numFrames() ) {
-//		_frame = 0;
-//	}
+	if ( _renderTexture == nil ) 
+		return;
+	
+	
+	
+	[_renderTexture startDraw];
 	
 	if ( _sprite ) {
-		float offset[2] = { self.view.frame.size.width/2, self.view.frame.size.height/2};
+		float offset[2] = { _glview.frame.size.width*2/4, _glview.frame.size.height*2/4};
+		_sprite->setScale( 2.0f );
 		_sprite->setTranslate( offset );
 		_sprite->draw( _frame );
 		
@@ -122,6 +127,97 @@ using namespace MonkSWF;
 	} else if ( _shape ) {
 		_shape->draw();
 	}
+	
+	[_renderTexture endDraw];
+	
+}
+- (void)postDrawView:(id)sender {
+	
+}
+
+- (void)drawView:(id)sender {
+	
+	if ( _renderTexture == nil ) 
+		return;
+	
+//	[_renderTexture startDraw];
+//	
+//	if ( _sprite ) {
+//		float offset[2] = { _glview.frame.size.width/2, _glview.frame.size.height/2};
+//		_sprite->setTranslate( offset );
+//		_sprite->draw( _frame );
+//		
+//		NSTimeInterval deltaTime = [NSDate timeIntervalSinceReferenceDate] - _lastTime;
+//		if ( deltaTime > 1.0f / _swf->getFrameRate() ) {
+//			_frame++;
+//			_lastTime = [NSDate timeIntervalSinceReferenceDate];
+//		}
+//		if ( _frame >= _sprite->frameCount() ) {
+//			_frame = 0;
+//		}
+//		
+//	} else if ( _shape ) {
+//		_shape->draw();
+//	}
+//	
+//	[_renderTexture endDraw];
+	
+	// setup GL projection 
+	glViewport(0,0, _glview.frame.size.width, _glview.frame.size.height);
+	
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrthof(0, _glview.frame.size.width, _glview.frame.size.height, 0, -1, 1);
+	
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	
+	glDisable( GL_CULL_FACE );
+	
+	// turn on blending
+	glEnable(GL_BLEND);
+	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);	
+	
+	
+	
+	CGRect rect = _glview.frame;
+	rect.origin = CGPointMake(0, 0);
+
+	[_renderTexture.texture drawInRect:rect 
+//							   srcEnum:GL_ONE
+//							   dstEnum:GL_ONE_MINUS_SRC_ALPHA
+					textureEnvironment:GL_REPLACE 
+								 flipY:NO];
+	
+	//[_renderTexture.texture drawInRect:rect textureEnvironment:GL_REPLACE flipY:NO];
+	
+//	vgSeti(VG_MATRIX_MODE, VG_MATRIX_PATH_USER_TO_SURFACE);
+//	vgLoadIdentity();
+//	vgTranslate(320/2,480/2);
+//	vgScale(2.0, 2.0);
+	
+//	_swf->drawFrame( _frame++ );
+//	if ( _frame >= _swf->numFrames() ) {
+//		_frame = 0;
+//	}
+	
+//	if ( _sprite ) {
+//		float offset[2] = { _glview.frame.size.width/2, _glview.frame.size.height/2};
+//		_sprite->setTranslate( offset );
+//		_sprite->draw( _frame );
+//		
+//		NSTimeInterval deltaTime = [NSDate timeIntervalSinceReferenceDate] - _lastTime;
+//		if ( deltaTime > 1.0f / _swf->getFrameRate() ) {
+//			_frame++;
+//			_lastTime = [NSDate timeIntervalSinceReferenceDate];
+//		}
+//		if ( _frame >= _sprite->frameCount() ) {
+//			_frame = 0;
+//		}
+//		
+//	} else if ( _shape ) {
+//		_shape->draw();
+//	}
 	
 }
 

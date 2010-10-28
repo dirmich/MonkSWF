@@ -14,10 +14,19 @@
 @protocol EAGLViewDelegate
 @required
 - (void)drawView:(id)sender;
+
 @optional
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+
+@optional
+- (void)preDrawView:(id)sender;
+- (void)postDrawView:(id)sender;
+
+@optional
+- (void)postLayoutSubviews:(id)sender;
+
 @end
 
 // This class wraps the CAEAGLLayer from CoreAnimation into a convenient UIView subclass.

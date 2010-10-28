@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EAGLView.h"
 #import "MonkSWF.h"
-
+#import "RenderTexture.h"
 
 @interface GLViewController : UIViewController <EAGLViewDelegate> {
 @private
@@ -22,6 +22,9 @@
 	int							_frame;
 	
 	NSTimeInterval				_lastTime;
+	
+	RenderTexture*				_renderTexture;
+	Texture2D*					_background;
 
 }
 @property (nonatomic, retain) IBOutlet EAGLView* glview;

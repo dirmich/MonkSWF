@@ -15,5 +15,7 @@
 
 - (void)render;
 - (BOOL)resizeFromLayer:(CAEAGLLayer *)layer;
+- (void)startRender;
+- (void)endRender;
 
 @end

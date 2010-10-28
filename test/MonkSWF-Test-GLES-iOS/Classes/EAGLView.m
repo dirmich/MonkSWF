@@ -60,21 +60,29 @@
     return self;
 }
 
-- (void)drawView:(id)sender
-{
+- (void)drawView:(id)sender {
+    if ([(id)delegate respondsToSelector:@selector(preDrawView:)])
+        [delegate preDrawView:self];
+	
 	[renderer startRender];
 	
     if ([(id)delegate respondsToSelector:@selector(drawView:)])
         [delegate drawView:self];
 	
 	[renderer endRender];
+
+    if ([(id)delegate respondsToSelector:@selector(postDrawView:)])
+        [delegate postDrawView:self];
 	
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [renderer resizeFromLayer:(CAEAGLLayer*)self.layer];
     [self drawView:nil];
+	
+    if ([(id)delegate respondsToSelector:@selector(postLayoutSubviews:)])
+        [delegate postLayoutSubviews:self];
+	
 }
 
 - (NSInteger)animationFrameInterval

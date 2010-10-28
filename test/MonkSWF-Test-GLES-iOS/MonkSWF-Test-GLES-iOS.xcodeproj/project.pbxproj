@@ -25,9 +25,12 @@
 		FA68BFD5123F060E00BF08FF /* intersect3.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68BFD4123F060E00BF08FF /* intersect3.swf */; };
 		FA68C0E8123FFEC000BF08FF /* tatoo.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68C0E7123FFEC000BF08FF /* tatoo.swf */; };
 		FA68C3621241948600BF08FF /* hole.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68C3611241948600BF08FF /* hole.swf */; };
-		FA6AEEA912765498004079EE /* MSB_test_01.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEEA812765498004079EE /* MSB_test_01.swf */; };
 		FA6AEF2A127659BC004079EE /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEF29127659BC004079EE /* MainWindow-iPad.xib */; };
 		FA6AEF3D12765CFB004079EE /* GLViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */; };
+		FAC2C2CA1279F690000B4C92 /* RenderTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2C2C71279F690000B4C92 /* RenderTexture.m */; };
+		FAC2C2CB1279F690000B4C92 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2C2C91279F690000B4C92 /* Texture2D.m */; };
+		FAC2C2E01279F906000B4C92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC2C2DF1279F906000B4C92 /* CoreGraphics.framework */; };
+		FAC2C45F127A0EE6000B4C92 /* MSB_test_01.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAC2C45E127A0EE6000B4C92 /* MSB_test_01.swf */; };
 		FAD72FCD1229EE8900B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD72FC51229EE5100B99B94 /* libMonkVG_iOS_OpenGL.a */; };
 		FAD730001229F1AB00B99B94 /* GLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD72FFE1229F1AB00B99B94 /* GLViewController.mm */; };
 		FAD730011229F1AB00B99B94 /* GLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD72FFF1229F1AB00B99B94 /* GLViewController.xib */; };
@@ -107,9 +110,14 @@
 		FA68BFD4123F060E00BF08FF /* intersect3.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = intersect3.swf; path = ../intersect3.swf; sourceTree = SOURCE_ROOT; };
 		FA68C0E7123FFEC000BF08FF /* tatoo.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = tatoo.swf; path = ../tatoo.swf; sourceTree = SOURCE_ROOT; };
 		FA68C3611241948600BF08FF /* hole.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hole.swf; path = ../hole.swf; sourceTree = SOURCE_ROOT; };
-		FA6AEEA812765498004079EE /* MSB_test_01.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MSB_test_01.swf; sourceTree = "<group>"; };
 		FA6AEF29127659BC004079EE /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GLViewController-iPad.xib"; sourceTree = "<group>"; };
+		FAC2C2C61279F690000B4C92 /* RenderTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderTexture.h; sourceTree = "<group>"; };
+		FAC2C2C71279F690000B4C92 /* RenderTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderTexture.m; sourceTree = "<group>"; };
+		FAC2C2C81279F690000B4C92 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
+		FAC2C2C91279F690000B4C92 /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
+		FAC2C2DF1279F906000B4C92 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FAC2C45E127A0EE6000B4C92 /* MSB_test_01.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MSB_test_01.swf; sourceTree = "<group>"; };
 		FAD72FBA1229EE5100B99B94 /* MonkVG-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-iOS.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-iOS/MonkVG-iOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		FAD72FFD1229F1AB00B99B94 /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
 		FAD72FFE1229F1AB00B99B94 /* GLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLViewController.mm; sourceTree = "<group>"; };
@@ -137,6 +145,7 @@
 				28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */,
 				28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */,
 				FAD730191229F61000B99B94 /* libz.dylib in Frameworks */,
+				FAC2C2E01279F906000B4C92 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +155,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FAC2C2C61279F690000B4C92 /* RenderTexture.h */,
+				FAC2C2C71279F690000B4C92 /* RenderTexture.m */,
+				FAC2C2C81279F690000B4C92 /* Texture2D.h */,
+				FAC2C2C91279F690000B4C92 /* Texture2D.m */,
 				2514C26D10084DB100A42282 /* ES1Renderer.h */,
 				2514C26E10084DB100A42282 /* ES1Renderer.mm */,
 				2514C26F10084DB100A42282 /* ES2Renderer.h */,
@@ -208,7 +221,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FA6AEEA812765498004079EE /* MSB_test_01.swf */,
+				FAC2C45E127A0EE6000B4C92 /* MSB_test_01.swf */,
 				FA68C3611241948600BF08FF /* hole.swf */,
 				FA68C0E7123FFEC000BF08FF /* tatoo.swf */,
 				FA68BFD4123F060E00BF08FF /* intersect3.swf */,
@@ -236,6 +249,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				FAD730181229F61000B99B94 /* libz.dylib */,
+				FAC2C2DF1279F906000B4C92 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -367,9 +381,9 @@
 				FA68BFD5123F060E00BF08FF /* intersect3.swf in Resources */,
 				FA68C0E8123FFEC000BF08FF /* tatoo.swf in Resources */,
 				FA68C3621241948600BF08FF /* hole.swf in Resources */,
-				FA6AEEA912765498004079EE /* MSB_test_01.swf in Resources */,
 				FA6AEF2A127659BC004079EE /* MainWindow-iPad.xib in Resources */,
 				FA6AEF3D12765CFB004079EE /* GLViewController-iPad.xib in Resources */,
+				FAC2C45F127A0EE6000B4C92 /* MSB_test_01.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +400,8 @@
 				2514C27210084DB100A42282 /* ES1Renderer.mm in Sources */,
 				2514C27310084DB100A42282 /* ES2Renderer.m in Sources */,
 				FAD730001229F1AB00B99B94 /* GLViewController.mm in Sources */,
+				FAC2C2CA1279F690000B4C92 /* RenderTexture.m in Sources */,
+				FAC2C2CB1279F690000B4C92 /* Texture2D.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +492,43 @@
 			};
 			name = Release;
 		};
+		FAC2C452127A0C43000B4C92 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = AdHoc;
+		};
+		FAC2C453127A0C43000B4C92 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Micah Pearlman";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MonkSWF_Test_GLES_iOS_Prefix.pch;
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				HEADER_SEARCH_PATHS = (
+					../../../MonkSWF,
+					../../../MonkVG/include,
+				);
+				INFOPLIST_FILE = "MonkSWF_Test_GLES_iOS-Info.plist";
+				PRODUCT_NAME = "MonkSWF-Test-GLES-iOS";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "994AC41D-BE78-495A-A2DA-FEEB4A9A32FB";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AdHoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -484,6 +537,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				FAC2C453127A0C43000B4C92 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -493,6 +547,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				FAC2C452127A0C43000B4C92 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
