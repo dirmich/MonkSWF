@@ -55,8 +55,8 @@ namespace MonkSWF {
 			_transform[1][1] = m.sy/65536.0f;
 			
 			// rotate and skew
-			_transform[0][1] = m.r0/65536.0f;
-			_transform[1][0] = m.r1/65536.0f;
+			_transform[0][1] = -m.r0/65536.0f;
+			_transform[1][0] = -m.r1/65536.0f;
 //			_translation[0] = m.tx/20.0f;
 //			_translation[1] = m.ty/20.0f;
 //			_scale[0] = m.sx/65536.0f;

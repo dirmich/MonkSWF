@@ -85,6 +85,9 @@ namespace MonkSWF {
 			}
 			return it->second;
 		}
+		int32_t numSprites() const {
+			return _sprite_dictionary.size();
+		}
 		
 		void addSprite( IDefineSpriteTag* sprite, uint16_t cid ) {
 			_sprite_dictionary[cid] = sprite;
@@ -110,6 +113,23 @@ namespace MonkSWF {
 			return _header.getFrameRate();
 		}
 		
+		void setOffsetTranslate( float t[2] ) {
+			_offsetTranslate[0] = t[0];
+			_offsetTranslate[1] = t[1];
+		}
+		void getOffsetTranslate( float t[2] ) const  {
+			t[0] = _offsetTranslate[0];
+			t[1] = _offsetTranslate[1];
+		}
+		void setOffsetScale( float s ) {
+			_offsetScale = s;
+		}
+		float getOffsetScale() const {
+			return _offsetScale;
+		}
+		
+		
+		
 		
 		
 	private:
@@ -132,6 +152,12 @@ namespace MonkSWF {
 		TagFactoryMap		_tag_factories;
 		Reader*				_reader;
 		int32_t				_frame;
+		
+		// offset
+		float				_offsetTranslate[2];
+		float				_offsetScale;
+		
+		
 	
 	};
 }

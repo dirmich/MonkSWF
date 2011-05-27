@@ -31,4 +31,7 @@
 
 - (IBAction) incrementShape:(id)sender;
 - (IBAction) decrementShape:(id)sender;
+- (IBAction) incrementSprite:(id)sender;
+- (IBAction) decrementSprite:(id)sender;
+
 @end

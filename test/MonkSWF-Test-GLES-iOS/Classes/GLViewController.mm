@@ -29,7 +29,7 @@ using namespace MonkSWF;
     [super viewDidLoad];
 	
 	NSBundle      *mainBundle = [NSBundle mainBundle];
-	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"MSB_test_01.swf"];
+	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"giraffe.swf"];
 	NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 	if (fromFile) {
 		NSData *data = [fromFile readDataToEndOfFile];
@@ -108,25 +108,37 @@ using namespace MonkSWF;
 	
 	
 	[_renderTexture startDraw];
+
+	float offset[2] = { _glview.frame.size.width*2/16, _glview.frame.size.height*2/16};
 	
-	if ( _sprite ) {
-		float offset[2] = { _glview.frame.size.width*2/4, _glview.frame.size.height*2/4};
-		_sprite->setScale( 2.0f );
-		_sprite->setTranslate( offset );
-		_sprite->draw( _frame );
-		
-		NSTimeInterval deltaTime = [NSDate timeIntervalSinceReferenceDate] - _lastTime;
-		if ( deltaTime > 1.0f / _swf->getFrameRate() ) {
-			_frame++;
-			_lastTime = [NSDate timeIntervalSinceReferenceDate];
-		}
-		if ( _frame >= _sprite->frameCount() ) {
-			_frame = 0;
-		}
-		
-	} else if ( _shape ) {
-		_shape->draw();
+	NSTimeInterval deltaTime = [NSDate timeIntervalSinceReferenceDate] - _lastTime;
+	if ( deltaTime > 1.0f / _swf->getFrameRate() ) {
+		_frame++;
+		_lastTime = [NSDate timeIntervalSinceReferenceDate];
 	}
+	if ( _frame >= _swf->numFrames() ) {
+		_frame = 0;
+	}
+	
+	_swf->setOffsetTranslate( offset );
+	_swf->setOffsetScale( 3.0 );
+	_swf->drawFrame( _frame );
+	
+
+//	if ( _sprite ) {
+//		_sprite->setScale( 2.0f );
+//		_sprite->setTranslate( offset );
+//		_sprite->draw( _frame );
+//		
+//		
+//	} else if ( _shape ) {
+//		
+//		vgLoadIdentity();
+//		vgTranslate( offset[0], offset[1] );
+//		vgScale( 2.0f, 2.0f );
+//
+//		_shape->draw();
+//	}
 	
 	[_renderTexture endDraw];
 	
@@ -224,27 +236,57 @@ using namespace MonkSWF;
 #pragma mark Actions
 
 - (IBAction) incrementShape:(id)sender {
-	int c = _swf->numShapes();
 
-	_shapeIdx++;
-	if ( _shapeIdx >= c) {
-		_shapeIdx = 0;
+	
+	if ( _sprite ) {
+		int c = _swf->numSprites();
+		_shapeIdx++;
+		if ( _shapeIdx >= c ) {
+			_shapeIdx = 0;
+		}
+		_sprite = _swf->spriteAt( _shapeIdx );
+	} else {
+		int c = _swf->numShapes();
+		
+		_shapeIdx++;
+		if ( _shapeIdx >= c) {
+			_shapeIdx = 0;
+		}
+		
+		_shape = _swf->shapeAt( _shapeIdx );
+		
 	}
-
-	_shape = _swf->shapeAt( _shapeIdx );
 	
 }
 - (IBAction) decrementShape:(id)sender {
-	int c = _swf->numShapes();
 	
-	_shapeIdx--;
-	if ( _shapeIdx < 0 ) {
-		_shapeIdx = c - 1;
+	if ( _sprite ) {
+		int c = _swf->numSprites();
+		_shapeIdx--;
+		if ( _shapeIdx < 0 ) {
+			_shapeIdx = c - 1;
+		}
+		_sprite = _swf->spriteAt( _shapeIdx );
+	} else {
+		int c = _swf->numShapes();
+		
+		_shapeIdx--;
+		if ( _shapeIdx < 0 ) {
+			_shapeIdx = c - 1;
+		}
+		
+		_shape = _swf->shapeAt( _shapeIdx );
+		
 	}
-	
-	_shape = _swf->shapeAt( _shapeIdx );
+}
+
+- (IBAction) incrementSprite:(id)sender {
 	
 }
+- (IBAction) decrementSprite:(id)sender {
+	
+}
+
 
 
 - (void)dealloc {

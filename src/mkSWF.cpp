@@ -141,8 +141,13 @@ namespace MonkSWF {
 		DisplayList *display_list = _frame_list[ frame_idx ];
 		for (DisplayListIter iter = display_list->begin(); iter != display_list->end(); iter++ ) {
 			IPlaceObjectTag *place_obj = iter->second;
-			if( place_obj )
+			if( place_obj ) {
+				VGfloat offset[2];
+				getOffsetTranslate( offset );
+				place_obj->setOffsetTranslate( offset );
+				place_obj->setOffsetScale( getOffsetScale() );
 				place_obj->draw( this );
+			}
 		}
 	}
 }
