@@ -255,7 +255,7 @@
 				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = MonkSWF_iOS;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -271,7 +271,7 @@
 				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = MonkSWF_iOS;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
