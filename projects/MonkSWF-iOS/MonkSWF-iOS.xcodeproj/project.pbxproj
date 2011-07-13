@@ -255,7 +255,7 @@
 				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = MonkSWF_iOS;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -268,10 +268,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MonkSWF_iOS_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = MonkSWF_iOS;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -287,7 +288,8 @@
 				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -302,7 +304,8 @@
 				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
