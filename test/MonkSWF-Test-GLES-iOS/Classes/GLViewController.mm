@@ -29,7 +29,7 @@ using namespace MonkSWF;
     [super viewDidLoad];
 	
 	NSBundle      *mainBundle = [NSBundle mainBundle];
-	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"giraffe.swf"];
+	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"fish_test.swf"];
 	NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 	if (fromFile) {
 		NSData *data = [fromFile readDataToEndOfFile];
@@ -51,12 +51,7 @@ using namespace MonkSWF;
 
 	_glview.delegate = self;
 
-	vgCreateContextSH( _glview.frame.size.width*2, _glview.frame.size.height*2);
-//	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {	
-//		vgCreateContextSH( self.view.frame.size.width, self.view.frame.size.height );
-//	} else { // iPhone
-//		vgCreateContextSH( self.view.frame.size.width, self.view.frame.size.height );
-//	}
+	vgCreateContextSH( _glview.frame.size.width, _glview.frame.size.height);
 
 
 	_shapeIdx = 0;
@@ -68,7 +63,6 @@ using namespace MonkSWF;
 	
 	_lastTime = [NSDate timeIntervalSinceReferenceDate];
 	
-	//_background = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"IMG_1350.JPG"]];
 	
 	[_glview startAnimation];
 	
@@ -96,19 +90,17 @@ using namespace MonkSWF;
 }
 
 - (void)postLayoutSubviews:(id)sender {
-	_renderTexture =[[RenderTexture alloc] initWithSize: CGSizeMake( _glview.frame.size.width*2, _glview.frame.size.width*2) ];
 }
 
 
 - (void)preDrawView:(id)sender {
+}
+- (void)postDrawView:(id)sender {
 	
-	if ( _renderTexture == nil ) 
-		return;
-	
-	
-	
-	[_renderTexture startDraw];
+}
 
+- (void)drawView:(id)sender {
+	
 	float offset[2] = { _glview.frame.size.width*2/16, _glview.frame.size.height*2/16};
 	
 	NSTimeInterval deltaTime = [NSDate timeIntervalSinceReferenceDate] - _lastTime;
@@ -121,116 +113,8 @@ using namespace MonkSWF;
 	}
 	
 	_swf->setOffsetTranslate( offset );
-	_swf->setOffsetScale( 3.0 );
+	_swf->setOffsetScale( 1.0 );
 	_swf->drawFrame( _frame );
-	
-
-//	if ( _sprite ) {
-//		_sprite->setScale( 2.0f );
-//		_sprite->setTranslate( offset );
-//		_sprite->draw( _frame );
-//		
-//		
-//	} else if ( _shape ) {
-//		
-//		vgLoadIdentity();
-//		vgTranslate( offset[0], offset[1] );
-//		vgScale( 2.0f, 2.0f );
-//
-//		_shape->draw();
-//	}
-	
-	[_renderTexture endDraw];
-	
-}
-- (void)postDrawView:(id)sender {
-	
-}
-
-- (void)drawView:(id)sender {
-	
-	if ( _renderTexture == nil ) 
-		return;
-	
-//	[_renderTexture startDraw];
-//	
-//	if ( _sprite ) {
-//		float offset[2] = { _glview.frame.size.width/2, _glview.frame.size.height/2};
-//		_sprite->setTranslate( offset );
-//		_sprite->draw( _frame );
-//		
-//		NSTimeInterval deltaTime = [NSDate timeIntervalSinceReferenceDate] - _lastTime;
-//		if ( deltaTime > 1.0f / _swf->getFrameRate() ) {
-//			_frame++;
-//			_lastTime = [NSDate timeIntervalSinceReferenceDate];
-//		}
-//		if ( _frame >= _sprite->frameCount() ) {
-//			_frame = 0;
-//		}
-//		
-//	} else if ( _shape ) {
-//		_shape->draw();
-//	}
-//	
-//	[_renderTexture endDraw];
-	
-	// setup GL projection 
-	glViewport(0,0, _glview.frame.size.width, _glview.frame.size.height);
-	
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glOrthof(0, _glview.frame.size.width, _glview.frame.size.height, 0, -1, 1);
-	
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	
-	glDisable( GL_CULL_FACE );
-	
-	// turn on blending
-	glEnable(GL_BLEND);
-	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);	
-	
-	
-	
-	CGRect rect = _glview.frame;
-	rect.origin = CGPointMake(0, 0);
-
-	[_renderTexture.texture drawInRect:rect 
-//							   srcEnum:GL_ONE
-//							   dstEnum:GL_ONE_MINUS_SRC_ALPHA
-					textureEnvironment:GL_REPLACE 
-								 flipY:NO];
-	
-	//[_renderTexture.texture drawInRect:rect textureEnvironment:GL_REPLACE flipY:NO];
-	
-//	vgSeti(VG_MATRIX_MODE, VG_MATRIX_PATH_USER_TO_SURFACE);
-//	vgLoadIdentity();
-//	vgTranslate(320/2,480/2);
-//	vgScale(2.0, 2.0);
-	
-//	_swf->drawFrame( _frame++ );
-//	if ( _frame >= _swf->numFrames() ) {
-//		_frame = 0;
-//	}
-	
-//	if ( _sprite ) {
-//		float offset[2] = { _glview.frame.size.width/2, _glview.frame.size.height/2};
-//		_sprite->setTranslate( offset );
-//		_sprite->draw( _frame );
-//		
-//		NSTimeInterval deltaTime = [NSDate timeIntervalSinceReferenceDate] - _lastTime;
-//		if ( deltaTime > 1.0f / _swf->getFrameRate() ) {
-//			_frame++;
-//			_lastTime = [NSDate timeIntervalSinceReferenceDate];
-//		}
-//		if ( _frame >= _sprite->frameCount() ) {
-//			_frame = 0;
-//		}
-//		
-//	} else if ( _shape ) {
-//		_shape->draw();
-//	}
-	
 }
 
 #pragma mark Actions

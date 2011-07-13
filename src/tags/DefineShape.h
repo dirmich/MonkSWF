@@ -39,12 +39,21 @@ namespace MonkSWF {
 		
 		GradientRecordArray		_gradient_records;
 	};
-	
+
+#define SOLID_FILL				0x00
+#define LINEAR_GRADIENT_FILL	0x10
+#define RADIAL_GRADIENT_FILL	0x12
+#define FOCAL_GRADIENT_FILL		0x13
+#define REPEATING_BITMAP_FILL	0x40
+#define CLIPPED_BITMAP_FILL		0x42
+#define NON_SMOOTHED_REPEATING_BITMAP_FILL	0x42
+#define NON_SMOOTHED_CLIPPED_BITMAP_FILL	0x43
+
 	class FillStyle {
 	public:
 		FillStyle()
 		:	_type(-1)
-		,	_paint(0)
+		,	_paint(VG_INVALID_HANDLE)
 		{}
 		
 		
@@ -74,9 +83,8 @@ namespace MonkSWF {
 		MATRIX		_gradient_matrix;
 		Gradient	_gradient;
 		VGPaint		_paint;
-		// GRADIENT or FOCAL GRADIENT
-		// bitmap id
-		// bitmap matrix
+		uint16_t	_bitmap_id;
+		MATRIX		_bitmap_matrix;
 		
 	};
 	
@@ -84,7 +92,7 @@ namespace MonkSWF {
 	public:
 		
 		LineStyle()
-		:	_paint(0)
+		:	_paint(VG_INVALID_HANDLE)
 		{}
 		
 		bool read( Reader* reader, bool support_32bit_color );

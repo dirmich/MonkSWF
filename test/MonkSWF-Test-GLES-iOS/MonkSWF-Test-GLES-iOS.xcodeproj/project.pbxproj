@@ -20,6 +20,7 @@
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		FA25C8A61236E50500E46025 /* stuff.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA25C8A51236E50500E46025 /* stuff.swf */; };
+		FA4D521013CD1E0200510602 /* papercut.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA4D520F13CD1E0200510602 /* papercut.swf */; };
 		FA4E3447138D970E002CB3C4 /* transportation.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA4E3446138D970E002CB3C4 /* transportation.swf */; };
 		FA4E3449138DC2E7002CB3C4 /* splashscreen.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA4E3448138DC2E7002CB3C4 /* splashscreen.swf */; };
 		FA4E344B138DCD88002CB3C4 /* giraffe.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA4E344A138DCD88002CB3C4 /* giraffe.swf */; };
@@ -30,6 +31,7 @@
 		FA68C3621241948600BF08FF /* hole.swf in Resources */ = {isa = PBXBuildFile; fileRef = FA68C3611241948600BF08FF /* hole.swf */; };
 		FA6AEF2A127659BC004079EE /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEF29127659BC004079EE /* MainWindow-iPad.xib */; };
 		FA6AEF3D12765CFB004079EE /* GLViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */; };
+		FAA1887913CD499D00718228 /* fish_test.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAA1887813CD499D00718228 /* fish_test.swf */; };
 		FAC2C2CA1279F690000B4C92 /* RenderTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2C2C71279F690000B4C92 /* RenderTexture.m */; };
 		FAC2C2CB1279F690000B4C92 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2C2C91279F690000B4C92 /* Texture2D.m */; };
 		FAC2C2E01279F906000B4C92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC2C2DF1279F906000B4C92 /* CoreGraphics.framework */; };
@@ -49,13 +51,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FAD72FC21229EE5100B99B94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAD72FBA1229EE5100B99B94 /* MonkVG-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = "MonkVG-iOS-Quartz";
-		};
 		FAD72FC41229EE5100B99B94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAD72FBA1229EE5100B99B94 /* MonkVG-iOS.xcodeproj */;
@@ -108,6 +103,7 @@
 		32CA4F630368D1EE00C91783 /* MonkSWF_Test_GLES_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkSWF_Test_GLES_iOS_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MonkSWF_Test_GLES_iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MonkSWF_Test_GLES_iOS-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		FA25C8A51236E50500E46025 /* stuff.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stuff.swf; sourceTree = "<group>"; };
+		FA4D520F13CD1E0200510602 /* papercut.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = papercut.swf; sourceTree = "<group>"; };
 		FA4E3446138D970E002CB3C4 /* transportation.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = transportation.swf; path = ../transportation.swf; sourceTree = "<group>"; };
 		FA4E3448138DC2E7002CB3C4 /* splashscreen.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = splashscreen.swf; path = ../splashscreen.swf; sourceTree = "<group>"; };
 		FA4E344A138DCD88002CB3C4 /* giraffe.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = giraffe.swf; path = ../giraffe.swf; sourceTree = "<group>"; };
@@ -118,6 +114,7 @@
 		FA68C3611241948600BF08FF /* hole.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hole.swf; path = ../hole.swf; sourceTree = SOURCE_ROOT; };
 		FA6AEF29127659BC004079EE /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GLViewController-iPad.xib"; sourceTree = "<group>"; };
+		FAA1887813CD499D00718228 /* fish_test.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fish_test.swf; sourceTree = "<group>"; };
 		FAC2C2C61279F690000B4C92 /* RenderTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderTexture.h; sourceTree = "<group>"; };
 		FAC2C2C71279F690000B4C92 /* RenderTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderTexture.m; sourceTree = "<group>"; };
 		FAC2C2C81279F690000B4C92 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
@@ -227,6 +224,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAA1887813CD499D00718228 /* fish_test.swf */,
+				FA4D520F13CD1E0200510602 /* papercut.swf */,
 				FA4E344A138DCD88002CB3C4 /* giraffe.swf */,
 				FA4E3448138DC2E7002CB3C4 /* splashscreen.swf */,
 				FA4E3446138D970E002CB3C4 /* transportation.swf */,
@@ -274,7 +273,6 @@
 		FAD72FBB1229EE5100B99B94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FAD72FC31229EE5100B99B94 /* libMonkVG_iOS_Quartz.a */,
 				FAD72FC51229EE5100B99B94 /* libMonkVG_iOS_OpenGL.a */,
 			);
 			name = Products;
@@ -345,13 +343,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FAD72FC31229EE5100B99B94 /* libMonkVG_iOS_Quartz.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMonkVG_iOS_Quartz.a;
-			remoteRef = FAD72FC21229EE5100B99B94 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		FAD72FC51229EE5100B99B94 /* libMonkVG_iOS_OpenGL.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -396,6 +387,8 @@
 				FA4E3447138D970E002CB3C4 /* transportation.swf in Resources */,
 				FA4E3449138DC2E7002CB3C4 /* splashscreen.swf in Resources */,
 				FA4E344B138DCD88002CB3C4 /* giraffe.swf in Resources */,
+				FA4D521013CD1E0200510602 /* papercut.swf in Resources */,
+				FAA1887913CD499D00718228 /* fish_test.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

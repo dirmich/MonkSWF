@@ -34,13 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FAD7312F1229FFFB00B99B94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = "MonkVG-iOS-Quartz";
-		};
 		FAD731311229FFFB00B99B94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
@@ -182,7 +175,6 @@
 		FAD7312B1229FFFB00B99B94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FAD731301229FFFB00B99B94 /* libMonkVG_iOS_Quartz.a */,
 				FAD731321229FFFB00B99B94 /* libMonkVG_iOS_OpenGL.a */,
 			);
 			name = Products;
@@ -264,13 +256,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FAD731301229FFFB00B99B94 /* libMonkVG_iOS_Quartz.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMonkVG_iOS_Quartz.a;
-			remoteRef = FAD7312F1229FFFB00B99B94 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		FAD731321229FFFB00B99B94 /* libMonkVG_iOS_OpenGL.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;

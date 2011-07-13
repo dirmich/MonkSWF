@@ -59,8 +59,6 @@ namespace MonkSWF {
 //			S16           b0, b1;
 //		} CXFORM;
 //	
-#define GRADIENT_LINEAR 0x10
-#define GRADIENT_RADIAL 0x12
 	struct GRADIENT
 	{
 		int num;

@@ -744,33 +744,40 @@ namespace MonkSWF {
 	
 	bool FillStyle::read( Reader* reader, bool support_32bit_color ) {
 		
-		// create the openvg paint
-		_paint = vgCreatePaint();
 		
 		_type = reader->get<uint8_t>();
-		assert( _type == 0 && "unsupported fill style" );
+		//assert( _type == 0 && "unsupported fill style" );
 		
-		// todo set vg paint mode...
-		
-		_color[0] = (reader->get<uint8_t>()/255.0f);
-		_color[1] = (reader->get<uint8_t>()/255.0f);
-		_color[2] = (reader->get<uint8_t>()/255.0f);
-		
-		if( support_32bit_color )
-			_color[3] = (reader->get<uint8_t>()/255.0f);
-		else
-			_color[3] = 1.0f;
-		
-		vgSetParameterfv( _paint, VG_PAINT_COLOR, 4, &_color[0] );
-		
-		cout << "\t\tFill Style: " << int(_color[0] * 255) << ", " << int(_color[1] * 255) << ", " << int(_color[2] * 255) << ", " << int(_color[3] * 255) << endl;
-		
-		if( _type == GRADIENT_LINEAR || _type == GRADIENT_RADIAL ) {
-			reader->getMatrix( _gradient_matrix );
-			_gradient.read( reader );
-			assert(0);
+		if ( _type == SOLID_FILL ) {
+			// create the openvg paint
+			_paint = vgCreatePaint();
+			
+			_color[0] = (reader->get<uint8_t>()/255.0f);
+			_color[1] = (reader->get<uint8_t>()/255.0f);
+			_color[2] = (reader->get<uint8_t>()/255.0f);
+			
+			if( support_32bit_color )
+				_color[3] = (reader->get<uint8_t>()/255.0f);
+			else
+				_color[3] = 1.0f;
+			
+			vgSetParameterfv( _paint, VG_PAINT_COLOR, 4, &_color[0] );
+
 		}
 		
+//		cout << "\t\tFill Style: " << int(_color[0] * 255) << ", " << int(_color[1] * 255) << ", " << int(_color[2] * 255) << ", " << int(_color[3] * 255) << endl;
+		
+		if( _type == LINEAR_GRADIENT_FILL || _type == RADIAL_GRADIENT_FILL || _type == FOCAL_GRADIENT_FILL ) {
+			reader->getMatrix( _gradient_matrix );
+			_gradient.read( reader );
+			//			assert(0);
+		}
+		
+		if( _type == REPEATING_BITMAP_FILL || _type == CLIPPED_BITMAP_FILL 
+		   || _type == NON_SMOOTHED_CLIPPED_BITMAP_FILL || _type == NON_SMOOTHED_REPEATING_BITMAP_FILL ) {
+			_bitmap_id = reader->get<uint16_t>();
+			reader->getMatrix( _bitmap_matrix );
+		}
 		return true;
 	}
 	
@@ -1053,18 +1060,19 @@ namespace MonkSWF {
 			//			vgSeti( VG_FILL_RULE, VG_EVEN_ODD );
 			
 			
-			if( path._fill_style && path._fill_style->getPaint() ) {	// set up fill style
+			if( path._fill_style && path._fill_style->getPaint() != VG_INVALID_HANDLE ) {	// set up fill style
 				path_style |= VG_FILL_PATH;
 				vgSetPaint( path._fill_style->getPaint(), VG_FILL_PATH );
 			} 
 			
-			if( path._line_style && path._line_style->getPaint() ) {	// set up stroke style
+			if( path._line_style && path._line_style->getPaint() != VG_INVALID_HANDLE ) {	// set up stroke style
 				path_style |= VG_STROKE_PATH;
 				vgSetPaint( path._line_style->getPaint(), VG_STROKE_PATH );
 				vgSetf(VG_STROKE_LINE_WIDTH, path._line_style->getWidth() );
 			}
 			
-			vgDrawPath( path._vgpath, path_style );
+			if( path_style != 0 )
+				vgDrawPath( path._vgpath, path_style );
 		}
 	}
 	
