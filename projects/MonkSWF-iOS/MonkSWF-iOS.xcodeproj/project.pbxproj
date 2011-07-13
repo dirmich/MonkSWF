@@ -30,25 +30,7 @@
 		FAD731031229FE5700B99B94 /* mkHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730EF1229FE5700B99B94 /* mkHeader.cpp */; };
 		FAD731041229FE5700B99B94 /* mkSWF.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730F01229FE5700B99B94 /* mkSWF.h */; };
 		FAD731051229FE5700B99B94 /* mkSWF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730F11229FE5700B99B94 /* mkSWF.cpp */; };
-		FAD73135122A001800B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD731321229FFFB00B99B94 /* libMonkVG_iOS_OpenGL.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FAD731311229FFFB00B99B94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FAE282E9121A08BB00823BCB;
-			remoteInfo = "MonkVG-iOS-OpenGL";
-		};
-		FAD73133122A000600B99B94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = FAE282A8121A08BB00823BCB;
-			remoteInfo = "MonkVG-iOS-OpenGL";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* MonkSWF_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkSWF_iOS_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -75,7 +57,6 @@
 		FAD730EF1229FE5700B99B94 /* mkHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mkHeader.cpp; path = ../../src/mkHeader.cpp; sourceTree = SOURCE_ROOT; };
 		FAD730F01229FE5700B99B94 /* mkSWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mkSWF.h; path = ../../src/mkSWF.h; sourceTree = SOURCE_ROOT; };
 		FAD730F11229FE5700B99B94 /* mkSWF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mkSWF.cpp; path = ../../src/mkSWF.cpp; sourceTree = SOURCE_ROOT; };
-		FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-iOS.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-iOS/MonkVG-iOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD73135122A001800B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,7 +82,6 @@
 		0867D691FE84028FC02AAC07 /* MonkSWF-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */,
 				FAD730DC1229FE5700B99B94 /* Source */,
 				FAD730BB1229FD6F00B99B94 /* include */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
@@ -172,14 +151,6 @@
 			path = ../../src/tags;
 			sourceTree = SOURCE_ROOT;
 		};
-		FAD7312B1229FFFB00B99B94 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FAD731321229FFFB00B99B94 /* libMonkVG_iOS_OpenGL.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -217,7 +188,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FAD73134122A000600B99B94 /* PBXTargetDependency */,
 			);
 			name = "MonkSWF-iOS";
 			productName = "MonkSWF-iOS";
@@ -242,28 +212,12 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* MonkSWF-iOS */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = FAD7312B1229FFFB00B99B94 /* Products */;
-					ProjectRef = FAD7312A1229FFFB00B99B94 /* MonkVG-iOS.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* MonkSWF-iOS */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		FAD731321229FFFB00B99B94 /* libMonkVG_iOS_OpenGL.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMonkVG_iOS_OpenGL.a;
-			remoteRef = FAD731311229FFFB00B99B94 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2AAC07B0554694100DB518D /* Sources */ = {
@@ -283,14 +237,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FAD73134122A000600B99B94 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MonkVG-iOS-OpenGL";
-			targetProxy = FAD73133122A000600B99B94 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
