@@ -133,7 +133,7 @@ namespace MonkSWF {
 			return _offsetScale;
 		}
 		
-		void setRootTransform( float t[9] ) {
+		void setRootTransform( const float t[9] ) {
 			for( int i = 0; i < 9; i++ )
 				_rootTransform[i] = t[i];
 		}
