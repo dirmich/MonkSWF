@@ -13,10 +13,11 @@
 #include "mkReader.h"
 #include "mkHeader.h"
 #include "mkTag.h"
-#include <map>
+#include <map> 
 #include <vector>
 #include <list>
-#include <tr1/memory>
+#include <boost/shared_ptr.hpp>
+#include <boost/make_shared.hpp>
 
 using namespace std;
 
@@ -24,6 +25,12 @@ namespace MonkSWF {
 	
 	class SWF {
 	public:
+		
+		typedef boost::shared_ptr<SWF> SmartPtr;
+		static SWF::SmartPtr create( ) {
+			return boost::make_shared<SWF>( );
+		}
+
 
 		// factory function prototype
 		typedef ITag* (*TagFactoryFunc)( TagHeader* );
