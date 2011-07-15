@@ -28,9 +28,7 @@ namespace MonkSWF {
 		// factory function prototype
 		typedef ITag* (*TagFactoryFunc)( TagHeader* );
 	
-		SWF() {
-			
-		}
+		SWF(); 
 		
 		bool initialize();
 		bool read( Reader *reader );

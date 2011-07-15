@@ -13,6 +13,7 @@
 #include "mkTag.h"
 #include <vg/openvg.h>
 #include <vg/vgu.h>
+#include <string>
 
 namespace MonkSWF {
 
@@ -20,7 +21,7 @@ namespace MonkSWF {
 	public:
 		PlaceObject2Tag( TagHeader& h ) 
 			:	IPlaceObjectTag( h )
-			,	_name(0)
+			,	_name( "__none__" )
 			,	_offsetScale(1.0f)
 		{
 			_offsetTranslate[0] = _offsetTranslate[1] = 0.0f;
@@ -35,10 +36,6 @@ namespace MonkSWF {
 		}
 		
 		virtual ~PlaceObject2Tag() {
-			if ( _name ) {
-				delete [] _name;
-				_name = 0;
-			}
 		}
 		
 		virtual bool read( Reader* reader );
@@ -70,14 +67,11 @@ namespace MonkSWF {
 	private:
 	
 		// offset
-		VGfloat		_offsetTranslate[2];
-		VGfloat		_offsetScale;
+		VGfloat			_offsetTranslate[2];
+		VGfloat			_offsetScale;
 		
-		VGfloat		_transform[3][3];
-//		VGfloat		_translation[2];
-//		VGfloat		_scale[2];
-//		VGfloat		_rotation;
-		char*		_name;
+		VGfloat			_transform[3][3];
+		std::string		_name;
 	};
 }
 #endif // __PlaceObject_h__

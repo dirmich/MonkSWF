@@ -16,6 +16,13 @@
 
 namespace MonkSWF {
 	
+	SWF::SWF()
+	:	_offsetScale( 1 )
+	{
+		_offsetTranslate[0] = 0;
+		_offsetTranslate[1] = 0;
+		
+	}
 	bool SWF::initialize() {
 		
 		// setup the factories
@@ -138,6 +145,11 @@ namespace MonkSWF {
 		vgSetfv(VG_CLEAR_COLOR, 4, clearColor);
 		vgClear(0,0,_header.getFrameWidth(), _header.getFrameHeight() );
 		
+		vgSeti(VG_MATRIX_MODE, VG_MATRIX_PATH_USER_TO_SURFACE);
+		VGfloat oldMatrix[9];
+		vgGetMatrix( oldMatrix );
+
+		
 		DisplayList *display_list = _frame_list[ frame_idx ];
 		for (DisplayListIter iter = display_list->begin(); iter != display_list->end(); iter++ ) {
 			IPlaceObjectTag *place_obj = iter->second;
@@ -149,5 +161,8 @@ namespace MonkSWF {
 				place_obj->draw( this );
 			}
 		}
+		// restore old matrix
+		vgLoadMatrix( oldMatrix );
+
 	}
 }

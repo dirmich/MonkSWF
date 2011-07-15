@@ -55,13 +55,10 @@ namespace MonkSWF {
 			_transform[1][1] = m.sy/65536.0f;
 			
 			// rotate and skew
-			_transform[0][1] = -m.r0/65536.0f;
-			_transform[1][0] = -m.r1/65536.0f;
-//			_translation[0] = m.tx/20.0f;
-//			_translation[1] = m.ty/20.0f;
-//			_scale[0] = m.sx/65536.0f;
-//			_scale[1] = m.sy/65536.0f;
-//			_rotation = m.r0/65536.0f; 
+			_transform[0][1] = m.r1/65536.0f;
+			_transform[1][0] = m.r0/65536.0f;
+			
+			
 		}
 		
 		if ( has_color_transform ) {
@@ -89,7 +86,9 @@ namespace MonkSWF {
 			reader->get<uint16_t>();
 		}
 		if( has_name ) {
-			_name = reader->getString();
+			char* n = reader->getString();
+			_name = std::string( n );
+			delete [] n;
 		}
 		if( has_clip_depth ) {
 			reader->get<uint16_t>();
@@ -109,20 +108,16 @@ namespace MonkSWF {
 				_transform[i][p] = other->_transform[i][p];
 			}
 		}
-//		_translation[0] = other->_translation[0];
-//		_translation[1] = other->_translation[1];
-//		_scale[0] = other->_scale[0];
-//		_scale[1] = other->_scale[1];
-//		_rotation = other->_rotation; //todo 
 	}
 	
-//	static inline float degrees (float radians) {return radians * (180.0f/3.14159f);}	
+	static inline float degrees (float radians) {return radians * (180.0f/3.14159f);}	
 	void PlaceObject2Tag::draw( SWF* swf ) {
-		vgLoadIdentity();
-		vgLoadMatrix( (VGfloat*)&_transform[0][0] );
+		VGfloat oldMatrix[9];
+		vgGetMatrix( oldMatrix );
+		vgMultMatrix( (VGfloat*)&_transform[0][0] );
 		vgTranslate( _offsetTranslate[0], _offsetTranslate[1] );
 		vgScale( _offsetScale, _offsetScale );
-//		vgRotate( degrees( _rotation ) );
+		
 		
 		IDefineShapeTag* shape = swf->getShape( _character_id );
 		if( shape )
@@ -133,6 +128,8 @@ namespace MonkSWF {
 				sprite->draw(0);		// TOOD: have swf store the current frame
 			}
 		}
+		// restore old matrix
+		vgLoadMatrix( oldMatrix );
 
 	}
 	
@@ -141,20 +138,4 @@ namespace MonkSWF {
 		_header.print();
 	}
 
-//	PlaceFlagHasClipActions UB[1] SWF 5 and later: has
-//	clip actions (sprite
-//				  characters only)
-//Otherwise: always 0
-//	PlaceFlagHasClipDepth UB[1] Has clip depth
-//	PlaceFlagHasName UB[1] Has name
-//	PlaceFlagHasRatio UB[1] Has ratio
-//	PlaceFlagHasColorTransform UB[1] Has color transform
-//	PlaceFlagHasMatrix UB[1] Has matrix
-//	PlaceFlagHasCharacter UB[1] Places a character
-//	PlaceFlagMove UB[1] Defines a character to
-//	be moved
-//	Depth UI16 Depth of character
-//	CharacterId If PlaceFlagHasCharacter
-//	UI16
-//	ID of character to place	
 }
