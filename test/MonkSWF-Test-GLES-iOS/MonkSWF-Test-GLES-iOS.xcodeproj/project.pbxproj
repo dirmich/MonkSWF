@@ -32,10 +32,12 @@
 		FA6AEF2A127659BC004079EE /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEF29127659BC004079EE /* MainWindow-iPad.xib */; };
 		FA6AEF3D12765CFB004079EE /* GLViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */; };
 		FAA1887913CD499D00718228 /* fish_test.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAA1887813CD499D00718228 /* fish_test.swf */; };
+		FAA188B513CE636F00718228 /* fish_idle.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAA188B413CE636F00718228 /* fish_idle.swf */; };
 		FAC2C2CA1279F690000B4C92 /* RenderTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2C2C71279F690000B4C92 /* RenderTexture.m */; };
 		FAC2C2CB1279F690000B4C92 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2C2C91279F690000B4C92 /* Texture2D.m */; };
 		FAC2C2E01279F906000B4C92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC2C2DF1279F906000B4C92 /* CoreGraphics.framework */; };
 		FAC2C45F127A0EE6000B4C92 /* MSB_test_01.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAC2C45E127A0EE6000B4C92 /* MSB_test_01.swf */; };
+		FACFD95F13CFC52E00986C1D /* fish_idle2.swf in Resources */ = {isa = PBXBuildFile; fileRef = FACFD95E13CFC52E00986C1D /* fish_idle2.swf */; };
 		FAD72FCD1229EE8900B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD72FC51229EE5100B99B94 /* libMonkVG_iOS_OpenGL.a */; };
 		FAD730001229F1AB00B99B94 /* GLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD72FFE1229F1AB00B99B94 /* GLViewController.mm */; };
 		FAD730011229F1AB00B99B94 /* GLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD72FFF1229F1AB00B99B94 /* GLViewController.xib */; };
@@ -115,12 +117,14 @@
 		FA6AEF29127659BC004079EE /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GLViewController-iPad.xib"; sourceTree = "<group>"; };
 		FAA1887813CD499D00718228 /* fish_test.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fish_test.swf; sourceTree = "<group>"; };
+		FAA188B413CE636F00718228 /* fish_idle.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fish_idle.swf; sourceTree = "<group>"; };
 		FAC2C2C61279F690000B4C92 /* RenderTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderTexture.h; sourceTree = "<group>"; };
 		FAC2C2C71279F690000B4C92 /* RenderTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderTexture.m; sourceTree = "<group>"; };
 		FAC2C2C81279F690000B4C92 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
 		FAC2C2C91279F690000B4C92 /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
 		FAC2C2DF1279F906000B4C92 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FAC2C45E127A0EE6000B4C92 /* MSB_test_01.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MSB_test_01.swf; sourceTree = "<group>"; };
+		FACFD95E13CFC52E00986C1D /* fish_idle2.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fish_idle2.swf; sourceTree = "<group>"; };
 		FAD72FBA1229EE5100B99B94 /* MonkVG-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "MonkVG-iOS.xcodeproj"; path = "../../../MonkVG/projects/MonkVG-iOS/MonkVG-iOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		FAD72FFD1229F1AB00B99B94 /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
 		FAD72FFE1229F1AB00B99B94 /* GLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLViewController.mm; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FACFD95E13CFC52E00986C1D /* fish_idle2.swf */,
+				FAA188B413CE636F00718228 /* fish_idle.swf */,
 				FAA1887813CD499D00718228 /* fish_test.swf */,
 				FA4D520F13CD1E0200510602 /* papercut.swf */,
 				FA4E344A138DCD88002CB3C4 /* giraffe.swf */,
@@ -389,6 +395,8 @@
 				FA4E344B138DCD88002CB3C4 /* giraffe.swf in Resources */,
 				FA4D521013CD1E0200510602 /* papercut.swf in Resources */,
 				FAA1887913CD499D00718228 /* fish_test.swf in Resources */,
+				FAA188B513CE636F00718228 /* fish_idle.swf in Resources */,
+				FACFD95F13CFC52E00986C1D /* fish_idle2.swf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
