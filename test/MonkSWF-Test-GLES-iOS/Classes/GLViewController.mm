@@ -29,7 +29,7 @@ using namespace MonkSWF;
     [super viewDidLoad];
 	
 	NSBundle      *mainBundle = [NSBundle mainBundle];
-	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"fish_test.swf"];
+	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"fish_idle2.swf"];
 	NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 	if (fromFile) {
 		NSData *data = [fromFile readDataToEndOfFile];
@@ -101,7 +101,12 @@ using namespace MonkSWF;
 
 - (void)drawView:(id)sender {
 	
-	float offset[2] = { _glview.frame.size.width*2/16, _glview.frame.size.height*2/16};
+	static VGfloat angle = 0;
+	angle += 0.1;
+	if( angle > 360 )
+		angle = 0;
+	
+	float offset[2] = { _glview.frame.size.width*2/2, _glview.frame.size.height*2/2};
 	
 	NSTimeInterval deltaTime = [NSDate timeIntervalSinceReferenceDate] - _lastTime;
 	if ( deltaTime > 1.0f / _swf->getFrameRate() ) {
@@ -111,10 +116,14 @@ using namespace MonkSWF;
 	if ( _frame >= _swf->numFrames() ) {
 		_frame = 0;
 	}
-	
+	vgLoadIdentity();
+	vgRotate( angle );
 	_swf->setOffsetTranslate( offset );
-	_swf->setOffsetScale( 1.0 );
+	_swf->setOffsetScale( 0.5f );
 	_swf->drawFrame( _frame );
+	
+//	i think the camera is flipped in the wrong direction
+//	either flip the camera or do y = height - y
 }
 
 #pragma mark Actions
