@@ -22,6 +22,14 @@ namespace MonkSWF {
 		_offsetTranslate[0] = 0;
 		_offsetTranslate[1] = 0;
 		
+		for ( int i = 0; i < 9; i++ ) {
+			_rootTransform[i] = 0;
+		}
+		// set root tranform to identity
+		_rootTransform[0] = 1;
+		_rootTransform[4] = 1;
+		_rootTransform[8] = 1;
+		
 	}
 	bool SWF::initialize() {
 		
@@ -148,7 +156,7 @@ namespace MonkSWF {
 		vgSeti(VG_MATRIX_MODE, VG_MATRIX_PATH_USER_TO_SURFACE);
 		VGfloat oldMatrix[9];
 		vgGetMatrix( oldMatrix );
-
+		vgMultMatrix( _rootTransform );
 		
 		DisplayList *display_list = _frame_list[ frame_idx ];
 		for (DisplayListIter iter = display_list->begin(); iter != display_list->end(); iter++ ) {
