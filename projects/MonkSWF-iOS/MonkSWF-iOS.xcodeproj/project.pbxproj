@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* MonkSWF_iOS_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* MonkSWF_iOS_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		FAB3803213D203B900C03C7F /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB3803113D203B900C03C7F /* boost.framework */; };
 		FAD730BD1229FD6F00B99B94 /* MonkSWF.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730BC1229FD6F00B99B94 /* MonkSWF.h */; };
 		FAD730F21229FE5700B99B94 /* DefineShape.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD730DE1229FE5700B99B94 /* DefineShape.h */; };
 		FAD730F31229FE5700B99B94 /* DefineShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAD730DF1229FE5700B99B94 /* DefineShape.cpp */; };
@@ -36,6 +37,7 @@
 		AA747D9E0F9514B9006C5449 /* MonkSWF_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkSWF_iOS_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libMonkSWF_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMonkSWF_iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAB3803113D203B900C03C7F /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../../Frameworks/boost.framework; sourceTree = "<group>"; };
 		FAD730BC1229FD6F00B99B94 /* MonkSWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MonkSWF.h; path = ../../MonkSWF.h; sourceTree = SOURCE_ROOT; };
 		FAD730DE1229FE5700B99B94 /* DefineShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineShape.h; sourceTree = "<group>"; };
 		FAD730DF1229FE5700B99B94 /* DefineShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefineShape.cpp; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				FAB3803213D203B900C03C7F /* boost.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +97,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAB3803113D203B900C03C7F /* boost.framework */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -242,37 +246,53 @@
 		1DEB921F08733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/MonkSWF_iOS.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MonkSWF_iOS_Prefix.pch;
-				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
+				HEADER_SEARCH_PATHS = (
+					../../../MonkVG/include,
+					/opt/local/include,
+				);
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = MonkSWF_iOS;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		1DEB922008733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/MonkSWF_iOS.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Frameworks\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MonkSWF_iOS_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				HEADER_SEARCH_PATHS = ../../../MonkVG/include;
+				HEADER_SEARCH_PATHS = (
+					../../../MonkVG/include,
+					/opt/local/include,
+				);
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = MonkSWF_iOS;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

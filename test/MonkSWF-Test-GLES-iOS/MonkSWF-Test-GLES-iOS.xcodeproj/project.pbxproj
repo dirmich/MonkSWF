@@ -33,6 +33,7 @@
 		FA6AEF3D12765CFB004079EE /* GLViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */; };
 		FAA1887913CD499D00718228 /* fish_test.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAA1887813CD499D00718228 /* fish_test.swf */; };
 		FAA188B513CE636F00718228 /* fish_idle.swf in Resources */ = {isa = PBXBuildFile; fileRef = FAA188B413CE636F00718228 /* fish_idle.swf */; };
+		FAB3803413D206F200C03C7F /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB3803313D206F100C03C7F /* boost.framework */; };
 		FAC2C2CA1279F690000B4C92 /* RenderTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2C2C71279F690000B4C92 /* RenderTexture.m */; };
 		FAC2C2CB1279F690000B4C92 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2C2C91279F690000B4C92 /* Texture2D.m */; };
 		FAC2C2E01279F906000B4C92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC2C2DF1279F906000B4C92 /* CoreGraphics.framework */; };
@@ -118,6 +119,7 @@
 		FA6AEF3C12765CFB004079EE /* GLViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GLViewController-iPad.xib"; sourceTree = "<group>"; };
 		FAA1887813CD499D00718228 /* fish_test.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fish_test.swf; sourceTree = "<group>"; };
 		FAA188B413CE636F00718228 /* fish_idle.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fish_idle.swf; sourceTree = "<group>"; };
+		FAB3803313D206F100C03C7F /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../../Frameworks/boost.framework; sourceTree = "<group>"; };
 		FAC2C2C61279F690000B4C92 /* RenderTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderTexture.h; sourceTree = "<group>"; };
 		FAC2C2C71279F690000B4C92 /* RenderTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderTexture.m; sourceTree = "<group>"; };
 		FAC2C2C81279F690000B4C92 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
@@ -145,10 +147,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD730C81229FDE100B99B94 /* libMonkSWF_iOS.a in Frameworks */,
 				FAD72FCD1229EE8900B99B94 /* libMonkVG_iOS_OpenGL.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				FAB3803413D206F200C03C7F /* boost.framework in Frameworks */,
+				FAD730C81229FDE100B99B94 /* libMonkSWF_iOS.a in Frameworks */,
 				28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */,
 				28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */,
 				FAD730191229F61000B99B94 /* libz.dylib in Frameworks */,
@@ -202,6 +205,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FAB3803313D206F100C03C7F /* boost.framework */,
 				FAD730C01229FDC700B99B94 /* MonkSWF-iOS.xcodeproj */,
 				FAD72FBA1229EE5100B99B94 /* MonkVG-iOS.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -440,6 +444,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -462,6 +470,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MonkSWF_Test_GLES_iOS_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
@@ -526,6 +538,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Micah Pearlman";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MonkSWF_Test_GLES_iOS_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
