@@ -893,12 +893,12 @@ namespace MonkSWF {
 					
 					if( flags & SF_NEWSTYLE ) { 
 						//						assert( 0 );
-						cout << "NEW STYLE" << endl;
+						//						cout << "NEW STYLE" << endl;
 						// get the fill styles
 						num_fill_styles = reader->get<uint8_t>();
 						if( num_fill_styles == 0xff )
 							num_fill_styles = reader->get<uint16_t>();
-						cout << "\tnum fill styles: " << int(num_fill_styles) << endl;
+						//						cout << "\tnum fill styles: " << int(num_fill_styles) << endl;
 						if ( num_fill_styles ) {
 							base_fill_idx = _fill_styles.size();
 						}
@@ -913,7 +913,7 @@ namespace MonkSWF {
 						num_line_styles = reader->get<uint8_t>();
 						if ( num_line_styles == 0xff )
 							num_line_styles = reader->get<uint16_t>();
-						cout << "\tnum line styles: " << int(num_line_styles) << endl;
+						//						cout << "\tnum line styles: " << int(num_line_styles) << endl;
 						if ( num_line_styles ) {
 							base_line_idx += _line_styles.size() - 1;
 						}

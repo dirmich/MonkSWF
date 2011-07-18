@@ -116,7 +116,7 @@ namespace MonkSWF {
 					
 					display_list = new_display_list;
 					
-					cout << "### SHOWFRAME ###" << endl;
+					//cout << "### SHOWFRAME ###" << endl;
 				}
 				
 				if( tag_header->code() == REMOVEOBJECT2 ) {
@@ -124,10 +124,10 @@ namespace MonkSWF {
 					display_list->erase( remove_object->depth() );
 				}
 				
-				tag->print();
+				//tag->print();
 					
 			} else {	// no registered factory so skip this tag
-				cout << "*** SKIPPING UNKOWN TAG ***" << endl;
+				//cout << "*** SKIPPING UNKOWN TAG ***" << endl;
 				tag_header->print();
 				reader->skip( tag_header->length() );
 				delete tag_header;
