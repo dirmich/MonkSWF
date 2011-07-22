@@ -118,7 +118,7 @@ namespace MonkSWF {
 			return _header.getFrameRate();
 		}
 		
-		void setOffsetTranslate( float t[2] ) {
+		void setOffsetTranslate( const float t[2] ) {
 			_offsetTranslate[0] = t[0];
 			_offsetTranslate[1] = t[1];
 		}
