@@ -98,16 +98,30 @@ namespace MonkSWF {
 				if( tag_header->code() == PLACEOBJECT2 ) {	//PlaceObject2
 					IPlaceObjectTag* place_obj = (IPlaceObjectTag*)tag;
 					
-					if( place_obj->doMove() ) {	// just move the object at the current depth
-						IPlaceObjectTag* move_obj = (*display_list)[ place_obj->depth() ];
-						if ( move_obj ) {
-							place_obj->copyNoTransform( move_obj );
-							(*display_list)[ place_obj->depth() ] = place_obj;
-							//						move_obj->copyTransform( place_obj );
+					if ( place_obj->doMove() == false && place_obj->hasCharacter() == true ) {
+						// A new character (with ID of CharacterId) is placed on the display list at the specified
+						// depth. Other fields set the attributes of this new character.
+						IPlaceObjectTag* current_obj = (*display_list)[ place_obj->depth() ];
+						// copy over the previous matrix if the new character doesn't have one
+						if ( current_obj && place_obj->hasMatrix() == false ) {
+							place_obj->copyTransform( current_obj );
 						}
-					} else {
+						(*display_list)[ place_obj->depth() ] = place_obj;
+						
+					} else if ( place_obj->doMove() == true && place_obj->hasCharacter() == false ) {
+						// The character at the specified depth is modified. Other fields modify the attributes of this
+						// character. Because any given depth can have only one character, no CharacterId is required.
+						IPlaceObjectTag* current_obj = (*display_list)[ place_obj->depth() ];
+						if ( current_obj ) {
+							place_obj->setCharacterId( current_obj->characterId() );
+							(*display_list)[ place_obj->depth() ] = place_obj;
+						}
+					} else if ( place_obj->doMove() == true && place_obj->hasCharacter() == true ) {
+						// The character at the specified Depth is removed, and a new character (with ID of CharacterId) 
+						// is placed at that depth. Other fields set the attributes of this new character.
 						(*display_list)[ place_obj->depth() ] = place_obj;
 					}
+					
 				}
 				
 				if( tag_header->code() == SHOWFRAME ) {	// ShowFrame
@@ -127,7 +141,7 @@ namespace MonkSWF {
 				//tag->print();
 					
 			} else {	// no registered factory so skip this tag
-				//cout << "*** SKIPPING UNKOWN TAG ***" << endl;
+				cout << "*** SKIPPING UNKOWN TAG ***" << endl;
 				tag_header->print();
 				reader->skip( tag_header->length() );
 				delete tag_header;

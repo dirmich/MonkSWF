@@ -29,7 +29,7 @@ using namespace MonkSWF;
     [super viewDidLoad];
 	
 	NSBundle      *mainBundle = [NSBundle mainBundle];
-	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"fish_idle2.swf"];
+	NSString      *fromFilePath = [[mainBundle resourcePath] stringByAppendingPathComponent:@"puppy.swf"];
 	NSFileHandle  *fromFile = [NSFileHandle fileHandleForReadingAtPath:fromFilePath];;
 	if (fromFile) {
 		NSData *data = [fromFile readDataToEndOfFile];
