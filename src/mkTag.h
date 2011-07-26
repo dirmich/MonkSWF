@@ -178,7 +178,8 @@ namespace MonkSWF {
 			_character_id = other->_character_id;
 			_has_character = other->_has_character;
 			_do_move = other->_do_move;
-		}	
+		}
+		
 		uint16_t depth() const {
 			return _depth;
 		}
@@ -190,6 +191,10 @@ namespace MonkSWF {
 		uint16_t characterId() const {
 			return _character_id;
 		}
+		void setCharacterId( uint16_t i ) { _character_id = i; }
+		bool hasCharacter() const { return _has_character; }
+		
+		bool hasMatrix() const { return _has_matrix; }
 		
 		bool doMove() {
 			return !_has_character && _do_move;
@@ -207,7 +212,9 @@ namespace MonkSWF {
 		IPlaceObjectTag( TagHeader& header ) 
 		:	ITag( header )
 		,	_depth( 0 )
-		,	_character_id( 0 )
+		,	_character_id( 0xffff )
+		,	_has_character( 0 )
+		,	_has_matrix( 0 )
 		{}
 		
 		virtual ~IPlaceObjectTag() {
@@ -218,6 +225,7 @@ namespace MonkSWF {
 		uint16_t	_character_id;
 		uint8_t		_has_character;
 		uint8_t		_do_move;
+		uint8_t		_has_matrix;
 	};
 	
 #define SHOWFRAME 1	

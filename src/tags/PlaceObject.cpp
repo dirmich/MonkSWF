@@ -23,7 +23,7 @@ namespace MonkSWF {
 		uint8_t has_name = reader->getbits( 1 );
 		uint8_t has_ratio = reader->getbits( 1 );
 		uint8_t has_color_transform = reader->getbits( 1 );
-		uint8_t has_matrix = reader->getbits( 1 );
+		_has_matrix = reader->getbits( 1 );
 		_has_character = reader->getbits( 1 );
 		_do_move = reader->getbits( 1 );
 		
@@ -35,7 +35,7 @@ namespace MonkSWF {
 			_character_id = reader->get<uint16_t>();
 			
 			
-		if( has_matrix ) {
+		if( _has_matrix ) {
 			MATRIX m;
 			reader->getMatrix( m );
 			
@@ -55,6 +55,7 @@ namespace MonkSWF {
 			_transform[1][1] = m.sy/65536.0f;
 			
 			// rotate and skew
+			// note the order of r1 and r0!
 			_transform[0][1] = m.r1/65536.0f;
 			_transform[1][0] = m.r0/65536.0f;
 			
@@ -83,6 +84,8 @@ namespace MonkSWF {
 		}
 		
 		if ( has_ratio ) {
+			// dummy read
+			// TODO
 			reader->get<uint16_t>();
 		}
 		if( has_name ) {
@@ -94,6 +97,7 @@ namespace MonkSWF {
 			reader->get<uint16_t>();
 		}
 		if( has_clip_actions ) {
+			// TOOD: support clip actions 
 			assert( 0 );
 		}
 		
