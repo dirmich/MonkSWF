@@ -119,9 +119,8 @@ namespace MonkSWF {
 		VGfloat oldMatrix[9];
 		vgGetMatrix( oldMatrix );
 		vgMultMatrix( (VGfloat*)&_transform[0][0] );
-		vgTranslate( _offsetTranslate[0], _offsetTranslate[1] );
 		vgScale( _offsetScale, _offsetScale );
-		
+		vgTranslate( _offsetTranslate[0], _offsetTranslate[1] );
 		
 		IDefineShapeTag* shape = swf->getShape( _character_id );
 		if( shape )
